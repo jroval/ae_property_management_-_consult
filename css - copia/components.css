@@ -1,0 +1,241 @@
+/* ==========================================================================
+   COMPONENTS CSS — Property Management Mallorca
+   Componentes reutilizables: header, navegación, botones, WhatsApp float.
+   Depende de variables.css (debe cargarse después).
+   Mobile-first: estilos base = móvil; media queries en responsive.css
+   amplían el comportamiento a partir de tablet/desktop.
+   ========================================================================== */
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-sm) var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+/* ---------- Logo ---------- */
+.site-logo {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: var(--fw-medium);
+  color: var(--color-text-strong);
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.site-logo:hover,
+.site-logo:focus-visible {
+  color: var(--color-accent);
+}
+
+/* ---------- Botón menú móvil (hamburguesa) ---------- */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.menu-toggle__bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-strong);
+  border-radius: 2px;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- Navegación principal (mobile-first: oculta hasta abrir) ---------- */
+.main-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(320px, 85vw);
+  background-color: var(--color-bg);
+  border-left: 1px solid var(--color-border);
+  padding: calc(var(--space-sm) + 44px) var(--space-md) var(--space-md);
+  transform: translateX(100%);
+  transition: transform var(--transition-base);
+  z-index: var(--z-mobile-menu);
+  overflow-y: auto;
+}
+
+.main-nav[data-open="true"] {
+  transform: translateX(0);
+}
+
+.main-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.main-nav__link {
+  display: block;
+  padding: var(--space-xs) 0;
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-strong);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.main-nav__link:hover,
+.main-nav__link:focus-visible,
+.main-nav__link[aria-current="page"] {
+  color: var(--color-accent);
+}
+
+/* ---------- CTA dentro de la navegación ---------- */
+.main-nav__cta {
+  margin-top: var(--space-md);
+}
+
+/* ---------- Selector de idioma dentro de la navegación ---------- */
+.lang-switch {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.lang-switch__link {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-secondary);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.lang-switch__link[aria-current="true"] {
+  color: var(--color-text-strong);
+  background-color: var(--color-bg-alt);
+}
+
+.lang-switch__link:hover,
+.lang-switch__link:focus-visible {
+  color: var(--color-accent);
+}
+
+/* ---------- Overlay al abrir el menú móvil ---------- */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(33, 31, 27, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+  z-index: 150;
+}
+
+.nav-overlay[data-visible="true"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------- Botones (usados en header y en el resto del sitio) ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-strong);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ---------- Botón flotante de WhatsApp ---------- */
+.whatsapp-float {
+  position: fixed;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  z-index: var(--z-whatsapp-button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  background-color: var(--color-accent-dark);
+  transform: scale(1.05);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--color-bg);
+}

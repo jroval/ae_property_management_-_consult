@@ -1,0 +1,917 @@
+/* ==========================================================================
+   AE PROPERTY MANAGEMENT & CONSULT
+   Archivo: css/components.css
+
+   Componentes reutilizables:
+   - Contenedores.
+   - Secciones.
+   - Encabezados.
+   - Botones.
+   - Tarjetas.
+   - Formularios.
+   - Etiquetas.
+   - Procesos.
+   - Mensajes.
+   - Botón flotante de WhatsApp.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   CONTENEDORES
+   ========================================================================== */
+
+.container {
+  width: min(
+    calc(100% - (var(--page-gutter) * 2)),
+    var(--container-width)
+  );
+  margin-inline: auto;
+}
+
+.container--wide {
+  width: min(
+    calc(100% - (var(--page-gutter) * 2)),
+    var(--container-width-wide)
+  );
+  margin-inline: auto;
+}
+
+.container--text {
+  width: min(
+    calc(100% - (var(--page-gutter) * 2)),
+    var(--container-width-text)
+  );
+  margin-inline: auto;
+}
+
+
+/* ==========================================================================
+   SECCIONES
+   ========================================================================== */
+
+.section {
+  padding-block: var(--section-spacing);
+}
+
+.section--small {
+  padding-block: var(--section-spacing-small);
+}
+
+.section--large {
+  padding-block: var(--section-spacing-large);
+}
+
+.section--surface {
+  background-color: var(--color-background-soft);
+}
+
+.section--elevated {
+  background-color: var(--color-background-elevated);
+}
+
+.section--quartz {
+  background-color: var(--color-background);
+  background-image: var(--background-quartz-emphasis);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section--border-top {
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.section--border-bottom {
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+
+/* ==========================================================================
+   ENLACE PARA SALTAR AL CONTENIDO
+   ========================================================================== */
+
+.skip-link {
+  position: fixed;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: 1000;
+
+  padding: var(--space-3) var(--space-5);
+
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent);
+  color: var(--color-text-primary);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+
+  transform: translateY(-200%);
+  transition: transform var(--transition-fast);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+
+/* ==========================================================================
+   ETIQUETAS Y ENCABEZADOS DE SECCIÓN
+   ========================================================================== */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  color: var(--color-accent-hover);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-label);
+  line-height: var(--line-height-ui);
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 2.5rem;
+  height: 1px;
+
+  background-color: currentColor;
+
+  content: "";
+}
+
+.section-heading {
+  display: grid;
+  gap: var(--space-5);
+
+  max-width: 48rem;
+  margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.section-heading--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-heading--center .eyebrow {
+  justify-content: center;
+}
+
+.section-heading--center .eyebrow::after {
+  width: 2.5rem;
+  height: 1px;
+
+  background-color: currentColor;
+
+  content: "";
+}
+
+.section-heading h2,
+.page-title {
+  color: var(--color-text-primary);
+
+  font-family: var(--font-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-heading);
+}
+
+.section-heading p,
+.lead {
+  color: var(--color-text-secondary);
+
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-body);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-accent {
+  color: var(--color-accent-hover);
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  min-height: var(--button-min-height);
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+
+  padding: 0.9rem 1.5rem;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.035em;
+  line-height: 1;
+  text-align: center;
+
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn--primary {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-text-primary);
+
+  box-shadow: var(--shadow-accent);
+}
+
+.btn--primary:hover {
+  border-color: var(--color-accent-hover);
+  background-color: var(--color-accent-hover);
+}
+
+.btn--secondary {
+  border-color: var(--color-border-strong);
+  background-color: rgba(255, 255, 255, 0.025);
+  color: var(--color-text-primary);
+}
+
+.btn--secondary:hover {
+  border-color: var(--color-text-primary);
+  background-color: var(--overlay-medium);
+}
+
+.btn--ghost {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--color-text-secondary);
+}
+
+.btn--ghost:hover {
+  background-color: var(--overlay-light);
+  color: var(--color-text-primary);
+}
+
+.btn--text {
+  min-height: auto;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--color-text-primary);
+
+  box-shadow: none;
+}
+
+.btn--text:hover {
+  color: var(--color-accent-hover);
+  transform: none;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   BOTONES DE ICONO
+   ========================================================================== */
+
+.icon-button {
+  display: inline-grid;
+  width: var(--control-min-size);
+  height: var(--control-min-size);
+  flex: 0 0 auto;
+  place-items: center;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-circle);
+
+  background-color: rgba(15, 16, 15, 0.6);
+  color: var(--color-text-primary);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.icon-button:hover {
+  border-color: var(--color-border-strong);
+  background-color: rgba(30, 31, 29, 0.9);
+
+  transform: translateY(-2px);
+}
+
+.icon-button:active {
+  transform: translateY(0);
+}
+
+.icon-button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.icon-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+
+/* ==========================================================================
+   REJILLAS
+   ========================================================================== */
+
+.card-grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-3 {
+  gap: var(--space-3);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-5 {
+  gap: var(--space-5);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+
+/* ==========================================================================
+   TARJETAS
+   ========================================================================== */
+
+.service-card,
+.feature-card,
+.contact-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: clamp(1.5rem, 4vw, 2rem);
+
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+
+  background-color: var(--color-surface);
+
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.service-card::before,
+.feature-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background-color: var(--color-accent);
+
+  content: "";
+
+  transition: width var(--transition-base);
+}
+
+.service-card:hover,
+.feature-card:hover {
+  border-color: var(--color-accent-border);
+  background-color: var(--color-surface-hover);
+
+  box-shadow: var(--shadow-md);
+
+  transform: translateY(-5px);
+}
+
+.service-card:hover::before,
+.feature-card:hover::before {
+  width: 100%;
+}
+
+.card-icon {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+
+  margin-bottom: var(--space-8);
+
+  border: 1px solid var(--color-accent-border);
+  border-radius: var(--radius-circle);
+
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-hover);
+}
+
+.card-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.service-card h3,
+.feature-card h3,
+.contact-card h2,
+.contact-card h3 {
+  margin-bottom: var(--space-4);
+
+  color: var(--color-text-primary);
+
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-heading);
+}
+
+.service-card p,
+.feature-card p,
+.contact-card p {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-body);
+}
+
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  margin-top: var(--space-7);
+
+  color: var(--color-text-primary);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.service-card__link span {
+  color: var(--color-accent-hover);
+
+  transition: transform var(--transition-fast);
+}
+
+.service-card:hover .service-card__link span {
+  transform: translateX(4px);
+}
+
+
+/* ==========================================================================
+   PROCESO DE TRABAJO
+   ========================================================================== */
+
+.step-list {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: var(--space-4);
+
+  padding-block: var(--space-6);
+
+  border-top: 1px solid var(--color-divider);
+}
+
+.step:last-child {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.step__number {
+  color: var(--color-accent);
+
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  line-height: 1;
+}
+
+.step h3 {
+  margin-bottom: var(--space-2);
+
+  color: var(--color-text-primary);
+
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.step p {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-body);
+}
+
+
+/* ==========================================================================
+   ETIQUETAS
+   ========================================================================== */
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 2.25rem;
+  padding: 0.55rem 0.85rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+
+  background-color: rgba(255, 255, 255, 0.018);
+  color: var(--color-text-secondary);
+
+  font-size: var(--font-size-sm);
+}
+
+
+/* ==========================================================================
+   FORMULARIOS
+   ========================================================================== */
+
+.form-grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.form-field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-field label,
+.form-field legend {
+  color: var(--color-text-primary);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-height: var(--form-control-min-height);
+
+  padding: 0.9rem 1rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  outline: none;
+
+  background-color: var(--color-background-soft);
+  color: var(--color-text-primary);
+
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.form-field textarea {
+  min-height: 10rem;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover {
+  border-color: var(--color-border-strong);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--focus-color);
+  box-shadow: var(--focus-ring);
+}
+
+.form-field select {
+  appearance: none;
+
+  padding-right: 3rem;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--color-text-secondary) 50%
+    ),
+    linear-gradient(
+      135deg,
+      var(--color-text-secondary) 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 1.15rem) 50%,
+    calc(100% - 0.85rem) 50%;
+
+  background-repeat: no-repeat;
+  background-size:
+    0.35rem 0.35rem,
+    0.35rem 0.35rem;
+}
+
+.form-field small {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.form-field input:disabled,
+.form-field select:disabled,
+.form-field textarea:disabled {
+  cursor: not-allowed;
+  opacity: var(--opacity-disabled);
+}
+
+.form-check {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.form-check input {
+  width: 1.15rem;
+  height: 1.15rem;
+
+  margin-top: 0.2rem;
+
+  accent-color: var(--color-accent);
+}
+
+.form-check label {
+  color: var(--color-text-secondary);
+
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
+}
+
+.form-check a {
+  color: var(--color-accent-hover);
+
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.form-check a:hover {
+  color: var(--color-text-primary);
+}
+
+.form-status {
+  padding: var(--space-4);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  background-color: var(--color-surface);
+  color: var(--color-text-secondary);
+
+  line-height: var(--line-height-body);
+}
+
+.form-status--success {
+  border-color: rgba(125, 162, 130, 0.5);
+  background-color: rgba(125, 162, 130, 0.1);
+  color: #c6dccb;
+}
+
+.form-status--error {
+  border-color: rgba(209, 110, 101, 0.5);
+  background-color: rgba(209, 110, 101, 0.1);
+  color: #efbbb5;
+}
+
+
+/* ==========================================================================
+   AVISOS
+   ========================================================================== */
+
+.notice {
+  padding: var(--space-5);
+
+  border-left: 3px solid var(--color-accent);
+
+  background-color: var(--color-accent-soft);
+  color: var(--color-text-secondary);
+
+  line-height: var(--line-height-body);
+}
+
+.notice strong {
+  color: var(--color-text-primary);
+}
+
+
+/* ==========================================================================
+   MIGAS DE PAN
+   ========================================================================== */
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+
+  margin-bottom: var(--space-6);
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-sm);
+}
+
+.breadcrumbs a {
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-text-primary);
+}
+
+
+/* ==========================================================================
+   CONTENIDO LEGAL
+   ========================================================================== */
+
+.legal-content {
+  display: grid;
+  gap: var(--space-9);
+}
+
+.legal-content section {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.legal-content h2 {
+  color: var(--color-text-primary);
+
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-heading);
+}
+
+.legal-content h3 {
+  color: var(--color-text-primary);
+
+  font-size: var(--font-size-md);
+}
+
+.legal-content p,
+.legal-content li {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-body);
+}
+
+.legal-content ul,
+.legal-content ol {
+  display: grid;
+  gap: var(--space-2);
+
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.legal-content a {
+  color: var(--color-accent-hover);
+
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+
+/* ==========================================================================
+   BOTÓN FLOTANTE DE WHATSAPP
+   ========================================================================== */
+
+.whatsapp-float {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: var(--z-index-whatsapp);
+
+  display: inline-grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+
+  border: 1px solid var(--color-accent-border);
+  border-radius: var(--radius-circle);
+
+  background-color: var(--color-accent);
+  color: var(--color-text-primary);
+
+  box-shadow: var(--shadow-lg);
+
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.whatsapp-float:hover {
+  background-color: var(--color-accent-hover);
+
+  transform: translateY(-4px) scale(1.03);
+}
+
+.whatsapp-float:active {
+  transform: translateY(0) scale(1);
+}
+
+.whatsapp-float:focus-visible {
+  outline: none;
+  box-shadow:
+    var(--focus-ring),
+    var(--shadow-lg);
+}
+
+.whatsapp-float svg {
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+
+/* ==========================================================================
+   ESTADO DESHABILITADO
+   ========================================================================== */
+
+.btn:disabled,
+.icon-button:disabled {
+  cursor: not-allowed;
+  opacity: var(--opacity-disabled);
+  transform: none;
+}

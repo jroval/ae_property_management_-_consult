@@ -1,0 +1,94 @@
+/* ==========================================================================
+   RESPONSIVE CSS — Property Management Mallorca
+   Mobile-first: estos breakpoints AMPLÍAN el comportamiento base.
+   Breakpoints: tablet 768px, desktop 1024px, wide 1280px.
+   ========================================================================== */
+
+/* ---------- Tablet: 768px ---------- */
+@media (min-width: 48em) {
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+  .advantage-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-list { grid-template-columns: repeat(2, 1fr); }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .hero h1 { font-size: 3rem; }
+
+  .contact-layout {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+}
+
+/* ---------- Desktop: 1024px ---------- */
+@media (min-width: 64em) {
+  .menu-toggle { display: none; }
+
+  .nav-overlay { display: none; }
+
+  .main-nav {
+    position: static;
+    height: auto;
+    width: auto;
+    transform: none;
+    border-left: none;
+    padding: 0;
+    background: transparent;
+    overflow: visible;
+  }
+
+  .main-nav__list {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .main-nav__link {
+    border-bottom: none;
+    padding: 4px 0;
+    font-size: var(--fs-body);
+  }
+
+  .main-nav__cta {
+    margin-top: 0;
+  }
+
+  .lang-switch {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .site-header__inner {
+    gap: var(--space-lg);
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-left: auto;
+  }
+
+  .service-grid { grid-template-columns: repeat(3, 1fr); }
+  .advantage-grid { grid-template-columns: repeat(4, 1fr); }
+  .process-list { grid-template-columns: repeat(4, 1fr); }
+  .values-grid { grid-template-columns: repeat(4, 1fr); }
+
+  .hero { min-height: 92vh; }
+  .hero h1 { font-size: 3.5rem; }
+  .hero-content { max-width: 720px; padding-bottom: var(--space-xl); }
+
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* ---------- Wide: 1280px ---------- */
+@media (min-width: 80em) {
+  .container { padding: 0 2.5rem; }
+}

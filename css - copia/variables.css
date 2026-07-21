@@ -1,0 +1,80 @@
+/* ==========================================================================
+   VARIABLES CSS — Property Management Mallorca
+   Sistema visual: monocromático cálido + acento terracota
+   Este archivo se carga SIEMPRE antes que cualquier otro CSS del proyecto.
+   ========================================================================== */
+
+:root {
+
+  /* ---------- COLOR: escala monocromática cálida ---------- */
+  --color-bg: #FAF8F5;
+  --color-bg-alt: #EFEBE4;
+  --color-border: #D8D2C7;
+  --color-text-secondary: #8C8579;
+  --color-text: #4A4640;
+  --color-text-strong: #211F1B;
+  --color-dark-bg: #211F1B;
+  --color-dark-text: #FAF8F5;
+  --color-dark-border: #4A4640;
+
+  /* ---------- COLOR: acento único ---------- */
+  --color-accent: #B8875B;
+  --color-accent-dark: #9A6E45;
+  --color-accent-light: #E4D2BC;
+
+  /* ---------- COLOR: estados funcionales ---------- */
+  --color-focus-ring: #B8875B;
+  --color-error: #9B4C3F;
+  --color-success: #5C6E5A;
+
+  /* ---------- TIPOGRAFÍA ---------- */
+  --font-heading: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --fs-h1: 2.75rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+  --fs-h4: 1.25rem;
+  --fs-body-lg: 1.125rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-xs: 0.75rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  --lh-heading: 1.25;
+  --lh-body: 1.7;
+
+  /* ---------- ESPACIADO ---------- */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* ---------- LAYOUT ---------- */
+  --container-max: 1200px;
+  --container-padding: 1.25rem;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* ---------- SOMBRAS ---------- */
+  --shadow-sm: 0 1px 3px rgba(33, 31, 27, 0.08);
+  --shadow-md: 0 4px 12px rgba(33, 31, 27, 0.10);
+  --shadow-lg: 0 8px 24px rgba(33, 31, 27, 0.12);
+
+  /* ---------- TRANSICIONES ---------- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ---------- Z-INDEX ---------- */
+  --z-header: 100;
+  --z-mobile-menu: 200;
+  --z-whatsapp-button: 150;
+  --z-modal: 300;
+}
