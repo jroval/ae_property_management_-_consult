@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeHeader();
   initializeMobileNavigation();
   initializeCarousels();
+  initializeHomeServiceShowcase();
+  initializeScrollReveals();
   initializeContactForms();
   updateCurrentYear();
 });
@@ -360,6 +362,24 @@ class AccessibleCarousel {
 
     this.currentIndex = normalizedIndex;
 
+    const currentCounter = this.carousel.querySelector(
+      "[data-carousel-current]"
+    );
+
+    if (currentCounter) {
+      currentCounter.textContent = String(
+        normalizedIndex + 1
+      ).padStart(2, "0");
+    }
+
+    const progress =
+      ((normalizedIndex + 1) / this.slides.length) * 100;
+
+    this.carousel.style.setProperty(
+      "--carousel-progress",
+      `${progress}%`
+    );
+
     if (announce) {
       this.updateAccessibleLabel();
     }
@@ -530,6 +550,111 @@ function initializeCarousels() {
 
   carousels.forEach((carousel) => {
     new AccessibleCarousel(carousel);
+  });
+}
+
+
+/* ==========================================================================
+   SERVICIOS INTERACTIVOS DE LA PÁGINA DE INICIO
+   ========================================================================== */
+
+function initializeHomeServiceShowcase() {
+  const showcases = document.querySelectorAll(
+    "[data-service-showcase]"
+  );
+
+  showcases.forEach((showcase) => {
+    const items = Array.from(
+      showcase.querySelectorAll("[data-service-item]")
+    );
+
+    const triggers = Array.from(
+      showcase.querySelectorAll("[data-service-trigger]")
+    );
+
+    const panels = Array.from(
+      showcase.querySelectorAll("[data-service-panel]")
+    );
+
+    function activateService(index) {
+      items.forEach((item, itemIndex) => {
+        item.classList.toggle("is-active", itemIndex === index);
+      });
+
+      triggers.forEach((trigger, triggerIndex) => {
+        trigger.setAttribute(
+          "aria-expanded",
+          String(triggerIndex === index)
+        );
+      });
+
+      panels.forEach((panel, panelIndex) => {
+        const isActive = panelIndex === index;
+
+        panel.classList.toggle("is-active", isActive);
+        panel.setAttribute("aria-hidden", String(!isActive));
+      });
+    }
+
+    triggers.forEach((trigger, index) => {
+      trigger.addEventListener("click", () => {
+        activateService(index);
+      });
+
+      trigger.addEventListener("mouseenter", () => {
+        activateService(index);
+      });
+
+      trigger.addEventListener("focus", () => {
+        activateService(index);
+      });
+    });
+  });
+}
+
+
+/* ==========================================================================
+   APARICIONES AL HACER SCROLL
+   ========================================================================== */
+
+function initializeScrollReveals() {
+  const revealElements = document.querySelectorAll("[data-reveal]");
+
+  if (revealElements.length === 0) {
+    return;
+  }
+
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    revealElements.forEach((element) => {
+      element.classList.add("is-revealed");
+    });
+
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-revealed");
+        currentObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -8% 0px"
+    }
+  );
+
+  revealElements.forEach((element) => {
+    observer.observe(element);
   });
 }
 

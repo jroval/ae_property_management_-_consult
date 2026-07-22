@@ -287,597 +287,332 @@
   </header>
 
 
-  <!-- ================================================================
-       CONTENIDO PRINCIPAL
-       ================================================================ -->
+ <main id="main-content">
 
-  <main id="main-content">
+  <!-- ==============================================================
+       CONTACTO
+       ============================================================== -->
 
-    <!-- ==============================================================
-         HERO
-         ============================================================== -->
+  <section
+    class="contact-premium"
+    id="formulario-contacto"
+    aria-labelledby="contact-premium-title"
+  >
+    <div class="container--wide contact-premium__layout">
 
-    <section class="page-hero">
-      <div class="container page-hero__content">
-        <nav
-          class="breadcrumbs"
-          aria-label="Migas de pan"
+      <!-- ============================================================
+           PRESENTACIÓN Y CONTACTO DIRECTO
+           ============================================================ -->
+
+      <aside class="contact-premium__intro">
+
+        <header
+          class="contact-premium__heading"
+          data-reveal
         >
-          <a href="index.html">
-            Inicio
-          </a>
-
-          <span aria-hidden="true">
-            /
-          </span>
-
-          <span aria-current="page">
+          <span class="eyebrow">
             Contacto
           </span>
-        </nav>
 
-        <span class="eyebrow">
-          Contacto
-        </span>
+          <h1 id="contact-premium-title">
+            Hablemos de
+            <span>su propiedad.</span>
+          </h1>
 
-        <h1 class="page-title">
-          Cuéntanos cómo podemos ayudarte
-        </h1>
+          <p>
+            Cuéntenos qué necesita y contactaremos con usted personalmente.
+          </p>
+        </header>
 
-        <p>
-          Háblanos de tu propiedad y de las necesidades que deseas cubrir.
-          Valoraremos tu solicitud personalmente para ofrecerte una propuesta
-          de gestión adaptada.
-        </p>
 
-        <div class="page-hero__actions">
-          <a
-            class="btn btn--primary"
-            href="#formulario-contacto"
+        <!--
+          Imagen provisional.
+
+          Más adelante puede sustituirse por una fotografía vertical
+          real de Mallorca, una propiedad o un detalle arquitectónico.
+        -->
+
+        <figure
+          class="contact-premium__media"
+          data-reveal
+        >
+          <img
+            src="../assets/images/home/mallorca.webp"
+            alt="Representación artística de la isla de Mallorca"
+            width="1600"
+            height="2000"
+            fetchpriority="high"
           >
-            Completar formulario
+
+          <figcaption>
+            Mallorca · Atención personal
+          </figcaption>
+        </figure>
+
+
+        <div
+          class="contact-premium__direct"
+          data-reveal
+        >
+          <span>
+            Contacto directo
+          </span>
+
+          <a href="tel:+34601927601">
+            +34 601 927 601
+          </a>
+
+          <a href="mailto:info@tu-dominio.com">
+            info@tu-dominio.com
           </a>
 
           <a
-            class="btn btn--secondary"
             href="https://wa.me/34601927601?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20gesti%C3%B3n%20de%20mi%20propiedad%20en%20Mallorca."
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Hablar con AE Property Management & Consult por WhatsApp"
+            aria-label="Contactar con AE Property Management and Consult mediante WhatsApp"
           >
-            Hablar por WhatsApp
+            WhatsApp
           </a>
         </div>
-      </div>
-    </section>
+
+      </aside>
 
 
-    <!-- ==============================================================
-         FORMULARIO Y DATOS DE CONTACTO
-         ============================================================== -->
+      <!-- ============================================================
+           FORMULARIO
+           ============================================================ -->
 
-    <section
-      class="section"
-      id="formulario-contacto"
-    >
-      <div class="container contact-layout">
+      <!--
+        El formulario conserva el funcionamiento provisional de main.js.
 
-        <!-- ============================================================
-             FORMULARIO
-             ============================================================ -->
+        PENDIENTE:
+        conectar el formulario con el correo o servicio de envío definitivo.
+      -->
 
-        <!-- PENDIENTE: conectar el formulario al correo electrónico definitivo -->
-        <form
-          class="contact-form"
-          action="#"
-          method="post"
-          data-contact-form
-          data-success-message="El formulario se ha validado correctamente. La conexión con el sistema de envío está pendiente de configuración."
-        >
-          <div class="section-heading">
-            <span class="eyebrow">
-              Solicitar información
-            </span>
+      <form
+        class="contact-premium__form"
+        action="#"
+        method="post"
+        data-contact-form
+        data-success-message="El formulario se ha validado correctamente. La conexión con el sistema de envío está pendiente de configuración."
+        data-reveal
+      >
 
-            <h2>
-              Háblanos de tu propiedad
-            </h2>
+        <header class="contact-premium__form-header">
+          <span class="eyebrow">
+            Consulta privada
+          </span>
 
-            <p>
-              Cada propiedad requiere una atención diferente. Cuéntanos dónde
-              está situada, cuáles son tus necesidades y cómo podemos ayudarte.
-              Los campos marcados con un asterisco son obligatorios.
-            </p>
+          <h2>
+            Cuéntenos qué necesita
+          </h2>
+
+          <p>
+            Los campos marcados con un asterisco son obligatorios.
+          </p>
+        </header>
+
+
+        <div class="form-grid">
+
+          <!-- Nombre -->
+
+          <div class="form-field">
+            <label for="contact-name">
+              Nombre y apellidos *
+            </label>
+
+            <input
+              id="contact-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            >
           </div>
 
 
-          <div class="form-grid form-grid--two">
+          <!-- Correo electrónico -->
 
-            <!-- Nombre -->
-            <div class="form-field">
-              <label for="contact-name">
-                Nombre *
-              </label>
+          <div class="form-field">
+            <label for="contact-email">
+              Correo electrónico *
+            </label>
 
-              <input
-                id="contact-name"
-                name="first_name"
-                type="text"
-                autocomplete="given-name"
-                required
-              >
-            </div>
-
-
-            <!-- Apellidos -->
-            <div class="form-field">
-              <label for="contact-surname">
-                Apellidos *
-              </label>
-
-              <input
-                id="contact-surname"
-                name="last_name"
-                type="text"
-                autocomplete="family-name"
-                required
-              >
-            </div>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              inputmode="email"
+              required
+            >
+          </div>
 
 
-            <!-- Correo -->
-            <div class="form-field">
-              <label for="contact-email">
-                Correo electrónico *
-              </label>
+          <!-- Teléfono -->
 
-              <input
-                id="contact-email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                inputmode="email"
-                required
-              >
-            </div>
+          <div class="form-field">
+            <label for="contact-phone">
+              Teléfono
+            </label>
 
-
-            <!-- Teléfono -->
-            <div class="form-field">
-              <label for="contact-phone">
-                Teléfono *
-              </label>
-
-              <input
-                id="contact-phone"
-                name="phone"
-                type="tel"
-                autocomplete="tel"
-                inputmode="tel"
-                placeholder="+34"
-                required
-              >
-
-              <small>
-                Incluye el prefijo internacional.
-              </small>
-            </div>
+            <input
+              id="contact-phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              inputmode="tel"
+              placeholder="+34"
+            >
+          </div>
 
 
-            <!-- Tipo de propiedad -->
-            <div class="form-field">
-              <label for="property-type">
-                Tipo de propiedad *
-              </label>
+          <!-- Ubicación -->
 
-              <select
-                id="property-type"
-                name="property_type"
-                required
-              >
-                <option value="">
-                  Selecciona una opción
-                </option>
+          <div class="form-field">
+            <label for="property-location">
+              Ubicación de la propiedad
+            </label>
 
-                <option value="villa">
-                  Villa
-                </option>
-
-                <option value="chalet">
-                  Chalet
-                </option>
-
-                <option value="finca">
-                  Finca
-                </option>
-
-                <option value="rural-house">
-                  Casa rural
-                </option>
-
-                <option value="second-home">
-                  Segunda residencia
-                </option>
-
-                <option value="apartment">
-                  Apartamento o piso
-                </option>
-
-                <option value="other-private-property">
-                  Otra propiedad privada
-                </option>
-              </select>
-            </div>
+            <input
+              id="property-location"
+              name="property_location"
+              type="text"
+              autocomplete="address-level2"
+              placeholder="Municipio o zona de Mallorca"
+            >
+          </div>
 
 
-            <!-- Ubicación -->
-            <div class="form-field">
-              <label for="property-location">
-                Ubicación de la propiedad *
-              </label>
+          <!-- Contacto preferido -->
 
-              <input
-                id="property-location"
-                name="property_location"
-                type="text"
-                autocomplete="address-level2"
-                placeholder="Municipio o zona de Mallorca"
-                required
-              >
-            </div>
+          <div class="form-field form-field--full">
+            <label for="contact-method">
+              Método de contacto preferido
+            </label>
 
+            <select
+              id="contact-method"
+              name="preferred_contact_method"
+            >
+              <option value="">
+                Seleccione una opción
+              </option>
 
-            <!-- Servicio -->
-            <div class="form-field">
-              <label for="service-interest">
-                Servicio de interés
-              </label>
+              <option value="email">
+                Correo electrónico
+              </option>
 
-              <select
-                id="service-interest"
-                name="service_interest"
-              >
-                <option value="">
-                  Selecciona una opción
-                </option>
+              <option value="phone">
+                Llamada telefónica
+              </option>
 
-                <option value="property-management">
-                  Gestión y supervisión de la propiedad
-                </option>
-
-                <option value="concierge">
-                  Concierge y asistencia personalizada
-                </option>
-
-                <option value="works-management">
-                  Gestión y supervisión de obras
-                </option>
-
-                <option value="real-estate">
-                  Real Estate
-                </option>
-
-                <option value="advice">
-                  Necesito asesoramiento
-                </option>
-
-                <option value="other">
-                  Otro
-                </option>
-              </select>
-            </div>
-
-
-            <!-- Método de contacto -->
-            <div class="form-field">
-              <label for="contact-method">
-                Método de contacto preferido
-              </label>
-
-              <select
-                id="contact-method"
-                name="preferred_contact_method"
-              >
-                <option value="">
-                  Selecciona una opción
-                </option>
-
-                <option value="email">
-                  Correo electrónico
-                </option>
-
-                <option value="phone">
-                  Llamada telefónica
-                </option>
-
-                <option value="whatsapp">
-                  WhatsApp
-                </option>
-              </select>
-            </div>
+              <option value="whatsapp">
+                WhatsApp
+              </option>
+            </select>
           </div>
 
 
           <!-- Mensaje -->
+
+          <div class="form-field form-field--full">
+            <label for="contact-message">
+              Mensaje *
+            </label>
+
+            <textarea
+              id="contact-message"
+              name="message"
+              rows="7"
+              placeholder="Cuéntenos brevemente qué necesita."
+              required
+            ></textarea>
+          </div>
+
+
+          <!-- Campo antispam invisible -->
+
           <div
-            class="form-grid"
-            style="margin-top: var(--space-5);"
+            class="sr-only"
+            aria-hidden="true"
           >
-            <div class="form-field">
-              <label for="contact-message">
-                Mensaje *
-              </label>
+            <label for="contact-website">
+              Sitio web
+            </label>
 
-              <textarea
-                id="contact-message"
-                name="message"
-                rows="7"
-                placeholder="Cuéntanos brevemente qué necesitas, cuándo utilizas la propiedad y qué tipo de apoyo estás buscando."
-                required
-              ></textarea>
-            </div>
-
-
-            <!-- Campo antispam provisional -->
-            <div
-              class="sr-only"
-              aria-hidden="true"
-            >
-              <label for="contact-website">
-                Sitio web
-              </label>
-
-              <input
-                id="contact-website"
-                name="website"
-                type="text"
-                tabindex="-1"
-                autocomplete="off"
-              >
-            </div>
-
-
-            <!-- Privacidad -->
-            <div class="form-check">
-              <input
-                id="privacy-acceptance"
-                name="privacy_acceptance"
-                type="checkbox"
-                value="accepted"
-                required
-              >
-
-              <label for="privacy-acceptance">
-                He leído y acepto la
-                <a href="politica-privacidad.html">
-                  política de privacidad
-                </a>.
-                *
-              </label>
-            </div>
-
-
-            <!-- Envío -->
-            <div>
-              <button
-                class="btn btn--primary"
-                type="submit"
-              >
-                Enviar solicitud
-              </button>
-            </div>
-
-
-            <!-- Estado del formulario -->
-            <p
-              class="form-status"
-              role="status"
-              aria-live="polite"
+            <input
+              id="contact-website"
+              name="website"
+              type="text"
               tabindex="-1"
-              data-form-status
-              hidden
-            ></p>
-          </div>
-        </form>
-
-
-        <!-- ============================================================
-             INFORMACIÓN DE CONTACTO
-             ============================================================ -->
-
-        <aside
-          class="contact-sidebar"
-          aria-label="Información de contacto"
-        >
-          <div class="contact-card">
-            <span class="eyebrow">
-              Contacto directo
-            </span>
-
-            <h2>
-              AE Property Management &amp; Consult
-            </h2>
-
-            <p>
-              Puedes contactar directamente por teléfono o WhatsApp. También
-              puedes utilizar el correo provisional mientras se configura la
-              dirección profesional definitiva.
-            </p>
-
-
-            <dl class="contact-list">
-              <div>
-                <dt>
-                  Correo electrónico
-                </dt>
-
-                <dd>
-                  <!-- PENDIENTE: sustituir por el correo electrónico profesional definitivo -->
-                  <a href="mailto:info@tu-dominio.com">
-                    info@tu-dominio.com
-                  </a>
-                </dd>
-              </div>
-
-
-              <div>
-                <dt>
-                  Teléfono
-                </dt>
-
-                <dd>
-                  <a
-                    href="tel:+34601927601"
-                    aria-label="Llamar a AE Property Management & Consult al +34 601 927 601"
-                  >
-                    +34 601 927 601
-                  </a>
-                </dd>
-              </div>
-
-
-              <div>
-                <dt>
-                  WhatsApp
-                </dt>
-
-                <dd>
-                  <a
-                    href="https://wa.me/34601927601?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20gesti%C3%B3n%20de%20mi%20propiedad%20en%20Mallorca."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Iniciar una conversación con AE Property Management & Consult por WhatsApp"
-                  >
-                    Iniciar conversación
-                  </a>
-                </dd>
-              </div>
-
-
-              <div>
-                <dt>
-                  Zona de servicio
-                </dt>
-
-                <dd>
-                  Sur, sureste y suroeste de Mallorca
-                </dd>
-              </div>
-
-
-              <div>
-                <dt>
-                  Otras ubicaciones
-                </dt>
-
-                <dd>
-                  Se valoran de forma individual
-                </dd>
-              </div>
-            </dl>
-
-
-            <!-- PENDIENTE: sustituir por el enlace definitivo de reserva de llamada -->
-            <a
-              class="btn btn--secondary"
-              href="#formulario-contacto"
+              autocomplete="off"
             >
-              Reservar una llamada
-            </a>
           </div>
 
 
-          <div class="notice">
-            <strong>
-              Configuración pendiente:
-            </strong>
+          <!-- Privacidad -->
 
-            el correo electrónico, el envío real del formulario y el sistema
-            definitivo de reserva de llamadas deberán configurarse antes de
-            publicar la web definitiva.
+          <div class="form-check contact-premium__privacy">
+            <input
+              id="privacy-acceptance"
+              name="privacy_acceptance"
+              type="checkbox"
+              value="accepted"
+              required
+            >
+
+            <label for="privacy-acceptance">
+              He leído y acepto la
+
+              <a href="politica-privacidad.html">
+                política de privacidad
+              </a>.
+
+              *
+            </label>
           </div>
 
 
-          <div class="contact-card">
-            <h3>
-              Información útil para preparar la propuesta
-            </h3>
+          <!-- Envío -->
 
-            <p>
-              El primer contacto nos permitirá conocer la propiedad y valorar
-              si podemos ofrecer el nivel de atención adecuado. Resultará útil
-              saber:
-            </p>
-
-            <ul class="legal-content">
-              <li>
-                La zona en la que se encuentra la propiedad.
-              </li>
-
-              <li>
-                El tipo y el tamaño aproximado de la vivienda.
-              </li>
-
-              <li>
-                Cómo se utiliza y cuánto tiempo permanece desocupada.
-              </li>
-
-              <li>
-                Si dispone de jardín, piscina u otras instalaciones.
-              </li>
-
-              <li>
-                Qué necesidades deseas delegar o coordinar.
-              </li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-
-    
-
-
-    <!-- ==============================================================
-         CTA FINAL
-         ============================================================== -->
-
-    <section class="section section--small">
-      <div class="container">
-        <div class="cta-panel">
-          <span class="eyebrow">
-            Atención privada y personalizada
-          </span>
-
-          <h2>
-            Un único interlocutor para proteger tus intereses en Mallorca
-          </h2>
-
-          <p>
-            Conoce nuestros servicios de gestión, concierge, supervisión de
-            obras y Real Estate, y cuéntanos qué necesita tu propiedad.
-          </p>
-
-          <div class="cta-panel__actions">
-            <a
+          <div class="contact-premium__form-actions">
+            <button
               class="btn btn--primary"
-              href="servicios.html"
+              type="submit"
             >
-              Consultar servicios
-            </a>
-
-            <a
-              class="btn btn--secondary"
-              href="nosotros.html"
-            >
-              Conocer la empresa
-            </a>
+              Enviar consulta
+            </button>
           </div>
+
+
+          <!-- Mensaje generado por JavaScript -->
+
+          <p
+            class="form-status"
+            role="status"
+            aria-live="polite"
+            tabindex="-1"
+            data-form-status
+            hidden
+          ></p>
+
         </div>
-      </div>
-    </section>
-  </main>
+
+
+        <p class="contact-premium__confidentiality">
+          Su información será tratada de forma privada y con absoluta
+          discreción.
+        </p>
+
+      </form>
+
+    </div>
+  </section>
+
+</main>
 
 
   <!-- ================================================================

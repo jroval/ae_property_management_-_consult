@@ -132,7 +132,7 @@
   ></script>
 </head>
 
-<body>
+<body class="page-home">
   <!-- Accesibilidad: permite saltar el menú -->
   <a
     class="skip-link"
@@ -302,15 +302,14 @@
          ============================================================== -->
 
     <section
-      class="hero-carousel"
+      class="hero-carousel home-hero"
       aria-label="Propiedades gestionadas en Mallorca"
       aria-roledescription="carrusel"
       tabindex="0"
       data-carousel
       data-label="Carrusel principal"
-      data-autoplay-delay="6000"
+      data-autoplay-delay="6500"
     >
-      <!-- Diapositivas -->
       <div
         id="hero-carousel-slides"
         class="hero-carousel__slides"
@@ -326,8 +325,8 @@
             class="hero-carousel__media"
             src="../assets/images/hero/hero-01.webp"
             alt=""
-            width="1920"
-            height="1080"
+            width="2752"
+            height="1536"
             fetchpriority="high"
           >
         </div>
@@ -342,8 +341,8 @@
             class="hero-carousel__media"
             src="../assets/images/hero/hero-02.webp"
             alt=""
-            width="1920"
-            height="1080"
+            width="2752"
+            height="1536"
             loading="lazy"
           >
         </div>
@@ -358,8 +357,8 @@
             class="hero-carousel__media"
             src="../assets/images/hero/hero-03.webp"
             alt=""
-            width="1920"
-            height="1080"
+            width="2752"
+            height="1536"
             loading="lazy"
           >
         </div>
@@ -374,28 +373,27 @@
             class="hero-carousel__media"
             src="../assets/images/hero/hero-04.webp"
             alt=""
-            width="1920"
-            height="1080"
+            width="2752"
+            height="1536"
             loading="lazy"
           >
         </div>
       </div>
 
-      <!-- Contenido y controles -->
-      <div class="container hero-carousel__inner">
+      <div class="container--wide hero-carousel__inner">
         <div class="hero-carousel__content">
-          <div class="hero-carousel__copy">
+          <div class="hero-carousel__copy" data-reveal>
             <span class="eyebrow">
-              Property management · Mallorca
+              Mallorca · Property management
             </span>
 
             <h1>
-              Cuidamos de su propiedad. Usted disfruta de la tranquilidad.
+              Su propiedad,
+              <span>cuidada como merece.</span>
             </h1>
 
             <p class="hero-carousel__text">
-              Supervisión, mantenimiento y asistencia personalizada para villas,
-              segundas residencias y propiedades privadas en Mallorca.
+              Gestión privada, supervisión y asistencia personalizada.
             </p>
 
             <div class="hero-carousel__actions">
@@ -403,14 +401,7 @@
                 class="btn btn--primary"
                 href="contacto.html"
               >
-                Solicitar información
-              </a>
-
-              <a
-                class="btn btn--secondary"
-                href="servicios.html"
-              >
-                Descubrir servicios
+                Hablemos
               </a>
             </div>
           </div>
@@ -420,6 +411,16 @@
           class="hero-carousel__controls"
           aria-label="Controles del carrusel principal"
         >
+          <div class="home-hero__counter" aria-hidden="true">
+            <span data-carousel-current>01</span>
+            <span class="home-hero__counter-separator"></span>
+            <span>04</span>
+          </div>
+
+          <div class="home-hero__progress" aria-hidden="true">
+            <span></span>
+          </div>
+
           <div class="hero-carousel__arrows">
             <button
               class="icon-button"
@@ -469,7 +470,7 @@
           </div>
 
           <div
-            class="hero-carousel__indicators"
+            class="hero-carousel__indicators sr-only"
             aria-label="Seleccionar imagen del carrusel"
           >
             <button
@@ -509,637 +510,234 @@
             ></button>
           </div>
         </div>
+
+        <a
+          class="home-hero__scroll"
+          href="#servicios-principales"
+          aria-label="Ir a los servicios principales"
+        >
+          <span aria-hidden="true"></span>
+          Descubrir
+        </a>
       </div>
     </section>
 
 
     <!-- ==============================================================
-         FRANJA DE CONFIANZA
+         SERVICIOS PRINCIPALES
          ============================================================== -->
 
     <section
-      class="trust-strip"
-      aria-label="Principales ventajas"
+      class="home-services"
+      id="servicios-principales"
+      aria-labelledby="home-services-title"
     >
-      <div class="container trust-strip__grid">
-        <article class="trust-strip__item">
-          <span
-            class="trust-strip__number"
-            aria-hidden="true"
-          >
-            01
-          </span>
-
+      <div class="container--wide">
+        <div class="home-services__intro" data-reveal>
           <div>
-            <strong>
-              Atención personalizada
-            </strong>
-
-            <span>
-              Un servicio adaptado a cada propiedad.
+            <span class="eyebrow">
+              Servicios principales
             </span>
+
+            <h2 id="home-services-title">
+              Presencia local.
+              <span>Tranquilidad absoluta.</span>
+            </h2>
           </div>
-        </article>
 
-
-        <article class="trust-strip__item">
-          <span
-            class="trust-strip__number"
-            aria-hidden="true"
+          <a
+            class="home-text-link"
+            href="servicios.html"
           >
-            02
-          </span>
-
-          <div>
-            <strong>
-              Supervisión local
-            </strong>
-
-            <span>
-              Presencia y seguimiento en Mallorca.
-            </span>
-          </div>
-        </article>
-
-
-        <article class="trust-strip__item">
-          <span
-            class="trust-strip__number"
-            aria-hidden="true"
-          >
-            03
-          </span>
-
-          <div>
-            <strong>
-              Comunicación directa
-            </strong>
-
-            <span>
-              Información clara sobre cada actuación.
-            </span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-
-    
-
-
-    <!-- ==============================================================
-         SERVICIOS DESTACADOS
-         ============================================================== -->
-
-    <section class="section section--surface">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">
-            Servicios principales
-          </span>
-
-          <h2>
-            Todo lo necesario para cuidar su vivienda con tranquilidad
-          </h2>
-
-          <p>
-            Desde las revisiones periódicas hasta la coordinación de
-            proveedores y la preparación de la casa antes de su llegada.
-          </p>
+            Explorar servicios
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
 
-
-        <div class="card-grid card-grid--three">
-          <!-- Servicio 1 -->
-          <article class="service-card">
-            <div
-              class="card-icon"
-              aria-hidden="true"
+        <div class="home-services__experience" data-service-showcase>
+          <div
+            class="home-services__list"
+            role="list"
+            data-reveal
+          >
+            <article
+              class="home-service is-active"
+              role="listitem"
+              data-service-item
             >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
+              <button
+                class="home-service__button"
+                type="button"
+                aria-controls="home-service-panel-1"
+                aria-expanded="true"
+                data-service-trigger
               >
-                <path
-                  d="M12 3L4 7V12C4 17 7.4 19.9 12 21C16.6 19.9 20 17 20 12V7L12 3Z"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
+                <span class="home-service__number">01</span>
 
-                <path
-                  d="M9 12L11 14L15 10"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
+                <span class="home-service__copy">
+                  <span class="home-service__title">
+                    Supervisión y cuidado
+                  </span>
 
-            <h3>
-              Supervisión periódica
-            </h3>
+                  <span class="home-service__description">
+                    Control periódico del estado general de la propiedad.
+                  </span>
+                </span>
 
-            <p>
-              Revisamos el estado general de la vivienda, sus accesos,
-              interiores y exteriores durante sus periodos de ausencia.
-            </p>
+                <span class="home-service__arrow" aria-hidden="true">↗</span>
+              </button>
+            </article>
 
-            <a
-              class="service-card__link"
-              href="servicios.html#supervision"
+            <article
+              class="home-service"
+              role="listitem"
+              data-service-item
             >
-              Más información
-
-              <span aria-hidden="true">
-                →
-              </span>
-            </a>
-          </article>
-
-
-          <!-- Servicio 2 -->
-          <article class="service-card">
-            <div
-              class="card-icon"
-              aria-hidden="true"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
+              <button
+                class="home-service__button"
+                type="button"
+                aria-controls="home-service-panel-2"
+                aria-expanded="false"
+                data-service-trigger
               >
-                <path
-                  d="M14.7 6.3A4 4 0 0 0 9.4 11.6L4 17L7 20L12.4 14.6A4 4 0 0 0 17.7 9.3L15 12L12 9L14.7 6.3Z"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
+                <span class="home-service__number">02</span>
 
-            <h3>
-              Mantenimiento preventivo
-            </h3>
+                <span class="home-service__copy">
+                  <span class="home-service__title">
+                    Coordinación y mantenimiento
+                  </span>
 
-            <p>
-              Detectamos pequeñas necesidades y coordinamos su resolución
-              antes de que puedan convertirse en problemas mayores.
-            </p>
+                  <span class="home-service__description">
+                    Gestión de profesionales, trabajos e incidencias.
+                  </span>
+                </span>
 
-            <a
-              class="service-card__link"
-              href="servicios.html#mantenimiento"
+                <span class="home-service__arrow" aria-hidden="true">↗</span>
+              </button>
+            </article>
+
+            <article
+              class="home-service"
+              role="listitem"
+              data-service-item
             >
-              Más información
-
-              <span aria-hidden="true">
-                →
-              </span>
-            </a>
-          </article>
-
-
-          <!-- Servicio 3 -->
-          <article class="service-card">
-            <div
-              class="card-icon"
-              aria-hidden="true"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
+              <button
+                class="home-service__button"
+                type="button"
+                aria-controls="home-service-panel-3"
+                aria-expanded="false"
+                data-service-trigger
               >
-                <path
-                  d="M12 9V13"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                />
+                <span class="home-service__number">03</span>
 
-                <path
-                  d="M12 17H12.01"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                />
+                <span class="home-service__copy">
+                  <span class="home-service__title">
+                    Preparación y asistencia
+                  </span>
 
-                <path
-                  d="M10.3 4.6L3.4 17A2 2 0 0 0 5.2 20H18.8A2 2 0 0 0 20.6 17L13.7 4.6A2 2 0 0 0 10.3 4.6Z"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
+                  <span class="home-service__description">
+                    La vivienda lista para cada llegada y necesidad.
+                  </span>
+                </span>
 
-            <h3>
-              Gestión de incidencias
-            </h3>
+                <span class="home-service__arrow" aria-hidden="true">↗</span>
+              </button>
+            </article>
+          </div>
 
-            <p>
-              Evaluamos la situación, coordinamos a los profesionales
-              necesarios y mantenemos informado al propietario.
-            </p>
-
-            <a
-              class="service-card__link"
-              href="servicios.html#incidencias"
+          <div class="home-services__visual" data-reveal>
+            <figure
+              class="home-service-panel is-active"
+              id="home-service-panel-1"
+              aria-hidden="false"
+              data-service-panel
             >
-              Más información
-
-              <span aria-hidden="true">
-                →
-              </span>
-            </a>
-          </article>
-
-
-          <!-- Servicio 4 -->
-          <article class="service-card">
-            <div
-              class="card-icon"
-              aria-hidden="true"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
+              <img
+                src="../assets/images/home/property-care.webp"
+                alt="Supervisión del estado de una propiedad"
+                width="1888"
+                height="2272"
+                loading="lazy"
               >
-                <path
-                  d="M4 11L12 4L20 11"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+            </figure>
 
-                <path
-                  d="M6 10V20H18V10"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linejoin="round"
-                />
-
-                <path
-                  d="M10 20V14H14V20"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
-              </svg>
-            </div>
-
-            <h3>
-              Preparación de la vivienda
-            </h3>
-
-            <p>
-              Coordinamos la limpieza, ventilación y revisión general antes
-              de la llegada del propietario o de sus invitados.
-            </p>
-
-            <a
-              class="service-card__link"
-              href="servicios.html#preparacion"
-            >
-              Más información
-
-              <span aria-hidden="true">
-                →
-              </span>
-            </a>
-          </article>
-
-
-          <!-- Servicio 5 -->
-          <article class="service-card">
-            <div
-              class="card-icon"
+            <figure
+              class="home-service-panel"
+              id="home-service-panel-2"
               aria-hidden="true"
+              data-service-panel
             >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
+              <img
+                src="../assets/images/services/provider-management.webp"
+                alt="Coordinación profesional del mantenimiento de una propiedad"
+                width="1888"
+                height="2272"
+                loading="lazy"
               >
-                <path
-                  d="M8 4H16"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                />
+            </figure>
 
-                <path
-                  d="M10 4V8"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
-
-                <path
-                  d="M14 4V8"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
-
-                <path
-                  d="M7 8H17L16 20H8L7 8Z"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-
-            <h3>
-              Limpieza y proveedores
-            </h3>
-
-            <p>
-              Organizamos accesos, coordinamos servicios profesionales y
-              realizamos el seguimiento de los trabajos acordados.
-            </p>
-
-            <a
-              class="service-card__link"
-              href="servicios.html#proveedores"
-            >
-              Más información
-
-              <span aria-hidden="true">
-                →
-              </span>
-            </a>
-          </article>
-
-
-          <!-- Servicio 6 -->
-          <article class="service-card">
-            <div
-              class="card-icon"
+            <figure
+              class="home-service-panel"
+              id="home-service-panel-3"
               aria-hidden="true"
+              data-service-panel
             >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
+              <img
+                src="../assets/images/home/interior-property.webp"
+                alt="Interior de una vivienda preparado para la llegada del propietario"
+                width="1888"
+                height="2272"
+                loading="lazy"
               >
-                <path
-                  d="M7 14C4.8 14 3 12.2 3 10C3 7.8 4.8 6 7 6C9.2 6 11 7.8 11 10C11 12.2 9.2 14 7 14Z"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
+            </figure>
 
-                <path
-                  d="M10 12L21 12"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                />
-
-                <path
-                  d="M17 12V15"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
-
-                <path
-                  d="M20 12V14"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
-              </svg>
-            </div>
-
-            <h3>
-              Jardín, piscina y llaves
-            </h3>
-
-            <p>
-              Supervisamos exteriores, coordinamos su mantenimiento y
-              gestionamos los accesos autorizados a la propiedad.
-            </p>
-
-            <a
-              class="service-card__link"
-              href="servicios.html#llaves"
-            >
-              Más información
-
-              <span aria-hidden="true">
-                →
-              </span>
-            </a>
-          </article>
+            <span class="home-services__visual-label" aria-hidden="true">
+              AE / Mallorca
+            </span>
+          </div>
         </div>
       </div>
     </section>
-
-
-    
-
-
-    <!-- ==============================================================
-         PROCESO DE TRABAJO
-         ============================================================== -->
-
-    <section class="section section--surface">
-      <div class="container">
-        <div class="section-heading section-heading--center">
-          <span class="eyebrow">
-            Cómo trabajamos
-          </span>
-
-          <h2>
-            Un proceso sencillo, claro y personalizado
-          </h2>
-
-          <p>
-            Definimos desde el principio las necesidades de la vivienda,
-            las responsabilidades y la forma de comunicación.
-          </p>
-        </div>
-
-
-        <div class="step-list step-list--four">
-          <article class="step">
-            <span
-              class="step__number"
-              aria-hidden="true"
-            >
-              01
-            </span>
-
-            <div>
-              <h3>
-                Contacto inicial
-              </h3>
-
-              <p>
-                Conocemos la vivienda y las necesidades principales del
-                propietario.
-              </p>
-            </div>
-          </article>
-
-
-          <article class="step">
-            <span
-              class="step__number"
-              aria-hidden="true"
-            >
-              02
-            </span>
-
-            <div>
-              <h3>
-                Evaluación
-              </h3>
-
-              <p>
-                Revisamos el tipo de propiedad, su ubicación, uso e
-                instalaciones.
-              </p>
-            </div>
-          </article>
-
-
-          <article class="step">
-            <span
-              class="step__number"
-              aria-hidden="true"
-            >
-              03
-            </span>
-
-            <div>
-              <h3>
-                Propuesta
-              </h3>
-
-              <p>
-                Preparamos un plan de atención personalizado y transparente.
-              </p>
-            </div>
-          </article>
-
-
-          <article class="step">
-            <span
-              class="step__number"
-              aria-hidden="true"
-            >
-              04
-            </span>
-
-            <div>
-              <h3>
-                Seguimiento
-              </h3>
-
-              <p>
-                Supervisamos, coordinamos y mantenemos una comunicación
-                continua.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-
-    
-
-
-    <!-- ==============================================================
-     ZONA DE SERVICIO
-     ============================================================== -->
-
-<section class="section section--surface">
-  <div class="container">
-    <div class="zone-panel">
-      <div class="zone-panel__content">
-        <span class="eyebrow">
-          Zona de servicio
-        </span>
-
-        <h2 class="page-title">
-          Atención a propiedades en Mallorca
-        </h2>
-
-        <p class="lead">
-          Prestamos servicio a villas, apartamentos y segundas residencias
-          en Mallorca. La cobertura concreta se confirmará según la
-          ubicación y las necesidades de cada propiedad.
-        </p>
-
-        <div class="tag-list">
-          <span class="tag">
-            Villas
-          </span>
-
-          <span class="tag">
-            Apartamentos
-          </span>
-
-          <span class="tag">
-            Segundas residencias
-          </span>
-
-          <span class="tag">
-            Viviendas de uso estacional
-          </span>
-        </div>
-      </div>
-
-     <div
-          class="zone-panel__map split-layout__media"
-          aria-label="Representación artística de la isla de Mallorca"
-        >
-          <img
-            src="../assets/images/home/mallorca.webp"
-            alt="Representación artística de la isla de Mallorca como zona de servicio"
-            width="1000"
-            height="1200"
-            loading="lazy"
-          >
-        </div>
-    </div>
-  </div>
-</section>
 
 
     <!-- ==============================================================
          CTA FINAL
          ============================================================== -->
 
-    <section class="section section--small">
-      <div class="container">
-        <div class="cta-panel">
+    <section
+      class="home-contact-cta"
+      aria-labelledby="home-contact-title"
+    >
+      <img
+        class="home-contact-cta__media"
+        src="../assets/images/hero/hero-04.webp"
+        alt="Propiedad mediterránea en Mallorca"
+        width="2752"
+        height="1536"
+        loading="lazy"
+      >
+
+      <div class="container--wide home-contact-cta__inner">
+        <div class="home-contact-cta__content" data-reveal>
           <span class="eyebrow">
-            Hablemos
+            Contacto
           </span>
 
-          <h2>
-            Cuéntenos qué necesita su propiedad
+          <h2 id="home-contact-title">
+            La tranquilidad
+            <span>empieza aquí.</span>
           </h2>
 
           <p>
-            Prepararemos una propuesta personalizada según la vivienda, su
-            ubicación y la frecuencia de atención necesaria.
+            Hablemos de su propiedad.
           </p>
 
-          <div class="cta-panel__actions">
-            <a
-              class="btn btn--primary"
-              href="contacto.html"
-            >
-              Solicitar una propuesta
-            </a>
-
-            <a
-              class="btn btn--secondary"
-              href="servicios.html"
-            >
-              Ver todos los servicios
-            </a>
-          </div>
+          <a
+            class="btn btn--primary"
+            href="contacto.html"
+          >
+            Contactar
+          </a>
         </div>
       </div>
     </section>
