@@ -9,12 +9,12 @@
   >
 
   <title>
-    Contacto | AE Property Management & Consult Mallorca
+    Contacto | Gestión de propiedades en Mallorca | AE
   </title>
 
   <meta
     name="description"
-    content="Solicite información sobre los servicios de supervisión, mantenimiento y gestión personalizada de propiedades en Mallorca."
+    content="Contacta con AE Property Management & Consult para solicitar una valoración personalizada de tu villa, finca o segunda residencia en Mallorca."
   >
 
   <meta name="robots" content="index, follow">
@@ -69,12 +69,12 @@
 
   <meta
     property="og:title"
-    content="Contacto | AE Property Management & Consult"
+    content="Contacto | Gestión de propiedades en Mallorca | AE"
   >
 
   <meta
     property="og:description"
-    content="Cuéntenos qué necesita su propiedad en Mallorca y prepararemos una propuesta personalizada."
+    content="Solicita una valoración personalizada para tu villa, finca o segunda residencia en Mallorca."
   >
 
   <meta
@@ -84,12 +84,12 @@
 
   <meta
     property="og:image"
-    content="https://TU-DOMINIO.com/assets/images/hero/hero-01.webp"
+    content="https://TU-DOMINIO.com/assets/images/home/mallorca.webp"
   >
 
   <meta
     property="og:image:alt"
-    content="Villa mediterránea en Mallorca"
+    content="Representación artística de la isla de Mallorca"
   >
 
   <!-- Favicon -->
@@ -321,13 +321,13 @@
         </span>
 
         <h1 class="page-title">
-          Hablemos sobre su propiedad
+          Cuéntanos cómo podemos ayudarte
         </h1>
 
         <p>
-          Cuéntenos dónde se encuentra la vivienda, cómo se utiliza y qué tipo
-          de atención necesita. Estudiaremos su caso para preparar una
-          propuesta personalizada.
+          Háblanos de tu propiedad y de las necesidades que deseas cubrir.
+          Valoraremos tu solicitud personalmente para ofrecerte una propuesta
+          de gestión adaptada.
         </p>
 
         <div class="page-hero__actions">
@@ -340,9 +340,10 @@
 
           <a
             class="btn btn--secondary"
-            href="https://wa.me/34000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20gesti%C3%B3n%20de%20mi%20propiedad."
+            href="https://wa.me/34601927601?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20gesti%C3%B3n%20de%20mi%20propiedad%20en%20Mallorca."
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Hablar con AE Property Management & Consult por WhatsApp"
           >
             Hablar por WhatsApp
           </a>
@@ -365,12 +366,13 @@
              FORMULARIO
              ============================================================ -->
 
+        <!-- PENDIENTE: conectar el formulario al correo electrónico definitivo -->
         <form
           class="contact-form"
           action="#"
           method="post"
           data-contact-form
-          data-success-message="El formulario se ha validado correctamente. Todavía falta conectarlo con el sistema de envío definitivo."
+          data-success-message="El formulario se ha validado correctamente. La conexión con el sistema de envío está pendiente de configuración."
         >
           <div class="section-heading">
             <span class="eyebrow">
@@ -378,10 +380,12 @@
             </span>
 
             <h2>
-              Cuéntenos qué necesita
+              Háblanos de tu propiedad
             </h2>
 
             <p>
+              Cada propiedad requiere una atención diferente. Cuéntanos dónde
+              está situada, cuáles son tus necesidades y cómo podemos ayudarte.
               Los campos marcados con un asterisco son obligatorios.
             </p>
           </div>
@@ -392,14 +396,30 @@
             <!-- Nombre -->
             <div class="form-field">
               <label for="contact-name">
-                Nombre y apellidos *
+                Nombre *
               </label>
 
               <input
                 id="contact-name"
-                name="name"
+                name="first_name"
                 type="text"
-                autocomplete="name"
+                autocomplete="given-name"
+                required
+              >
+            </div>
+
+
+            <!-- Apellidos -->
+            <div class="form-field">
+              <label for="contact-surname">
+                Apellidos *
+              </label>
+
+              <input
+                id="contact-surname"
+                name="last_name"
+                type="text"
+                autocomplete="family-name"
                 required
               >
             </div>
@@ -425,7 +445,7 @@
             <!-- Teléfono -->
             <div class="form-field">
               <label for="contact-phone">
-                Teléfono
+                Teléfono *
               </label>
 
               <input
@@ -435,11 +455,116 @@
                 autocomplete="tel"
                 inputmode="tel"
                 placeholder="+34"
+                required
               >
 
               <small>
-                Opcional. Incluya el prefijo internacional.
+                Incluye el prefijo internacional.
               </small>
+            </div>
+
+
+            <!-- Tipo de propiedad -->
+            <div class="form-field">
+              <label for="property-type">
+                Tipo de propiedad *
+              </label>
+
+              <select
+                id="property-type"
+                name="property_type"
+                required
+              >
+                <option value="">
+                  Selecciona una opción
+                </option>
+
+                <option value="villa">
+                  Villa
+                </option>
+
+                <option value="chalet">
+                  Chalet
+                </option>
+
+                <option value="finca">
+                  Finca
+                </option>
+
+                <option value="rural-house">
+                  Casa rural
+                </option>
+
+                <option value="second-home">
+                  Segunda residencia
+                </option>
+
+                <option value="apartment">
+                  Apartamento o piso
+                </option>
+
+                <option value="other-private-property">
+                  Otra propiedad privada
+                </option>
+              </select>
+            </div>
+
+
+            <!-- Ubicación -->
+            <div class="form-field">
+              <label for="property-location">
+                Ubicación de la propiedad *
+              </label>
+
+              <input
+                id="property-location"
+                name="property_location"
+                type="text"
+                autocomplete="address-level2"
+                placeholder="Municipio o zona de Mallorca"
+                required
+              >
+            </div>
+
+
+            <!-- Servicio -->
+            <div class="form-field">
+              <label for="service-interest">
+                Servicio de interés
+              </label>
+
+              <select
+                id="service-interest"
+                name="service_interest"
+              >
+                <option value="">
+                  Selecciona una opción
+                </option>
+
+                <option value="property-management">
+                  Gestión y supervisión de la propiedad
+                </option>
+
+                <option value="concierge">
+                  Concierge y asistencia personalizada
+                </option>
+
+                <option value="works-management">
+                  Gestión y supervisión de obras
+                </option>
+
+                <option value="real-estate">
+                  Real Estate
+                </option>
+
+                <option value="advice">
+                  Necesito asesoramiento
+                </option>
+
+                <option value="other">
+                  Otro
+                </option>
+              </select>
             </div>
 
 
@@ -454,7 +579,7 @@
                 name="preferred_contact_method"
               >
                 <option value="">
-                  Seleccione una opción
+                  Selecciona una opción
                 </option>
 
                 <option value="email">
@@ -467,149 +592,6 @@
 
                 <option value="whatsapp">
                   WhatsApp
-                </option>
-              </select>
-            </div>
-
-
-            <!-- Ubicación -->
-            <div class="form-field">
-              <label for="property-location">
-                Ubicación aproximada de la propiedad
-              </label>
-
-              <input
-                id="property-location"
-                name="property_location"
-                type="text"
-                autocomplete="address-level2"
-                placeholder="Municipio o zona de Mallorca"
-              >
-            </div>
-
-
-            <!-- Tipo de propiedad -->
-            <div class="form-field">
-              <label for="property-type">
-                Tipo de propiedad
-              </label>
-
-              <select
-                id="property-type"
-                name="property_type"
-              >
-                <option value="">
-                  Seleccione una opción
-                </option>
-
-                <option value="villa">
-                  Villa
-                </option>
-
-                <option value="house">
-                  Casa
-                </option>
-
-                <option value="apartment">
-                  Apartamento
-                </option>
-
-                <option value="second-home">
-                  Segunda residencia
-                </option>
-
-                <option value="other">
-                  Otra
-                </option>
-              </select>
-            </div>
-
-
-            <!-- Uso de la propiedad -->
-            <div class="form-field">
-              <label for="property-use">
-                Uso habitual de la propiedad
-              </label>
-
-              <select
-                id="property-use"
-                name="property_use"
-              >
-                <option value="">
-                  Seleccione una opción
-                </option>
-
-                <option value="seasonal">
-                  Uso estacional
-                </option>
-
-                <option value="weekends">
-                  Fines de semana y periodos puntuales
-                </option>
-
-                <option value="second-residence">
-                  Segunda residencia
-                </option>
-
-                <option value="vacant">
-                  Permanece vacía gran parte del año
-                </option>
-
-                <option value="other">
-                  Otro
-                </option>
-              </select>
-            </div>
-
-
-            <!-- Servicio -->
-            <div class="form-field">
-              <label for="service-interest">
-                Servicio de mayor interés
-              </label>
-
-              <select
-                id="service-interest"
-                name="service_interest"
-              >
-                <option value="">
-                  Seleccione una opción
-                </option>
-
-                <option value="supervision">
-                  Supervisión periódica
-                </option>
-
-                <option value="maintenance">
-                  Mantenimiento preventivo
-                </option>
-
-                <option value="incidents">
-                  Gestión de incidencias
-                </option>
-
-                <option value="arrival">
-                  Preparación antes de la llegada
-                </option>
-
-                <option value="departure">
-                  Revisión después de la salida
-                </option>
-
-                <option value="providers">
-                  Coordinación de proveedores
-                </option>
-
-                <option value="garden-pool">
-                  Jardín y piscina
-                </option>
-
-                <option value="keys">
-                  Gestión de llaves y accesos
-                </option>
-
-                <option value="several">
-                  Varios servicios
                 </option>
               </select>
             </div>
@@ -630,7 +612,7 @@
                 id="contact-message"
                 name="message"
                 rows="7"
-                placeholder="Explíquenos brevemente cómo es la propiedad y qué tipo de ayuda necesita."
+                placeholder="Cuéntanos brevemente qué necesitas, cuándo utilizas la propiedad y qué tipo de apoyo estás buscando."
                 required
               ></textarea>
             </div>
@@ -690,6 +672,7 @@
             <p
               class="form-status"
               role="status"
+              aria-live="polite"
               tabindex="-1"
               data-form-status
               hidden
@@ -716,8 +699,9 @@
             </h2>
 
             <p>
-              También puede ponerse en contacto directamente por correo,
-              teléfono o WhatsApp.
+              Puedes contactar directamente por teléfono o WhatsApp. También
+              puedes utilizar el correo provisional mientras se configura la
+              dirección profesional definitiva.
             </p>
 
 
@@ -728,6 +712,7 @@
                 </dt>
 
                 <dd>
+                  <!-- PENDIENTE: sustituir por el correo electrónico profesional definitivo -->
                   <a href="mailto:info@tu-dominio.com">
                     info@tu-dominio.com
                   </a>
@@ -741,8 +726,11 @@
                 </dt>
 
                 <dd>
-                  <a href="tel:+34000000000">
-                    +34 000 000 000
+                  <a
+                    href="tel:+34601927601"
+                    aria-label="Llamar a AE Property Management & Consult al +34 601 927 601"
+                  >
+                    +34 601 927 601
                   </a>
                 </dd>
               </div>
@@ -755,9 +743,10 @@
 
                 <dd>
                   <a
-                    href="https://wa.me/34000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20gesti%C3%B3n%20de%20mi%20propiedad."
+                    href="https://wa.me/34601927601?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20gesti%C3%B3n%20de%20mi%20propiedad%20en%20Mallorca."
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Iniciar una conversación con AE Property Management & Consult por WhatsApp"
                   >
                     Iniciar conversación
                   </a>
@@ -771,32 +760,41 @@
                 </dt>
 
                 <dd>
-                  Mallorca, según ubicación de la propiedad
+                  Sur, sureste y suroeste de Mallorca
                 </dd>
               </div>
 
 
               <div>
                 <dt>
-                  Horario de atención
+                  Otras ubicaciones
                 </dt>
 
                 <dd>
-                  Con cita previa
+                  Se valoran de forma individual
                 </dd>
               </div>
             </dl>
+
+
+            <!-- PENDIENTE: sustituir por el enlace definitivo de reserva de llamada -->
+            <a
+              class="btn btn--secondary"
+              href="#formulario-contacto"
+            >
+              Reservar una llamada
+            </a>
           </div>
 
 
           <div class="notice">
             <strong>
-              Datos provisionales:
+              Configuración pendiente:
             </strong>
 
-            el teléfono, el correo electrónico, el horario y el enlace de
-            WhatsApp deberán sustituirse por los datos reales antes de
-            publicar la web.
+            el correo electrónico, el envío real del formulario y el sistema
+            definitivo de reserva de llamadas deberán configurarse antes de
+            publicar la web definitiva.
           </div>
 
 
@@ -806,7 +804,9 @@
             </h3>
 
             <p>
-              Para valorar correctamente el servicio, resultará útil conocer:
+              El primer contacto nos permitirá conocer la propiedad y valorar
+              si podemos ofrecer el nivel de atención adecuado. Resultará útil
+              saber:
             </p>
 
             <ul class="legal-content">
@@ -819,7 +819,7 @@
               </li>
 
               <li>
-                La frecuencia con la que permanece desocupada.
+                Cómo se utiliza y cuánto tiempo permanece desocupada.
               </li>
 
               <li>
@@ -827,7 +827,7 @@
               </li>
 
               <li>
-                Los servicios que actualmente ya tiene contratados.
+                Qué necesidades deseas delegar o coordinar.
               </li>
             </ul>
           </div>
@@ -848,10 +848,11 @@
           </span>
 
           <h2>
-            Un proceso sencillo para conocer sus necesidades
+            Un proceso personal para entender tus necesidades
           </h2>
 
           <p>
+            Toda la información sobre tu propiedad será tratada con discreción.
             La solicitud inicial no obliga a contratar ningún servicio.
           </p>
         </div>
@@ -868,11 +869,12 @@
 
             <div>
               <h3>
-                Recibimos su solicitud
+                Recibimos tu solicitud
               </h3>
 
               <p>
-                Revisamos la información enviada mediante el formulario.
+                Revisamos los datos de la propiedad y el tipo de ayuda que
+                necesitas.
               </p>
             </div>
           </article>
@@ -892,8 +894,8 @@
               </h3>
 
               <p>
-                Concretamos la ubicación, el uso y las necesidades de la
-                propiedad.
+                Conocemos tus prioridades, la ubicación y el uso habitual de
+                la propiedad.
               </p>
             </div>
           </article>
@@ -909,11 +911,12 @@
 
             <div>
               <h3>
-                Evaluación
+                Valoración individual
               </h3>
 
               <p>
-                Valoramos los servicios, la frecuencia y el alcance necesario.
+                Analizamos la frecuencia, el alcance del servicio y la
+                viabilidad de la gestión.
               </p>
             </div>
           </article>
@@ -933,7 +936,8 @@
               </h3>
 
               <p>
-                Presentamos un plan de atención adaptado a la vivienda.
+                Preparamos una propuesta clara y adaptada a las necesidades
+                reales de la propiedad.
               </p>
             </div>
           </article>
@@ -942,62 +946,66 @@
     </section>
 
 
-<!-- ==============================================================
-     ZONA DE SERVICIO
-     ============================================================== -->
+    <!-- ==============================================================
+         ZONA DE SERVICIO
+         ============================================================== -->
 
-<section class="section">
-  <div class="container zone-panel">
-    <div>
-      <span class="eyebrow">
-        Mallorca
-      </span>
+    <section class="section">
+      <div class="container zone-panel">
+        <div>
+          <span class="eyebrow">
+            Mallorca
+          </span>
 
-      <h2 class="page-title">
-        Servicio sujeto a la ubicación de la propiedad
-      </h2>
+          <h2 class="page-title">
+            Servicio sujeto a la ubicación de la propiedad
+          </h2>
 
-      <p class="lead">
-        La cobertura se confirmará según la zona, la frecuencia de las
-        visitas y las características concretas del servicio solicitado.
-      </p>
+          <p class="lead">
+            Trabajamos principalmente en el sur, sureste y suroeste de
+            Mallorca. Las solicitudes de otras zonas se valoran de forma
+            individual para asegurar el nivel de atención adecuado.
+          </p>
 
-      <p class="text-muted">
-        Estudiamos cada solicitud de manera individual para ofrecer una
-        atención realista, eficiente y adaptada a la ubicación de la
-        vivienda.
-      </p>
+          <p class="text-muted">
+            La cobertura se confirmará según la ubicación, la frecuencia de
+            las visitas, las características de la propiedad y los servicios
+            solicitados.
+          </p>
 
-      <div class="tag-list">
-        <span class="tag">
-          Villas
-        </span>
+          <div class="tag-list">
+            <span class="tag">
+              Sur
+            </span>
 
-        <span class="tag">
-          Apartamentos
-        </span>
+            <span class="tag">
+              Sureste
+            </span>
 
-        <span class="tag">
-          Segundas residencias
-        </span>
+            <span class="tag">
+              Suroeste
+            </span>
 
-        <span class="tag">
-          Propiedades privadas
-        </span>
+            <span class="tag">
+              Otras zonas a valorar
+            </span>
+          </div>
+        </div>
+
+        <div
+          class="zone-panel__map split-layout__media"
+          aria-label="Representación artística de la isla de Mallorca"
+        >
+          <img
+            src="../assets/images/home/mallorca.webp"
+            alt="Representación artística de la isla de Mallorca como zona de servicio"
+            width="1000"
+            height="1200"
+            loading="lazy"
+          >
+        </div>
       </div>
-    </div>
-
-    <div class="split-layout__media">
-      <img
-        src="../assets/images/services/services-overview.webp"
-        alt="Entorno mediterráneo con arquitectura tradicional de Mallorca"
-        width="1000"
-        height="1200"
-        loading="lazy"
-      >
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- ==============================================================
@@ -1008,16 +1016,16 @@
       <div class="container">
         <div class="cta-panel">
           <span class="eyebrow">
-            Atención personalizada
+            Atención privada y personalizada
           </span>
 
           <h2>
-            Una presencia local para cuidar de su vivienda
+            Un único interlocutor para proteger tus intereses en Mallorca
           </h2>
 
           <p>
-            Descubra los servicios que podemos combinar para crear un plan de
-            atención adaptado a su propiedad.
+            Conoce nuestros servicios de gestión, concierge, supervisión de
+            obras y Real Estate, y cuéntanos qué necesita tu propiedad.
           </p>
 
           <div class="cta-panel__actions">
@@ -1070,8 +1078,8 @@
         </a>
 
         <p>
-          Supervisión, mantenimiento y asistencia personalizada para villas,
-          segundas residencias y propiedades privadas en Mallorca.
+          Gestión privada y personalizada de villas, fincas y segundas
+          residencias en Mallorca.
         </p>
       </div>
 
@@ -1122,26 +1130,26 @@
           role="list"
         >
           <li>
-            <a href="servicios.html#supervision">
-              Supervisión periódica
+            <a href="servicios.html#gestion-propiedades">
+              Gestión de propiedades
             </a>
           </li>
 
           <li>
-            <a href="servicios.html#mantenimiento">
-              Mantenimiento preventivo
+            <a href="servicios.html#concierge">
+              Servicios de concierge
             </a>
           </li>
 
           <li>
-            <a href="servicios.html#incidencias">
-              Gestión de incidencias
+            <a href="servicios.html#supervision-obras">
+              Supervisión de obras
             </a>
           </li>
 
           <li>
-            <a href="servicios.html#preparacion">
-              Preparación de la vivienda
+            <a href="servicios.html#real-estate">
+              Real Estate
             </a>
           </li>
         </ul>
@@ -1157,6 +1165,7 @@
           class="site-footer__links"
           role="list"
         >
+          <!-- PENDIENTE: sustituir por el correo electrónico profesional definitivo -->
           <li>
             <a href="mailto:info@tu-dominio.com">
               info@tu-dominio.com
@@ -1164,8 +1173,8 @@
           </li>
 
           <li>
-            <a href="tel:+34000000000">
-              +34 000 000 000
+            <a href="tel:+34601927601">
+              +34 601 927 601
             </a>
           </li>
 
@@ -1206,12 +1215,12 @@
 
 
   <!-- ================================================================
-       WHATSAPP
+       BOTÓN FLOTANTE DE WHATSAPP
        ================================================================ -->
 
   <a
     class="whatsapp-float"
-    href="https://wa.me/34000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20gesti%C3%B3n%20de%20mi%20propiedad."
+    href="https://wa.me/34601927601?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20gesti%C3%B3n%20de%20mi%20propiedad%20en%20Mallorca."
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Contactar con AE Property Management & Consult por WhatsApp"
