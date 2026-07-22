@@ -1,172 +1,169 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AE Property Management & Consult | Selecciona tu idioma · Select your language · Sprache wählen</title>
-  <meta name="description" content="AE Property Management & Consult. Gestión integral de propiedades en Mallorca. Selecciona tu idioma para continuar / Select your language to continue / Wählen Sie Ihre Sprache.">
-  <meta name="robots" content="index, follow">
-  <link rel="author" href="AE Property Management & Consult">
+  <head>
+    <meta charset="UTF-8" />
 
-  <link rel="canonical" href="https://www.aepropertymanagement.com/">
-  <link rel="alternate" hreflang="es" href="https://www.aepropertymanagement.com/es/">
-  <link rel="alternate" hreflang="en" href="https://www.aepropertymanagement.com/en/">
-  <link rel="alternate" hreflang="de" href="https://www.aepropertymanagement.com/de/">
-  <link rel="alternate" hreflang="x-default" href="https://www.aepropertymanagement.com/es/">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="AE Property Management & Consult">
-  <meta property="og:description" content="Gestión integral de propiedades en Mallorca. Supervisión, mantenimiento y atención personalizada.">
-  <meta property="og:url" content="https://www.aepropertymanagement.com/">
-  <meta property="og:image" content="https://www.aepropertymanagement.com/assets/images/og-cover.jpg">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:locale:alternate" content="en_GB">
-  <meta property="og:locale:alternate" content="de_DE">
+    <meta
+      name="description"
+      content="Gestión privada y personalizada de propiedades en Mallorca."
+    />
 
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>AE Property Management & Consult</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/variables.css">
-
-  <style>
-    body {
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      font-family: var(--font-body);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: var(--container-padding);
-    }
-
-    .lang-gate {
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .lang-gate__logo {
-      font-family: var(--font-heading);
-      font-size: var(--fs-h3);
-      font-weight: var(--fw-medium);
-      color: var(--color-text-strong);
-      margin: 0 0 var(--space-lg);
-      letter-spacing: 0.01em;
-    }
-
-    .lang-gate__intro {
-      font-size: var(--fs-body);
-      line-height: var(--lh-body);
-      color: var(--color-text-secondary);
-      margin: 0 0 var(--space-lg);
-    }
-
-    .lang-gate__intro span {
-      display: block;
-    }
-
-    .lang-gate__options {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-sm);
-    }
-
-    .lang-gate__link {
-      display: block;
-      padding: var(--space-sm) var(--space-md);
-      background-color: var(--color-bg-alt);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      color: var(--color-text-strong);
-      font-size: var(--fs-body);
-      font-weight: var(--fw-medium);
-      text-decoration: none;
-      transition: background-color var(--transition-fast), border-color var(--transition-fast);
-    }
-
-    .lang-gate__link:hover,
-    .lang-gate__link:focus-visible {
-      background-color: var(--color-accent-light);
-      border-color: var(--color-accent);
-      outline: none;
-    }
-
-    .lang-gate__link:focus-visible {
-      box-shadow: 0 0 0 3px var(--color-focus-ring);
-    }
-
-    .lang-gate__note {
-      margin-top: var(--space-lg);
-      font-size: var(--fs-xs);
-      color: var(--color-text-secondary);
-    }
-  </style>
-</head>
-<body>
-
-  <main class="lang-gate">
-    <p class="lang-gate__logo">AE Property Management & Consult</p>
-
-    <p class="lang-gate__intro">
-      <span lang="es">Selecciona tu idioma para continuar</span>
-      <span lang="en">Select your language to continue</span>
-      <span lang="de">Wählen Sie Ihre Sprache aus</span>
-    </p>
-
-    <nav class="lang-gate__options" aria-label="Selector de idioma">
-      <a class="lang-gate__link" href="es/index.html" hreflang="es" lang="es" data-lang="es">Español</a>
-      <a class="lang-gate__link" href="en/index.html" hreflang="en" lang="en" data-lang="en">English</a>
-      <a class="lang-gate__link" href="de/index.html" hreflang="de" lang="de" data-lang="de">Deutsch</a>
-    </nav>
-
-    <p class="lang-gate__note">
-      <span lang="es">Te redirigiremos automáticamente si detectamos tu idioma preferido.</span>
-    </p>
-  </main>
-
-  <script>
-    (function () {
-      var SUPPORTED_LANGS = ['es', 'en', 'de'];
-      var DEFAULT_LANG = 'es';
-      var STORAGE_KEY = 'aepmc_preferred_lang';
-
-      document.querySelectorAll('.lang-gate__link').forEach(function (link) {
-        link.addEventListener('click', function () {
-          var chosen = link.getAttribute('data-lang');
-          try {
-            localStorage.setItem(STORAGE_KEY, chosen);
-          } catch (e) {
-            /* localStorage no disponible: la navegación continúa igualmente */
-          }
-        });
-      });
-
-      var storedLang = null;
-      try {
-        storedLang = localStorage.getItem(STORAGE_KEY);
-      } catch (e) {
-        storedLang = null;
+    <style>
+      :root {
+        --background: #f4f1eb;
+        --text: #171714;
+        --muted: #6f6c65;
       }
 
-      if (storedLang && SUPPORTED_LANGS.indexOf(storedLang) !== -1) {
-        window.location.replace(storedLang + '/index.html');
-        return;
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
-      var browserLang = (navigator.language || navigator.userLanguage || DEFAULT_LANG)
-        .slice(0, 2)
-        .toLowerCase();
+      html,
+      body {
+        width: 100%;
+        min-height: 100%;
+      }
 
-      var targetLang = SUPPORTED_LANGS.indexOf(browserLang) !== -1 ? browserLang : DEFAULT_LANG;
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        min-height: 100svh;
+        overflow: hidden;
+        background: var(--background);
+        color: var(--text);
+        font-family:
+          Arial,
+          Helvetica,
+          sans-serif;
+      }
 
-      window.location.replace(targetLang + '/index.html');
-    })();
-  </script>
+      .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+        padding: 2rem;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(8px);
+        animation: intro-in 0.7s ease forwards;
+      }
 
-</body>
+      .intro__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 96px;
+        height: 96px;
+        border: 1px solid rgba(23, 23, 20, 0.25);
+        border-radius: 50%;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+      }
+
+      .intro__brand {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .intro__name {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1rem, 3vw, 1.25rem);
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .intro__subtitle {
+        color: var(--muted);
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .intro--leaving {
+        animation: intro-out 0.35s ease forwards;
+      }
+
+      @keyframes intro-in {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes intro-out {
+        to {
+          opacity: 0;
+          transform: translateY(-5px);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .intro,
+        .intro--leaving {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="intro" id="intro">
+      <div
+        class="intro__logo"
+        aria-label="AE Property Management & Consult"
+      >
+        AE
+      </div>
+
+      <div class="intro__brand">
+        <h1 class="intro__name">
+          Property Management &amp; Consult
+        </h1>
+
+        <p class="intro__subtitle">
+          Mallorca
+        </p>
+      </div>
+    </main>
+
+    <noscript>
+      <p>
+        <a href="es/index.html">
+          Acceder a la página web
+        </a>
+      </p>
+    </noscript>
+
+    <script>
+      const intro = document.getElementById("intro");
+
+      window.setTimeout(() => {
+        intro.classList.add("intro--leaving");
+
+        window.setTimeout(() => {
+          window.location.replace("es/index.html");
+        }, 350);
+      }, 1100);
+    </script>
+  </body>
 </html>
