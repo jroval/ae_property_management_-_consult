@@ -1565,13 +1565,6 @@ button:focus-visible {
   padding: clamp(1.75rem, 4vw, 3rem);
 }
 
-.showroom-panel__index {
-  color: var(--color-accent-hover);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-wider);
-}
-
 .showroom-panel__title {
   max-width: 14ch;
   color: var(--color-text-primary);
