@@ -43,20 +43,17 @@
   --color-text-disabled: #696862;
 
   /*
-   * Terracota.
+   * Verde oliva ahumado.
    *
-   * El color principal se utiliza en detalles decorativos,
-   * iconos, enlaces y elementos activos.
-   *
-   * El tono fuerte ofrece mejor contraste cuando se utiliza
-   * como fondo de botones con texto claro.
+   * Acento definitivo de marca, cálido y editorial.
    */
-  --color-accent: #c2704f;
-  --color-accent-hover: #d18462;
-  --color-accent-strong: #a9573b;
-  --color-accent-strong-hover: #b96345;
-  --color-accent-soft: rgba(194, 112, 79, 0.14);
-  --color-accent-border: rgba(194, 112, 79, 0.45);
+
+  --color-accent: #6e7a4e;
+  --color-accent-hover: #8b9768;
+  --color-accent-strong: #4f5837;
+  --color-accent-strong-hover: #5c6640;
+  --color-accent-soft: rgba(110, 122, 78, 0.14);
+  --color-accent-border: rgba(110, 122, 78, 0.45);
 
   /*
    * Colores de estado.
@@ -128,7 +125,7 @@
     ),
     radial-gradient(
       circle at 82% 14%,
-      rgba(194, 112, 79, 0.035) 0,
+      rgba(110, 122, 78, 0.035) 0,
       transparent 22%
     ),
     radial-gradient(
@@ -150,7 +147,7 @@
       142deg,
       transparent 0%,
       transparent 46%,
-      rgba(194, 112, 79, 0.018) 46.4%,
+      rgba(110, 122, 78, 0.018) 46.4%,
       transparent 47%,
       transparent 100%
     );
@@ -167,7 +164,7 @@
     ),
     radial-gradient(
       ellipse at 78% 18%,
-      rgba(194, 112, 79, 0.045) 0,
+      rgba(110, 122, 78, 0.045) 0,
       transparent 22%
     ),
     radial-gradient(
@@ -189,7 +186,7 @@
       152deg,
       transparent 0%,
       transparent 48%,
-      rgba(194, 112, 79, 0.025) 48.4%,
+      rgba(110, 122, 78, 0.025) 48.4%,
       transparent 49%
     );
 
@@ -333,7 +330,7 @@
     0 1.875rem 5rem rgba(0, 0, 0, 0.38);
 
   --shadow-accent:
-    0 0.75rem 2.5rem rgba(169, 87, 59, 0.22);
+    0 0.75rem 2.5rem rgba(110, 122, 78, 0.22);
 
   --shadow-header:
     0 0.5rem 2rem rgba(0, 0, 0, 0.2);

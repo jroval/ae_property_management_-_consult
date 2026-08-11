@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeHeader();
   initializeMobileNavigation();
   initializeCarousels();
-  initializeHomeServiceShowcase();
   initializeScrollReveals();
   initializeContactForms();
   updateCurrentYear();
@@ -555,80 +554,19 @@ function initializeCarousels() {
 
 
 /* ==========================================================================
-   SERVICIOS INTERACTIVOS DE LA PÁGINA DE INICIO
-   ========================================================================== */
-
-function initializeHomeServiceShowcase() {
-  const showcases = document.querySelectorAll(
-    "[data-service-showcase]"
-  );
-
-  showcases.forEach((showcase) => {
-    const items = Array.from(
-      showcase.querySelectorAll("[data-service-item]")
-    );
-
-    const triggers = Array.from(
-      showcase.querySelectorAll("[data-service-trigger]")
-    );
-
-    const panels = Array.from(
-      showcase.querySelectorAll("[data-service-panel]")
-    );
-
-    function activateService(index) {
-      items.forEach((item, itemIndex) => {
-        item.classList.toggle("is-active", itemIndex === index);
-      });
-
-      triggers.forEach((trigger, triggerIndex) => {
-        trigger.setAttribute(
-          "aria-expanded",
-          String(triggerIndex === index)
-        );
-      });
-
-      panels.forEach((panel, panelIndex) => {
-        const isActive = panelIndex === index;
-
-        panel.classList.toggle("is-active", isActive);
-        panel.setAttribute("aria-hidden", String(!isActive));
-      });
-    }
-
-    triggers.forEach((trigger, index) => {
-      trigger.addEventListener("click", () => {
-        activateService(index);
-      });
-
-      trigger.addEventListener("mouseenter", () => {
-        activateService(index);
-      });
-
-      trigger.addEventListener("focus", () => {
-        activateService(index);
-      });
-    });
-  });
-}
-
-
-/* ==========================================================================
    APARICIONES AL HACER SCROLL
    ========================================================================== */
 
 function initializeScrollReveals() {
-  const revealElements = document.querySelectorAll("[data-reveal]");
+  const revealElements = document.querySelectorAll(
+    "[data-reveal], [data-reveal-mask]"
+  );
 
   if (revealElements.length === 0) {
     return;
   }
 
-  const reducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-  if (reducedMotion || !("IntersectionObserver" in window)) {
+  if (!("IntersectionObserver" in window)) {
     revealElements.forEach((element) => {
       element.classList.add("is-revealed");
     });
@@ -656,6 +594,20 @@ function initializeScrollReveals() {
   revealElements.forEach((element) => {
     observer.observe(element);
   });
+
+  // Red de seguridad: revela cualquier elemento ya visible que se haya
+  // quedado sin observador funcional (p. ej. fallos silenciosos del IO).
+  window.setTimeout(() => {
+    revealElements.forEach((element) => {
+      const alreadyRevealed = element.classList.contains("is-revealed");
+      const isAboveTheFold =
+        element.getBoundingClientRect().top < window.innerHeight;
+
+      if (!alreadyRevealed && isAboveTheFold) {
+        element.classList.add("is-revealed");
+      }
+    });
+  }, 6000);
 }
 
 
