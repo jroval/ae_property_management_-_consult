@@ -865,6 +865,17 @@
 
 
 /* ==========================================================================
+   RESEÑAS — HOME — RESPONSIVE
+   ========================================================================== */
+
+@media (min-width: 48rem) {
+  .home-reviews__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ==========================================================================
    SERVICIOS — RESPONSIVE EDITORIAL
    ========================================================================== */
 
@@ -912,11 +923,11 @@
   }
 
   .services-editorial__heading {
-    grid-column: 1 / 9;
+    grid-column: 1 / 7;
   }
 
   .services-editorial__lead-media {
-    grid-column: 9 / 13;
+    grid-column: 7 / 13;
     width: 100%;
   }
 

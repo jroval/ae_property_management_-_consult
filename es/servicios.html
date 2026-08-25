@@ -99,6 +99,30 @@
     sizes="any"
   >
 
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="../assets/icons/favicon-32x32.png"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="../assets/icons/favicon-16x16.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="../assets/icons/apple-touch-icon.png"
+  >
+
+  <link
+    rel="manifest"
+    href="../site.webmanifest"
+  >
+
   <!-- Estilos -->
   <link
     rel="stylesheet"
@@ -130,6 +154,78 @@
     src="../js/main.js"
     defer
   ></script>
+
+  <!-- Datos estructurados: migas de pan -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://TU-DOMINIO.com/es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Servicios",
+        "item": "https://TU-DOMINIO.com/es/servicios.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Datos estructurados: preguntas frecuentes -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuál es el precio del servicio mensual?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los planes personalizados parten de 250 € al mes. El importe final depende de la propiedad, su ubicación, instalaciones, frecuencia de visitas y necesidades concretas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué se factura por separado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los profesionales externos, los servicios de concierge y las gestiones adicionales se presupuestan aparte o se incorporan a la cuota mensual según la propuesta acordada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se gestionan las incidencias y reparaciones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AE valora la incidencia, coordina al profesional adecuado, supervisa el trabajo e informa al propietario. Las reparaciones técnicas las realizan especialistas externos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Existe un periodo inicial de garantía?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Durante los tres primeros meses puede conocer el servicio. Si al finalizar ese periodo no se han cumplido sus expectativas, se reembolsa una mensualidad conforme a las condiciones acordadas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué zonas de Mallorca trabajan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Principalmente en el sur, sureste y suroeste de Mallorca. Las propiedades situadas en otras zonas se valoran individualmente."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="page-services">

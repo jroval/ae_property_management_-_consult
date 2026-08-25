@@ -99,6 +99,30 @@
     sizes="any"
   >
 
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="../assets/icons/favicon-32x32.png"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="../assets/icons/favicon-16x16.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="../assets/icons/apple-touch-icon.png"
+  >
+
+  <link
+    rel="manifest"
+    href="../site.webmanifest"
+  >
+
   <!-- Stylesheets -->
   <link
     rel="stylesheet"
@@ -130,6 +154,78 @@
     src="../js/main.js"
     defer
   ></script>
+
+  <!-- Structured data: breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://TU-DOMINIO.com/en/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://TU-DOMINIO.com/en/servicios.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the price of the monthly service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Personalised plans start from €250 per month. The final amount depends on the property, its location, facilities, visit frequency and specific needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is billed separately?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "External professionals, concierge services and additional arrangements are quoted separately or included in the monthly fee, depending on the agreed proposal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are incidents and repairs handled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AE assesses the incident, coordinates the right professional, oversees the work and keeps the owner informed. Technical repairs are carried out by external specialists."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there an initial guarantee period?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "During the first three months you can get to know the service. If your expectations haven't been met by the end of that period, one month's fee is refunded in accordance with the agreed terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which areas of Mallorca do you work in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mainly in the south, south-east and south-west of Mallorca. Properties in other areas are assessed individually."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="page-services">

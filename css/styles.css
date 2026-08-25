@@ -1409,7 +1409,6 @@ button:focus-visible {
 .page-home .home-hero h1 span {
   display: block;
   margin-top: 0.2em;
-  margin-left: clamp(0rem, 4vw, 3.5rem);
   color: var(--color-text-primary);
   font-style: italic;
   font-weight: var(--font-weight-regular);
@@ -1418,7 +1417,6 @@ button:focus-visible {
 
 .page-home .home-hero .hero-carousel__text {
   max-width: 34rem;
-  margin-left: clamp(0rem, 4vw, 3.5rem);
   color: rgba(245, 242, 236, 0.82);
   font-size: clamp(0.95rem, 1.4vw, 1.15rem);
 }
@@ -1513,6 +1511,79 @@ button:focus-visible {
 }
 
 
+/* Reseñas — home */
+
+.home-reviews {
+  padding-block: clamp(4.5rem, 10vw, 7.5rem);
+  background-color: var(--color-background-soft);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.home-reviews__intro {
+  max-width: 40rem;
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.home-reviews__intro h2 {
+  margin-top: var(--space-4);
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.home-reviews__intro h2 span {
+  display: block;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.home-reviews__notice {
+  margin-top: var(--space-4);
+  color: var(--color-accent-hover);
+  font-size: var(--font-size-sm);
+  font-style: italic;
+}
+
+.home-reviews__list {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  grid-template-columns: 1fr;
+}
+
+.review-card {
+  display: grid;
+  gap: var(--space-4);
+  padding: clamp(1.75rem, 3vw, 2.25rem);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background-elevated);
+}
+
+.review-card__rating {
+  color: var(--color-accent-hover);
+  font-size: var(--font-size-md);
+  letter-spacing: 0.2em;
+}
+
+.review-card__quote {
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.review-card__author {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+
 /* Showroom — Servicios / Nosotros / Contacto */
 
 .home-showroom__track {
@@ -1537,6 +1608,7 @@ button:focus-visible {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  opacity: 0.55;
   filter:
     saturate(0.62)
     contrast(1.06)
@@ -1544,7 +1616,8 @@ button:focus-visible {
   transform: scale(1.06);
   transition:
     transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 700ms ease;
+    filter 700ms ease,
+    opacity 550ms ease;
 }
 
 .showroom-panel__scrim {
@@ -1603,7 +1676,7 @@ button:focus-visible {
 
 .showroom-panel:hover .showroom-panel__media,
 .showroom-panel:focus-visible .showroom-panel__media {
-  transform: scale(1);
+  opacity: 1;
   filter:
     saturate(0.85)
     contrast(1.04)
@@ -1634,7 +1707,9 @@ button:focus-visible {
   .showroom-panel {
     min-height: 100svh;
     flex: 1;
-    transition: flex 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 1;
+    will-change: transform;
+    transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .showroom-panel + .showroom-panel {
@@ -1642,13 +1717,45 @@ button:focus-visible {
     border-left: 1px solid var(--color-border-soft);
   }
 
-  .home-showroom__track:hover .showroom-panel {
-    flex: 0.72;
+  /* Panel en hover: va al centro (o crece si ya lo es) y pasa por delante */
+  .showroom-panel:nth-child(1):hover,
+  .showroom-panel:nth-child(1):focus-visible {
+    z-index: 5;
+    transform: translateX(100%) scale(1.2);
   }
 
-  .showroom-panel:hover,
-  .showroom-panel:focus-visible {
-    flex: 2.4;
+  .showroom-panel:nth-child(2):hover,
+  .showroom-panel:nth-child(2):focus-visible {
+    z-index: 5;
+    transform: scale(1.2);
+  }
+
+  .showroom-panel:nth-child(3):hover,
+  .showroom-panel:nth-child(3):focus-visible {
+    z-index: 5;
+    transform: translateX(-100%) scale(1.2);
+  }
+
+  /* El resto se encoge un poco por defecto (siempre visible como apoyo) */
+  .home-showroom__track:hover .showroom-panel:not(:hover):not(:focus-visible) {
+    transform: scale(0.86);
+  }
+
+  .home-showroom__track:hover .showroom-panel:not(:hover):not(:focus-visible) .showroom-panel__media {
+    opacity: 0.3;
+  }
+
+  /* Si el navegador soporta :has(), el panel del centro además se
+     desliza al hueco que deja el extremo que se ha ido al centro,
+     para que no quede espacio vacío. */
+  .home-showroom__track:has(.showroom-panel:nth-child(1):hover) .showroom-panel:nth-child(2),
+  .home-showroom__track:has(.showroom-panel:nth-child(1):focus-visible) .showroom-panel:nth-child(2) {
+    transform: translateX(-100%) scale(0.86);
+  }
+
+  .home-showroom__track:has(.showroom-panel:nth-child(3):hover) .showroom-panel:nth-child(2),
+  .home-showroom__track:has(.showroom-panel:nth-child(3):focus-visible) .showroom-panel:nth-child(2) {
+    transform: translateX(100%) scale(0.86);
   }
 
   .showroom-panel__content {
@@ -1668,6 +1775,76 @@ button:focus-visible {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+/* ==========================================================================
+   SHOWROOM 3D — SERVICIOS / NUESTRA HISTORIA / CONTACTO
+   La escena en sí (Three.js) se monta en js/showroom-3d.js; aquí solo el
+   contenedor y el nav de enlaces reales que sirve de alternativa accesible.
+   ========================================================================== */
+
+.showroom-3d {
+  position: relative;
+  background-color: var(--color-background-strong);
+}
+
+.showroom-3d__stage {
+  width: 100%;
+  height: clamp(32rem, 92vw, 46rem);
+}
+
+.showroom-3d__stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Enlaces reales: ocultos salvo que reciban el foco de teclado (mismo
+   patrón que .skip-link), o que showroom-3d.js los revele del todo
+   porque WebGL no esté disponible. */
+.showroom-3d__fallback {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  padding: var(--space-8) var(--page-gutter);
+}
+
+.showroom-3d__fallback a {
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+}
+
+.showroom-3d__fallback a:focus-visible {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: var(--space-3) var(--space-5) !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent);
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.showroom-3d__fallback.is-forced-visible {
+  padding-top: var(--space-10);
+}
+
+.showroom-3d__fallback.is-forced-visible a {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+  border-bottom: 1px solid var(--color-border-strong);
 }
 
 
@@ -1730,7 +1907,7 @@ button:focus-visible {
 .services-editorial__masthead {
   display: grid;
   gap: clamp(2.5rem, 7vw, 5rem);
-  padding-bottom: clamp(5rem, 12vw, 9rem);
+  padding-bottom: clamp(3.5rem, 8vw, 6rem);
 }
 
 .services-editorial__heading {
@@ -1742,26 +1919,23 @@ button:focus-visible {
 }
 
 .services-editorial__heading h1 {
-  max-width: 10.5ch;
+  max-width: 11.5ch;
   color: var(--color-text-primary);
   font-family: var(--font-heading);
-  font-size: clamp(3.75rem, 11vw, 9rem);
+  font-size: clamp(3.25rem, 7.5vw, 6.25rem);
   font-weight: var(--font-weight-regular);
   letter-spacing: -0.055em;
-  line-height: 0.86;
+  line-height: 0.94;
 }
 
 .services-editorial__heading h1 span {
   display: block;
-  margin-left: clamp(0rem, 7vw, 6rem);
   color: var(--color-text-secondary);
   font-style: italic;
-  white-space: nowrap;
 }
 
 .services-editorial__heading p {
   max-width: 37rem;
-  margin-left: clamp(0rem, 7vw, 6rem);
   color: var(--color-text-secondary);
   font-size: var(--font-size-md);
   line-height: 1.7;
@@ -2742,4 +2916,51 @@ button:focus-visible {
   border-radius: 50%;
   background-color: var(--color-accent);
   content: "";
+}
+
+
+/* ==========================================================================
+   ERROR 404
+   ========================================================================== */
+
+.error-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding-top: calc(var(--header-height-mobile) + var(--space-10));
+  padding-bottom: var(--space-10);
+  text-align: center;
+  background-color: var(--color-background);
+}
+
+.error-404__inner {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-6);
+  max-width: 40rem;
+}
+
+.error-404 h1 {
+  max-width: 16ch;
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.error-404 h1 span {
+  display: block;
+  margin-top: 0.2em;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.error-404 p {
+  max-width: 30rem;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
+  line-height: 1.7;
 }

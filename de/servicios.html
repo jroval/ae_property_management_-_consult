@@ -99,6 +99,30 @@
     sizes="any"
   >
 
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="../assets/icons/favicon-32x32.png"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="../assets/icons/favicon-16x16.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="../assets/icons/apple-touch-icon.png"
+  >
+
+  <link
+    rel="manifest"
+    href="../site.webmanifest"
+  >
+
   <!-- Stylesheets -->
   <link
     rel="stylesheet"
@@ -130,6 +154,78 @@
     src="../js/main.js"
     defer
   ></script>
+
+  <!-- Structured data: breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://TU-DOMINIO.com/de/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Leistungen",
+        "item": "https://TU-DOMINIO.com/de/servicios.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Strukturierte Daten: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie hoch ist der Preis der monatlichen Leistung?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Individuelle Pakete beginnen ab 250 € pro Monat. Der endgültige Betrag hängt von der Immobilie, ihrer Lage, den Einrichtungen, der Besuchshäufigkeit und den konkreten Bedürfnissen ab."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was wird separat berechnet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Externe Fachkräfte, Concierge-Leistungen und zusätzliche Aufgaben werden separat veranschlagt oder je nach vereinbartem Angebot in die monatliche Gebühr integriert."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie werden Störungen und Reparaturen abgewickelt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AE bewertet die Störung, beauftragt die passende Fachkraft, überwacht die Arbeit und informiert den Eigentümer. Technische Reparaturen werden von externen Spezialisten durchgeführt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Gibt es eine anfängliche Garantiezeit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In den ersten drei Monaten können Sie den Service kennenlernen. Wurden Ihre Erwartungen am Ende dieses Zeitraums nicht erfüllt, wird eine Monatsgebühr gemäß den vereinbarten Bedingungen erstattet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "In welchen Gebieten Mallorcas sind Sie tätig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hauptsächlich im Süden, Südosten und Südwesten Mallorcas. Immobilien in anderen Gebieten werden individuell geprüft."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="page-services">

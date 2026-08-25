@@ -99,35 +99,75 @@
     sizes="any"
   >
 
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="../assets/icons/favicon-32x32.png"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="../assets/icons/favicon-16x16.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="../assets/icons/apple-touch-icon.png"
+  >
+
+  <link
+    rel="manifest"
+    href="../site.webmanifest"
+  >
+
   <!-- Hojas de estilo -->
   <link
     rel="stylesheet"
-    href="../css/reset.css"
+    href="../css/reset.css?v=20260822"
   >
 
   <link
     rel="stylesheet"
-    href="../css/variables.css"
+    href="../css/variables.css?v=20260822"
   >
 
   <link
     rel="stylesheet"
-    href="../css/components.css"
+    href="../css/components.css?v=20260822"
   >
 
   <link
     rel="stylesheet"
-    href="../css/styles.css"
+    href="../css/styles.css?v=20260825"
   >
 
   <link
     rel="stylesheet"
-    href="../css/responsive.css"
+    href="../css/responsive.css?v=20260825"
   >
 
   <!-- JavaScript -->
   <script
-    src="../js/main.js"
+    src="../js/main.js?v=20260822"
+    defer
+  ></script>
+
+  <!-- Showroom 3D: Three.js + GSAP (solo en la home) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"
+    defer
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+    defer
+  ></script>
+
+  <script
+    src="../js/showroom-3d.js?v=20260825"
     defer
   ></script>
 </head>
@@ -501,106 +541,137 @@
             ></button>
           </div>
         </div>
-
-        <a
-          class="home-hero__scroll"
-          href="#servicios-principales"
-          aria-label="Ir a los servicios principales"
-        >
-          <span aria-hidden="true"></span>
-          Descubrir
-        </a>
       </div>
     </section>
 
 
     <!-- ==============================================================
-         SHOWROOM — SERVICIOS / NOSOTROS / CONTACTO
+         SHOWROOM 3D — SERVICIOS / NUESTRA HISTORIA / CONTACTO
+         Escena Three.js montada por js/showroom-3d.js.
          ============================================================== -->
 
     <section
-      class="home-showroom"
+      class="showroom-3d"
       aria-label="Explorar AE Property Management"
-      data-reveal
     >
-      <div class="home-showroom__track">
-        <a
-          class="showroom-panel"
-          href="servicios.html"
+      <div
+        class="showroom-3d__stage"
+        id="showroom3dStage"
+        aria-hidden="true"
+      ></div>
+
+      <!--
+        Enlaces reales: siempre presentes para buscadores y lectores de
+        pantalla. Visualmente ocultos por defecto; se muestran solos al
+        recibir el foco de teclado (igual que el skip-link de arriba), y
+        js/showroom-3d.js los revela por completo si el navegador no
+        soporta WebGL o si la escena 3D falla al iniciar.
+      -->
+
+      <nav
+        class="showroom-3d__fallback"
+        id="showroom3dFallback"
+        aria-label="Explorar AE Property Management"
+      >
+        <a class="sr-only" href="servicios.html">Servicios</a>
+        <a class="sr-only" href="nosotros.html">Nuestra historia</a>
+        <a class="sr-only" href="contacto.html">Contacto</a>
+      </nav>
+    </section>
+
+
+    <!-- ==============================================================
+         RESEÑAS
+         PENDIENTE: sustituir las 3 tarjetas de ejemplo y quitar
+         el aviso "home-reviews__notice" en cuanto haya reseñas reales.
+         ============================================================== -->
+
+    <section
+      class="home-reviews"
+      aria-labelledby="home-reviews-title"
+    >
+      <div class="container--wide home-reviews__inner">
+        <header
+          class="home-reviews__intro"
+          data-reveal
         >
-          <img
-            class="showroom-panel__media"
-            src="../assets/images/services/services-hero.webp"
-            alt="Vivienda gestionada por AE Property Management en Mallorca"
-            loading="lazy"
-          >
-
-          <span class="showroom-panel__scrim" aria-hidden="true"></span>
-
-          <span class="showroom-panel__content">
-            <span class="showroom-panel__title">
-              Servicios
-            </span>
-
-            <span class="showroom-panel__text">
-              Supervisión, mantenimiento y gestión de incidencias.
-            </span>
-
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
+          <span class="eyebrow">
+            Reseñas
           </span>
-        </a>
 
-        <a
-          class="showroom-panel"
-          href="nosotros.html"
+          <h2 id="home-reviews-title">
+            Lo que dicen
+            <span>nuestros propietarios.</span>
+          </h2>
+
+          <p class="home-reviews__notice">
+            Estas tarjetas son un ejemplo de formato. En breve las
+            sustituiremos por las opiniones reales de nuestros clientes.
+          </p>
+        </header>
+
+
+        <div
+          class="home-reviews__list"
+          data-reveal
         >
-          <img
-            class="showroom-panel__media"
-            src="../assets/images/about/about-hero.webp"
-            alt="Equipo local de AE Property Management en Mallorca"
-            loading="lazy"
-          >
+          <article class="review-card">
+            <div
+              class="review-card__rating"
+              role="img"
+              aria-label="5 de 5 estrellas"
+            >
+              ★★★★★
+            </div>
 
-          <span class="showroom-panel__scrim" aria-hidden="true"></span>
+            <p class="review-card__quote">
+              “Aquí irá el testimonio real de un propietario sobre cómo
+              AE ha cuidado de su vivienda.”
+            </p>
 
-          <span class="showroom-panel__content">
-            <span class="showroom-panel__title">
-              Nosotros
-            </span>
+            <p class="review-card__author">
+              [Nombre del cliente] · Propietario en Mallorca
+            </p>
+          </article>
 
-            <span class="showroom-panel__text">
-              Presencia local en Mallorca, trato cercano.
-            </span>
+          <article class="review-card">
+            <div
+              class="review-card__rating"
+              role="img"
+              aria-label="5 de 5 estrellas"
+            >
+              ★★★★★
+            </div>
 
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
-          </span>
-        </a>
+            <p class="review-card__quote">
+              “Aquí irá el testimonio real de otro cliente, destacando su
+              experiencia concreta con el servicio.”
+            </p>
 
-        <a
-          class="showroom-panel"
-          href="contacto.html"
-        >
-          <img
-            class="showroom-panel__media"
-            src="../assets/images/home/mallorca.webp"
-            alt="Villa mediterránea en Mallorca"
-            loading="lazy"
-          >
+            <p class="review-card__author">
+              [Nombre del cliente] · Propietario en Mallorca
+            </p>
+          </article>
 
-          <span class="showroom-panel__scrim" aria-hidden="true"></span>
+          <article class="review-card">
+            <div
+              class="review-card__rating"
+              role="img"
+              aria-label="5 de 5 estrellas"
+            >
+              ★★★★★
+            </div>
 
-          <span class="showroom-panel__content">
-            <span class="showroom-panel__title">
-              Contacto
-            </span>
+            <p class="review-card__quote">
+              “Aquí irá un tercer testimonio real, con el resultado
+              concreto que valoró el propietario.”
+            </p>
 
-            <span class="showroom-panel__text">
-              Hablemos de su propiedad.
-            </span>
-
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
-          </span>
-        </a>
+            <p class="review-card__author">
+              [Nombre del cliente] · Propietario en Mallorca
+            </p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
