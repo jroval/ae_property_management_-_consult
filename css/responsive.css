@@ -457,10 +457,8 @@
   /* Marca */
 
   .brand__monogram {
-    width: 3rem;
-    height: 3rem;
-
-    font-size: 1.45rem;
+    width: 3.75rem;
+    height: 3.75rem;
   }
 
   .brand__name {
@@ -593,8 +591,8 @@
   }
 
   .brand__monogram {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   .brand__name {
