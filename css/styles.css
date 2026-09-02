@@ -1847,6 +1847,24 @@ button:focus-visible {
   border-bottom: 1px solid var(--color-border-strong);
 }
 
+/* Tarjetas con foto para dispositivos táctiles: sin hover real, la
+   escena 3D no se ni intenta cargar (ver js/showroom-3d.js), así que
+   aquí se muestra una versión simple y siempre tocable. */
+.showroom-mobile-cards {
+  display: none;
+}
+
+@media (hover: none) {
+  .showroom-3d__stage,
+  .showroom-3d__fallback {
+    display: none;
+  }
+
+  .showroom-mobile-cards {
+    display: block;
+  }
+}
+
 
 /* Apariciones sutiles */
 
