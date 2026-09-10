@@ -2806,35 +2806,28 @@ button:focus-visible {
 
 .contact-premium__media {
   position: relative;
-  width: min(100%, 34rem);
-  aspect-ratio: 4 / 5;
+  width: min(100%, 30rem);
+  aspect-ratio: 1 / 1;
   overflow: hidden;
+  padding: var(--space-7);
+
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
   background-color: var(--color-background-elevated);
+  background-image: var(--background-quartz);
 }
 
 .contact-premium__media img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  filter: drop-shadow(0 0.75rem 1.5rem rgba(0, 0, 0, 0.45));
   transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .contact-premium__media:hover img {
-  transform: scale(1.025);
-}
-
-.contact-premium__media::after {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      to top,
-      rgba(5, 6, 5, 0.75),
-      transparent 46%
-    );
-  content: "";
-  pointer-events: none;
+  transform: scale(1.03);
 }
 
 .contact-premium__media figcaption {
@@ -2842,7 +2835,7 @@ button:focus-visible {
   right: var(--space-5);
   bottom: var(--space-5);
   z-index: 1;
-  color: rgba(245, 242, 236, 0.86);
+  color: var(--color-text-muted);
   font-size: var(--font-size-2xs);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wider);
