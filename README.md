@@ -67,7 +67,7 @@ AE PROPERTY/
 ├── favicon.ico
 ├── site.webmanifest      → Manifest para icono de pantalla de inicio / PWA básica
 ├── robots.txt
-├── sitemap.xml            → Pendiente de rellenar (ver Estado del proyecto)
+├── sitemap.xml            → Las 21 páginas indexables, con anotaciones hreflang
 ├── Cuestionario-informacion-pendiente.docx → Datos que faltan por confirmar con la clienta
 └── README.md
 ```
@@ -154,9 +154,10 @@ Todas las variables completas están documentadas en `css/variables.css`.
 - Títulos y metadescripciones únicos por página e idioma (verificado)
 - Open Graph con imagen panorámica propia por página
 - Datos estructurados `BreadcrumbList` y `FAQPage` (JSON-LD)
-- `sitemap.xml` con anotaciones `hreflang` — **pendiente de rellenar**
-  (archivo vacío; ya hay dominio definitivo, falta generar el listado
-  de URLs)
+- `sitemap.xml` con anotaciones `hreflang` para las 21 páginas
+  indexables (los 3 idiomas de index, servicios, nosotros, contacto,
+  aviso-legal, política de privacidad y política de cookies; quedan
+  fuera `404` y `gracias`, marcadas `noindex`)
 - Atributos `alt` descriptivos en todas las imágenes de contenido;
   `alt=""` deliberado en imágenes puramente decorativas (carrusel del
   hero)
@@ -187,7 +188,7 @@ desarrollo.
 - [x] **Dominio definitivo** (`aeproperties.es`) aplicado en todo el
       sitio (canonical, hreflang, Open Graph, `robots.txt`) y en el
       `CNAME` de GitHub Pages
-- [ ] **`sitemap.xml`** — rellenar ahora que ya hay dominio definitivo
+- [x] **`sitemap.xml`** relleno con las 21 páginas indexables
 - [ ] **Correo `info@aeproperties.com`** — el dominio del email ya está
       decidido, falta crear el buzón de verdad
 - [ ] Vincular el formulario de contacto a un proveedor de envío real
