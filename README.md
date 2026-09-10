@@ -11,7 +11,8 @@ JavaScript vanilla, sin frameworks de UI ni pasos de build — con una
 - HTML5 semántico
 - CSS3 (sin preprocesadores, sin Bootstrap/Tailwind)
 - JavaScript vanilla en `js/main.js` (menú móvil, carrusel del hero,
-  selector de idioma, validación de formulario)
+  selector de idioma, validación de formulario, desplegable accesible
+  personalizado en Contacto, reseñas expandibles en la home)
 - **Excepción:** `js/showroom-3d.js` monta una escena 3D real (Three.js
   r149 + GSAP 3.12.5, cargados por CDN) solo en la sección "showroom" de
   la home. Es la única dependencia externa de todo el proyecto; el resto
@@ -43,8 +44,8 @@ No requiere `npm install` ni ningún paso de compilación previo.
 
 ```
 AE PROPERTY/
-├── es/  → Páginas en español (idioma principal)
-├── en/  → Páginas en inglés
+├── es/  → Páginas en español (idioma de referencia para el contenido)
+├── en/  → Páginas en inglés (idioma por defecto de la web)
 ├── de/  → Páginas en alemán
 │         Cada idioma incluye: index, servicios, nosotros, contacto,
 │         404, gracias, aviso-legal, politica-privacidad,
@@ -56,14 +57,15 @@ AE PROPERTY/
 │   ├── styles.css       → Estilos generales de layout y secciones
 │   └── responsive.css   → Media queries (mobile-first)
 ├── js/
-│   ├── main.js          → Menú móvil, carrusel del hero, selector de idioma, formulario
+│   ├── main.js          → Menú móvil, carrusel, idioma, formulario, desplegable de Contacto, reseñas
 │   └── showroom-3d.js   → Escena 3D del showroom de la home (Three.js + GSAP)
 ├── assets/
 │   ├── images/          → Imágenes optimizadas del sitio (hero/, services/, about/, home/)
 │   ├── icons/           → Favicons PNG (favicon-16x16, favicon-32x32, apple-touch-icon, android-chrome)
 │   ├── fonts/           → Reservada para auto-hospedar tipografías (vacía; ver nota en Tipografía)
 │   └── logo/            → Logotipo real de marca (logo_ae.png)
-├── index.html            → Página raíz: redirige a /es/
+├── index.html            → Página raíz: redirige a /en/
+├── CNAME                 → Dominio definitivo de GitHub Pages (aeproperties.es)
 ├── favicon.ico
 ├── site.webmanifest      → Manifest para icono de pantalla de inicio / PWA básica
 ├── robots.txt
@@ -79,14 +81,15 @@ la opción recomendada para SEO internacional frente a subdominios o
 dominios distintos por país, ya que concentra toda la autoridad SEO en un
 único dominio.
 
-- **Idioma por defecto:** español (`es`)
-- **`index.html` raíz:** redirige automáticamente a `/es/` (vía
+- **Idioma por defecto:** inglés (`en`)
+- **`index.html` raíz:** redirige automáticamente a `/en/` (vía
   `meta http-equiv="refresh"` + JavaScript de respaldo); marcada como
-  `noindex` para que Google no la indexe en lugar de `/es/index.html`
+  `noindex` para que Google no la indexe en lugar de `/en/index.html`
 - **CSS, JS y `assets/` son compartidos** entre los 3 idiomas — no se
   duplican. Solo el HTML se traduce.
 - Cada página incluye etiquetas `hreflang` apuntando a sus equivalentes
-  en los otros idiomas, más un `x-default` hacia `/es/`
+  en los otros idiomas, más un `x-default` hacia la raíz del dominio
+  (`https://aeproperties.es/`, que redirige a `/en/`)
 - Cada página interna (excepto `404`/`gracias`, marcadas `noindex`)
   incluye datos estructurados `BreadcrumbList` (JSON-LD); `servicios.html`
   incluye además `FAQPage`
@@ -141,9 +144,13 @@ Todas las variables completas están documentadas en `css/variables.css`.
 - **Rutas relativas:** cada página dentro de `es/`, `en/` o `de/`
   referencia los recursos compartidos con `../` (ej. `../css/styles.css`,
   `../assets/logo/logo_ae.png`).
-- **Caché:** `styles.css`, `responsive.css` y `showroom-3d.js` llevan un
-  parámetro `?v=AAAAMMDD` en su URL para forzar la recarga en el
-  navegador cuando se editan; súbelo cada vez que los toques.
+- **Caché:** los CSS/JS compartidos (`styles.css`, `components.css`,
+  `responsive.css`, `main.js`, `showroom-3d.js`) llevan un parámetro
+  `?v=AAAAMMDD` en su URL para forzar la recarga en el navegador;
+  súbelo en cada página que enlace el archivo que toques.
+  `main.js` ya está versionado en las 27 páginas del sitio; el resto
+  de archivos solo llevan versión en las páginas donde se han editado
+  hasta ahora (no es todavía una cobertura 100% uniforme).
 - **JavaScript:** `main.js` para todo el comportamiento general del
   sitio; `showroom-3d.js` aislado y con su propio *fallback* accesible
   si WebGL no está disponible o falla la inicialización.
@@ -189,14 +196,14 @@ desarrollo.
       sitio (canonical, hreflang, Open Graph, `robots.txt`) y en el
       `CNAME` de GitHub Pages
 - [x] **`sitemap.xml`** relleno con las 21 páginas indexables
+- [x] Reseñas reales de clientes en la home (Ilka, Fam. Kortüm, Alice
+      & Pauline — sustituyeron a las tarjetas de ejemplo)
 - [ ] **Correo `info@aeproperties.com`** — el dominio del email ya está
       decidido, falta crear el buzón de verdad
 - [ ] Vincular el formulario de contacto a un proveedor de envío real
       (Netlify Forms, Formspree o similar) — hoy no envía a ningún sitio
 - [ ] Cargar Google Fonts de verdad (ver Tipografía)
 - [ ] Ficha de Google Business Profile + Google Analytics
-- [ ] Reseñas reales de clientes (hoy hay tarjetas de ejemplo,
-      claramente marcadas como tal, en la home)
 - [ ] Casos de estudio / ejemplos de trabajo realizado
 - [ ] Foto real del equipo (hoy hay fotos de ambiente en Nosotros,
       marcadas como provisionales en el propio código)
@@ -206,6 +213,7 @@ desarrollo.
 
 ## Despliegue
 
-Hay una previsualización activa en **GitHub Pages** desde este mismo
-repositorio, que usa la clienta para revisar avances. El despliegue
-definitivo (dominio propio y hosting final) sigue sin decidir.
+El sitio se sirve desde **GitHub Pages** en este mismo repositorio,
+con dominio propio ya configurado: **`aeproperties.es`** (archivo
+`CNAME` en la raíz). Sigue pendiente crear el buzón de correo real
+del dominio (ver Estado del proyecto).
