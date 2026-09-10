@@ -72,10 +72,6 @@ AE PROPERTY/
 └── README.md
 ```
 
-> Existen también `es - copia/` y `css - copia/`, carpetas de respaldo con
-> una versión antigua del sitio. No forman parte del sitio real y deben
-> eliminarse antes de publicar (ver Estado del proyecto).
-
 ## Idiomas
 
 El sitio es multiidioma mediante subdirectorios (`/es/`, `/en/`, `/de/`),
@@ -202,7 +198,6 @@ desarrollo.
 - [ ] Foto real del equipo (hoy hay fotos de ambiente en Nosotros,
       marcadas como provisionales en el propio código)
 - [ ] Datos estructurados `LocalBusiness` (necesita dirección/horario)
-- [ ] Eliminar `es - copia/` y `css - copia/` antes de publicar
 - [ ] Decidir si se compromete un tiempo de respuesta público (ej. "en
       menos de 24h")
 
