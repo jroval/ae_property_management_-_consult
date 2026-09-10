@@ -123,14 +123,16 @@ Todas las variables completas están documentadas en `css/variables.css`.
 
 ### Tipografía
 
-- **Cormorant Garamond** (serif) — titulares, H1-H3 (`--font-heading`)
-- **Manrope** (sans-serif) — cuerpo de texto, navegación, botones (`--font-body`)
-- **Pendiente:** ninguna de las dos está cargada realmente todavía (no
-  hay ningún `<link>` a Google Fonts en el HTML). El sitio entero está
-  renderizando con la tipografía de respaldo del sistema (Georgia/Times
-  New Roman para titulares, Segoe UI/Roboto para cuerpo). Hay que añadir
-  el `<link>` de Google Fonts en el `<head>` de cada página, o
-  auto-hospedar los archivos en `assets/fonts/`
+- **Cormorant Garamond** (serif) — titulares, H1-H3 (`--font-heading`).
+  Pesos 400/600/700, normal y cursiva (los títulos usan `<span>` en
+  cursiva con frecuencia)
+- **Manrope** (sans-serif) — cuerpo de texto, navegación, botones
+  (`--font-body`). Pesos 400/600/700
+- Cargadas vía Google Fonts (`<link>` en el `<head>` de las 27
+  páginas, con `preconnect` a `fonts.googleapis.com` y
+  `fonts.gstatic.com`). Si el visitante tiene bloqueado Google Fonts,
+  el navegador cae en las alternativas del sistema (Georgia/Times New
+  Roman, Segoe UI/Roboto) definidas en `--font-heading`/`--font-body`
 
 ## Convenciones de código
 
@@ -198,11 +200,11 @@ desarrollo.
 - [x] **`sitemap.xml`** relleno con las 21 páginas indexables
 - [x] Reseñas reales de clientes en la home (Ilka, Fam. Kortüm, Alice
       & Pauline — sustituyeron a las tarjetas de ejemplo)
+- [x] Google Fonts cargadas de verdad (Cormorant Garamond + Manrope)
 - [ ] **Correo `info@aeproperties.com`** — el dominio del email ya está
       decidido, falta crear el buzón de verdad
 - [ ] Vincular el formulario de contacto a un proveedor de envío real
       (Netlify Forms, Formspree o similar) — hoy no envía a ningún sitio
-- [ ] Cargar Google Fonts de verdad (ver Tipografía)
 - [ ] Ficha de Google Business Profile + Google Analytics
 - [ ] Casos de estudio / ejemplos de trabajo realizado
 - [ ] Foto real del equipo (hoy hay fotos de ambiente en Nosotros,

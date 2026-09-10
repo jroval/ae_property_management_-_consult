@@ -195,9 +195,9 @@
      ======================================================================== */
 
   /*
-   * Estas familias se cargarán posteriormente desde assets/fonts/.
-   * Mientras tanto se utilizarán las alternativas instaladas
-   * en el sistema del visitante.
+   * Cargadas vía Google Fonts (ver <link> en el <head> de cada
+   * página). Si Google Fonts no llega a cargar, el navegador usa
+   * las alternativas del sistema listadas a continuación.
    */
   --font-heading:
     "Cormorant Garamond",
