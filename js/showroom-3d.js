@@ -337,10 +337,6 @@ function runShowroomScene(stage, fallback, section) {
       ctx.font = "600 14px " + SANS_STACK;
       wrapCenteredText(ctx, item.subtitle.toUpperCase(), cx, c.height * 0.605, 460, 22);
 
-      ctx.fillStyle = TEXT_PRIMARY;
-      ctx.font = "300 30px " + SERIF_STACK;
-      ctx.fillText("↗", cx, c.height * 0.7);
-
       ctx.textAlign = "left";
       texture.needsUpdate = true;
     };

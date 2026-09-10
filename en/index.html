@@ -141,7 +141,7 @@
 
   <link
     rel="stylesheet"
-    href="../css/styles.css?v=20260910"
+    href="../css/styles.css?v=20260918"
   >
 
   <link
@@ -151,7 +151,7 @@
 
   <!-- JavaScript -->
   <script
-    src="../js/main.js"
+    src="../js/main.js?v=20260920"
     defer
   ></script>
 
@@ -167,7 +167,7 @@
   ></script>
 
   <script
-    src="../js/showroom-3d.js?v=20260825"
+    src="../js/showroom-3d.js?v=20260918"
     defer
   ></script>
 </head>
@@ -553,12 +553,16 @@
       class="home-intro"
       aria-label="About AE Property Management"
     >
-      <div class="container--text home-intro__body" data-reveal>
-        <p class="home-intro__lead">
+      <div class="container--wide home-intro__body" data-reveal>
+        <span class="eyebrow">
+          Welcome
+        </span>
+
+        <h2 class="home-intro__lead">
           The experience of owning a prestige property in Mallorca
           begins with the peace of mind of having someone completely
           trustworthy to look after it.
-        </p>
+        </h2>
 
         <p>
           Unlike high-volume management agencies, we intentionally limit
@@ -608,7 +612,7 @@
         aria-label="Explore AE Property Management"
       >
         <a class="sr-only" href="servicios.html">Services</a>
-        <a class="sr-only" href="nosotros.html">Our story</a>
+        <a class="sr-only" href="nosotros.html">About us</a>
         <a class="sr-only" href="contacto.html">Contact</a>
       </nav>
 
@@ -643,7 +647,6 @@
               Oversight, maintenance and issue management.
             </span>
 
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
           </span>
         </a>
 
@@ -662,14 +665,13 @@
 
           <span class="showroom-panel__content">
             <span class="showroom-panel__title">
-              Our story
+              About us
             </span>
 
             <span class="showroom-panel__text">
               A local presence in Mallorca, with a personal touch.
             </span>
 
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
           </span>
         </a>
 
@@ -695,7 +697,6 @@
               Let's talk about your property.
             </span>
 
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
           </span>
         </a>
       </nav>
@@ -742,13 +743,27 @@
               ★★★★★
             </div>
 
-            <p class="review-card__quote">
-              “Andrea is a great person, kind, reliable, quick and well
-              organized. She is a person who sees the ‘problems’ and all
-              issues and finds solutions. She can push when possible and
-              give time if needed. We always liked to work with her and
-              can only recommend her and her team!”
-            </p>
+            <div class="review-card__quote-wrap" data-review-quote>
+              <p class="review-card__quote">
+                “Andrea is a great person, kind, reliable, quick and well
+                organized. She is a person who sees the ‘problems’ and
+                all issues and finds solutions. She can push when
+                possible and give time if needed. We always liked to
+                work with her and can only recommend her and her team!”
+              </p>
+            </div>
+
+            <button
+              class="review-card__toggle"
+              type="button"
+              data-review-toggle
+              data-label-more="Read more"
+              data-label-less="Read less"
+              aria-expanded="false"
+              hidden
+            >
+              Read more
+            </button>
 
             <p class="review-card__author">
               Ilka
@@ -764,11 +779,25 @@
               ★★★★★
             </div>
 
-            <p class="review-card__quote">
-              “Having Andrea's help was a great choice for our house
-              maintenance and a few updates we wanted to make. I'm
-              really happy to have her taking care of our property.”
-            </p>
+            <div class="review-card__quote-wrap" data-review-quote>
+              <p class="review-card__quote">
+                “Having Andrea's help was a great choice for our house
+                maintenance and a few updates we wanted to make. I'm
+                really happy to have her taking care of our property.”
+              </p>
+            </div>
+
+            <button
+              class="review-card__toggle"
+              type="button"
+              data-review-toggle
+              data-label-more="Read more"
+              data-label-less="Read less"
+              aria-expanded="false"
+              hidden
+            >
+              Read more
+            </button>
 
             <p class="review-card__author">
               Fam. Kortüm
@@ -784,28 +813,44 @@
               ★★★★★
             </div>
 
-            <p class="review-card__quote">
-              “Working with Andrea has been an absolute pleasure from the
-              start. She is incredibly reliable, and has a calm and
-              positive way with which she approaches whatever comes up
-              with an old house. She simply gets things done without
-              ever making it feel complicated or stressful to us.
-            </p>
+            <div class="review-card__quote-wrap" data-review-quote>
+              <p class="review-card__quote">
+                “Working with Andrea has been an absolute pleasure from
+                the start. She is incredibly reliable, and has a calm
+                and positive way with which she approaches whatever
+                comes up with an old house. She simply gets things done
+                without ever making it feel complicated or stressful to
+                us.
+              </p>
 
-            <p class="review-card__quote">
-              We know that we can rely on her completely, all matters
-              are handled properly, timely, efficiently and always with
-              a very sensible eye on costs. She is proactive, hands-on
-              and thanks to her, we feel like we can enjoy the time in
-              the house rather than having to trouble shoot things
-              ourselves whenever we return.
-            </p>
+              <p class="review-card__quote">
+                We know that we can rely on her completely, all matters
+                are handled properly, timely, efficiently and always
+                with a very sensible eye on costs. She is proactive,
+                hands-on and thanks to her, we feel like we can enjoy
+                the time in the house rather than having to trouble
+                shoot things ourselves whenever we return.
+              </p>
 
-            <p class="review-card__quote">
-              On top of all that, Andrea is simply a wonderful person to
-              be around. We are extremely happy to have her looking
-              after our property and can wholeheartedly recommend her.”
-            </p>
+              <p class="review-card__quote">
+                On top of all that, Andrea is simply a wonderful person
+                to be around. We are extremely happy to have her looking
+                after our property and can wholeheartedly recommend
+                her.”
+              </p>
+            </div>
+
+            <button
+              class="review-card__toggle"
+              type="button"
+              data-review-toggle
+              data-label-more="Read more"
+              data-label-less="Read less"
+              aria-expanded="false"
+              hidden
+            >
+              Read more
+            </button>
 
             <p class="review-card__author">
               Alice &amp; Pauline
@@ -847,8 +892,8 @@
         </a>
 
         <p>
-          Oversight, maintenance and personalised assistance for villas,
-          second homes and private properties in Mallorca.
+          End-to-end oversight, preventive care, and bespoke management
+          for fine estates and private villas in Mallorca.
         </p>
       </div>
 

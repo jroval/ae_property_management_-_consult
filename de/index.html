@@ -141,7 +141,7 @@
 
   <link
     rel="stylesheet"
-    href="../css/styles.css?v=20260910"
+    href="../css/styles.css?v=20260918"
   >
 
   <link
@@ -151,7 +151,7 @@
 
   <!-- JavaScript -->
   <script
-    src="../js/main.js"
+    src="../js/main.js?v=20260920"
     defer
   ></script>
 
@@ -167,7 +167,7 @@
   ></script>
 
   <script
-    src="../js/showroom-3d.js?v=20260825"
+    src="../js/showroom-3d.js?v=20260918"
     defer
   ></script>
 </head>
@@ -553,12 +553,16 @@
       class="home-intro"
       aria-label="Über AE Property Management"
     >
-      <div class="container--text home-intro__body" data-reveal>
-        <p class="home-intro__lead">
+      <div class="container--wide home-intro__body" data-reveal>
+        <span class="eyebrow">
+          Willkommen
+        </span>
+
+        <h2 class="home-intro__lead">
           Der Genuss, eine bedeutende Immobilie auf Mallorca zu besitzen,
           beginnt mit der Gewissheit, jemanden von absolutem Vertrauen an
           ihrer Seite zu wissen, der sich um sie kümmert.
-        </p>
+        </h2>
 
         <p>
           Anders als klassische Verwaltungsunternehmen begrenzen wir
@@ -610,7 +614,7 @@
         aria-label="AE Property Management entdecken"
       >
         <a class="sr-only" href="servicios.html">Leistungen</a>
-        <a class="sr-only" href="nosotros.html">Unsere Geschichte</a>
+        <a class="sr-only" href="nosotros.html">Über uns</a>
         <a class="sr-only" href="contacto.html">Kontakt</a>
       </nav>
 
@@ -646,7 +650,6 @@
               Betreuung, Instandhaltung und Störungsmanagement.
             </span>
 
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
           </span>
         </a>
 
@@ -665,14 +668,13 @@
 
           <span class="showroom-panel__content">
             <span class="showroom-panel__title">
-              Unsere Geschichte
+              Über uns
             </span>
 
             <span class="showroom-panel__text">
               Lokale Präsenz auf Mallorca, persönlich und nah.
             </span>
 
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
           </span>
         </a>
 
@@ -698,7 +700,6 @@
               Sprechen wir über Ihre Immobilie.
             </span>
 
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
           </span>
         </a>
       </nav>
@@ -745,13 +746,27 @@
               ★★★★★
             </div>
 
-            <p class="review-card__quote">
-              „Andrea is a great person, kind, reliable, quick and well
-              organized. She is a person who sees the ‘problems’ and all
-              issues and finds solutions. She can push when possible and
-              give time if needed. We always liked to work with her and
-              can only recommend her and her team!“
-            </p>
+            <div class="review-card__quote-wrap" data-review-quote>
+              <p class="review-card__quote">
+                »Andrea is a great person, kind, reliable, quick and well
+                organized. She is a person who sees the ‘problems’ and
+                all issues and finds solutions. She can push when
+                possible and give time if needed. We always liked to
+                work with her and can only recommend her and her team!«
+              </p>
+            </div>
+
+            <button
+              class="review-card__toggle"
+              type="button"
+              data-review-toggle
+              data-label-more="Mehr lesen"
+              data-label-less="Weniger anzeigen"
+              aria-expanded="false"
+              hidden
+            >
+              Mehr lesen
+            </button>
 
             <p class="review-card__author">
               Ilka
@@ -767,11 +782,25 @@
               ★★★★★
             </div>
 
-            <p class="review-card__quote">
-              „Having Andrea's help was a great choice for our house
-              maintenance and a few updates we wanted to make. I'm
-              really happy to have her taking care of our property.“
-            </p>
+            <div class="review-card__quote-wrap" data-review-quote>
+              <p class="review-card__quote">
+                »Having Andrea's help was a great choice for our house
+                maintenance and a few updates we wanted to make. I'm
+                really happy to have her taking care of our property.«
+              </p>
+            </div>
+
+            <button
+              class="review-card__toggle"
+              type="button"
+              data-review-toggle
+              data-label-more="Mehr lesen"
+              data-label-less="Weniger anzeigen"
+              aria-expanded="false"
+              hidden
+            >
+              Mehr lesen
+            </button>
 
             <p class="review-card__author">
               Fam. Kortüm
@@ -787,28 +816,44 @@
               ★★★★★
             </div>
 
-            <p class="review-card__quote">
-              „Working with Andrea has been an absolute pleasure from the
-              start. She is incredibly reliable, and has a calm and
-              positive way with which she approaches whatever comes up
-              with an old house. She simply gets things done without
-              ever making it feel complicated or stressful to us.
-            </p>
+            <div class="review-card__quote-wrap" data-review-quote>
+              <p class="review-card__quote">
+                »Working with Andrea has been an absolute pleasure from
+                the start. She is incredibly reliable, and has a calm
+                and positive way with which she approaches whatever
+                comes up with an old house. She simply gets things done
+                without ever making it feel complicated or stressful to
+                us.
+              </p>
 
-            <p class="review-card__quote">
-              We know that we can rely on her completely, all matters
-              are handled properly, timely, efficiently and always with
-              a very sensible eye on costs. She is proactive, hands-on
-              and thanks to her, we feel like we can enjoy the time in
-              the house rather than having to trouble shoot things
-              ourselves whenever we return.
-            </p>
+              <p class="review-card__quote">
+                We know that we can rely on her completely, all matters
+                are handled properly, timely, efficiently and always
+                with a very sensible eye on costs. She is proactive,
+                hands-on and thanks to her, we feel like we can enjoy
+                the time in the house rather than having to trouble
+                shoot things ourselves whenever we return.
+              </p>
 
-            <p class="review-card__quote">
-              On top of all that, Andrea is simply a wonderful person to
-              be around. We are extremely happy to have her looking
-              after our property and can wholeheartedly recommend her.“
-            </p>
+              <p class="review-card__quote">
+                On top of all that, Andrea is simply a wonderful person
+                to be around. We are extremely happy to have her looking
+                after our property and can wholeheartedly recommend
+                her.«
+              </p>
+            </div>
+
+            <button
+              class="review-card__toggle"
+              type="button"
+              data-review-toggle
+              data-label-more="Mehr lesen"
+              data-label-less="Weniger anzeigen"
+              aria-expanded="false"
+              hidden
+            >
+              Mehr lesen
+            </button>
 
             <p class="review-card__author">
               Alice &amp; Pauline
@@ -995,7 +1040,7 @@
 
   <a
     class="whatsapp-float"
-    href="https://wa.me/34601927601?text=Hallo%2C%20ich%20h%C3%A4tte%20gerne%20Informationen%20zur%20Verwaltung%20meiner%20Immobilie."
+    href="https://wa.me/34601927601?text=Hello%2C%20I%27d%20like%20information%20about%20managing%20my%20property."
     target="_blank"
     rel="noopener noreferrer"
     aria-label="AE Property Management & Consult über WhatsApp kontaktieren"

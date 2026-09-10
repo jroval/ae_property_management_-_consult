@@ -1507,26 +1507,36 @@ button:focus-visible {
 /* Bienvenida — home */
 
 .home-intro {
-  padding-block: clamp(4rem, 9vw, 6.5rem);
+  padding-block: clamp(3rem, 6vw, 4.5rem);
   background-color: var(--color-background);
   border-bottom: 1px solid var(--color-border-soft);
 }
 
 .home-intro__body {
   display: grid;
+  justify-items: center;
   gap: var(--space-6);
+  max-width: 78rem;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .home-intro__lead {
+  max-width: 46ch;
   margin: 0;
   color: var(--color-text-primary);
-  font-size: var(--font-size-lg);
-  line-height: 1.6;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
 .home-intro__body p:not(.home-intro__lead) {
+  max-width: 100%;
   margin: 0;
   color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
   line-height: var(--line-height-body);
 }
 
@@ -1574,7 +1584,8 @@ button:focus-visible {
 }
 
 .review-card {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-4);
   padding: clamp(1.75rem, 3vw, 2.25rem);
   border: 1px solid var(--color-border-soft);
@@ -1588,6 +1599,49 @@ button:focus-visible {
   letter-spacing: 0.2em;
 }
 
+/*
+  Altura fija para que las 3 tarjetas midan siempre lo mismo, sea cual
+  sea la longitud de la reseña. Si el texto no cabe, se recorta con un
+  degradado y aparece el botón de "Leer más" (ver initializeReviewToggles
+  en js/main.js).
+*/
+.review-card__quote-wrap {
+  position: relative;
+  max-height: 13.25rem;
+  overflow: hidden;
+  transition: max-height 320ms ease;
+}
+
+.review-card__quote-wrap::after {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 2.75rem;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      var(--color-background-elevated)
+    );
+  content: "";
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+
+/* El degradado solo aparece si el texto realmente no cabe (ver
+   initializeReviewToggles en js/main.js, que añade esta clase). */
+.review-card__quote-wrap.has-overflow::after {
+  opacity: 1;
+}
+
+.review-card__quote-wrap.is-expanded {
+  max-height: 60rem;
+}
+
+.review-card__quote-wrap.is-expanded::after {
+  opacity: 0;
+}
+
 .review-card__quote {
   color: var(--color-text-primary);
   font-family: var(--font-heading);
@@ -1596,7 +1650,33 @@ button:focus-visible {
   line-height: 1.5;
 }
 
+.review-card__quote + .review-card__quote {
+  margin-top: var(--space-4);
+}
+
+.review-card__toggle {
+  align-self: flex-start;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-accent-hover);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.review-card__toggle:hover,
+.review-card__toggle:focus-visible {
+  color: var(--color-text-primary);
+}
+
 .review-card__author {
+  margin-top: auto;
+  padding-top: var(--space-2);
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
   letter-spacing: var(--letter-spacing-label);
@@ -1676,24 +1756,6 @@ button:focus-visible {
     transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.showroom-panel__arrow {
-  display: inline-flex;
-  width: 2.5rem;
-  height: 2.5rem;
-  align-items: center;
-  justify-content: center;
-  margin-top: var(--space-2);
-  border: 1px solid var(--color-border-strong);
-  border-radius: var(--radius-circle);
-  color: var(--color-text-primary);
-  font-size: var(--font-size-lg);
-  transition:
-    opacity 450ms ease,
-    transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color var(--transition-fast),
-    background-color var(--transition-fast);
-}
-
 .showroom-panel:hover .showroom-panel__media,
 .showroom-panel:focus-visible .showroom-panel__media {
   opacity: 1;
@@ -1701,12 +1763,6 @@ button:focus-visible {
     saturate(0.85)
     contrast(1.04)
     brightness(0.8);
-}
-
-.showroom-panel:hover .showroom-panel__arrow,
-.showroom-panel:focus-visible .showroom-panel__arrow {
-  border-color: var(--color-accent-hover);
-  background-color: var(--color-accent-soft);
 }
 
 .showroom-panel:focus-visible {
@@ -1782,16 +1838,13 @@ button:focus-visible {
     padding: clamp(2rem, 3vw, 3.5rem);
   }
 
-  .showroom-panel__text,
-  .showroom-panel__arrow {
+  .showroom-panel__text {
     opacity: 0;
     transform: translateY(0.5rem);
   }
 
   .showroom-panel:hover .showroom-panel__text,
-  .showroom-panel:focus-visible .showroom-panel__text,
-  .showroom-panel:hover .showroom-panel__arrow,
-  .showroom-panel:focus-visible .showroom-panel__arrow {
+  .showroom-panel:focus-visible .showroom-panel__text {
     opacity: 1;
     transform: translateY(0);
   }

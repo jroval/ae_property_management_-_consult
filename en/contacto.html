@@ -136,7 +136,7 @@
 
   <link
     rel="stylesheet"
-    href="../css/components.css"
+    href="../css/components.css?v=20260919"
   >
 
   <link
@@ -151,7 +151,7 @@
 
   <!-- JavaScript -->
   <script
-    src="../js/main.js"
+    src="../js/main.js?v=20260920"
     defer
   ></script>
 
@@ -511,7 +511,7 @@
               type="tel"
               autocomplete="tel"
               inputmode="tel"
-              placeholder="+34"
+              placeholder="(+00) 000 000 000"
             >
           </div>
 
@@ -536,30 +536,97 @@
           <!-- Preferred contact method -->
 
           <div class="form-field form-field--full">
-            <label for="contact-method">
+            <label id="contact-method-label" for="contact-method-trigger">
               Preferred contact method
             </label>
 
-            <select
-              id="contact-method"
-              name="preferred_contact_method"
-            >
-              <option value="">
-                Select an option
-              </option>
+            <div class="custom-select" data-custom-select>
+              <button
+                type="button"
+                class="custom-select__trigger"
+                id="contact-method-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-labelledby="contact-method-label contact-method-trigger"
+              >
+                <span class="custom-select__value" data-custom-select-value>
+                  Select an option
+                </span>
 
-              <option value="email">
-                Email
-              </option>
+                <span class="custom-select__arrow" aria-hidden="true"></span>
+              </button>
 
-              <option value="phone">
-                Phone call
-              </option>
+              <ul
+                class="custom-select__list"
+                role="listbox"
+                aria-labelledby="contact-method-label"
+                hidden
+              >
+                <li
+                  class="custom-select__option is-selected"
+                  id="contact-method-option-placeholder"
+                  role="option"
+                  aria-selected="true"
+                  data-value=""
+                >
+                  Select an option
+                </li>
 
-              <option value="whatsapp">
-                WhatsApp
-              </option>
-            </select>
+                <li
+                  class="custom-select__option"
+                  id="contact-method-option-email"
+                  role="option"
+                  aria-selected="false"
+                  data-value="email"
+                >
+                  Email
+                </li>
+
+                <li
+                  class="custom-select__option"
+                  id="contact-method-option-phone"
+                  role="option"
+                  aria-selected="false"
+                  data-value="phone"
+                >
+                  Phone call
+                </li>
+
+                <li
+                  class="custom-select__option"
+                  id="contact-method-option-whatsapp"
+                  role="option"
+                  aria-selected="false"
+                  data-value="whatsapp"
+                >
+                  WhatsApp
+                </li>
+              </ul>
+
+              <select
+                class="custom-select__native"
+                id="contact-method"
+                name="preferred_contact_method"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <option value="">
+                  Select an option
+                </option>
+
+                <option value="email">
+                  Email
+                </option>
+
+                <option value="phone">
+                  Phone call
+                </option>
+
+                <option value="whatsapp">
+                  WhatsApp
+                </option>
+              </select>
+            </div>
           </div>
 
 

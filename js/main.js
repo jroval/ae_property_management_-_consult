@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeMobileNavigation();
   initializeCarousels();
   initializeScrollReveals();
+  initializeReviewToggles();
+  initializeCustomSelects();
   initializeContactForms();
   updateCurrentYear();
 });
@@ -608,6 +610,232 @@ function initializeScrollReveals() {
       }
     });
   }, 6000);
+}
+
+
+/* ==========================================================================
+   RESEÑAS — EXPANDIR / CONTRAER
+   Todas las tarjetas mantienen el mismo tamaño; si el texto de una
+   reseña no cabe en la altura fijada por CSS, se muestra un botón para
+   desplegarla. El cálculo se hace midiendo la altura real del texto,
+   nunca contando caracteres, para que funcione con cualquier idioma o
+   longitud de reseña.
+   ========================================================================== */
+
+function initializeReviewToggles() {
+  const quoteWraps = document.querySelectorAll("[data-review-quote]");
+
+  if (quoteWraps.length === 0) {
+    return;
+  }
+
+  const pairs = [];
+
+  quoteWraps.forEach((wrap) => {
+    const toggle = wrap.nextElementSibling;
+
+    if (!toggle || !toggle.hasAttribute("data-review-toggle")) {
+      return;
+    }
+
+    pairs.push({ wrap, toggle });
+
+    toggle.addEventListener("click", () => {
+      const isExpanded = wrap.classList.toggle("is-expanded");
+
+      toggle.setAttribute("aria-expanded", String(isExpanded));
+      toggle.textContent = isExpanded
+        ? toggle.dataset.labelLess
+        : toggle.dataset.labelMore;
+    });
+  });
+
+  function refreshToggleVisibility() {
+    pairs.forEach(({ wrap, toggle }) => {
+      const isExpanded = wrap.classList.contains("is-expanded");
+      const overflows = wrap.scrollHeight > wrap.clientHeight + 2;
+
+      wrap.classList.toggle("has-overflow", overflows);
+      toggle.hidden = !overflows && !isExpanded;
+    });
+  }
+
+  refreshToggleVisibility();
+
+  let resizeTimer;
+
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(refreshToggleVisibility, 200);
+  });
+}
+
+
+/* ==========================================================================
+   SELECT PERSONALIZADO
+   Sustituye el <select> nativo (cuya lista de opciones no admite los
+   colores de la web en todos los navegadores) por un botón + listado
+   propios. El <select> original permanece oculto en el DOM y es el que
+   realmente viaja con el formulario.
+   ========================================================================== */
+
+function initializeCustomSelects() {
+  const wrappers = document.querySelectorAll("[data-custom-select]");
+
+  if (wrappers.length === 0) {
+    return;
+  }
+
+  wrappers.forEach((wrapper) => {
+    const trigger = wrapper.querySelector(".custom-select__trigger");
+    const valueLabel = wrapper.querySelector("[data-custom-select-value]");
+    const list = wrapper.querySelector(".custom-select__list");
+    const nativeSelect = wrapper.querySelector(".custom-select__native");
+    const options = Array.from(
+      list.querySelectorAll(".custom-select__option")
+    );
+
+    let activeIndex = 0;
+
+    function updateActive(index) {
+      activeIndex = index;
+
+      options.forEach((option, i) => {
+        option.classList.toggle("is-active", i === index);
+      });
+
+      trigger.setAttribute("aria-activedescendant", options[index].id);
+      options[index].scrollIntoView({ block: "nearest" });
+    }
+
+    function openList() {
+      list.hidden = false;
+      wrapper.classList.add("is-open");
+      trigger.setAttribute("aria-expanded", "true");
+
+      const selectedIndex = options.findIndex((option) =>
+        option.classList.contains("is-selected")
+      );
+
+      updateActive(selectedIndex === -1 ? 0 : selectedIndex);
+    }
+
+    function closeList() {
+      list.hidden = true;
+      wrapper.classList.remove("is-open");
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.removeAttribute("aria-activedescendant");
+    }
+
+    function selectOption(option, { silent } = { silent: false }) {
+      options.forEach((item) => {
+        item.classList.remove("is-selected");
+        item.setAttribute("aria-selected", "false");
+      });
+
+      option.classList.add("is-selected");
+      option.setAttribute("aria-selected", "true");
+
+      valueLabel.textContent = option.textContent.trim();
+      trigger.dataset.placeholder =
+        option.dataset.value === "" ? "true" : "false";
+
+      if (!silent) {
+        nativeSelect.value = option.dataset.value;
+        nativeSelect.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+    }
+
+    function syncFromNative() {
+      const match =
+        options.find((option) => option.dataset.value === nativeSelect.value) ||
+        options[0];
+
+      selectOption(match, { silent: true });
+    }
+
+    trigger.addEventListener("click", (event) => {
+      // event.detail is 0 when the click was synthesised by the browser
+      // from an Enter/Space keypress on the button (already handled by
+      // the keydown listener below) rather than a real pointer click.
+      if (event.detail === 0) {
+        return;
+      }
+
+      if (list.hidden) {
+        openList();
+      } else {
+        closeList();
+      }
+    });
+
+    trigger.addEventListener("keydown", (event) => {
+      if (list.hidden) {
+        if (["ArrowDown", "ArrowUp", "Enter", " "].includes(event.key)) {
+          event.preventDefault();
+          openList();
+        }
+
+        return;
+      }
+
+      switch (event.key) {
+        case "ArrowDown":
+          event.preventDefault();
+          updateActive(Math.min(activeIndex + 1, options.length - 1));
+          break;
+
+        case "ArrowUp":
+          event.preventDefault();
+          updateActive(Math.max(activeIndex - 1, 0));
+          break;
+
+        case "Enter":
+        case " ":
+          event.preventDefault();
+          selectOption(options[activeIndex]);
+          closeList();
+          break;
+
+        case "Escape":
+          event.preventDefault();
+          closeList();
+          break;
+
+        case "Tab":
+          closeList();
+          break;
+      }
+    });
+
+    options.forEach((option, index) => {
+      option.addEventListener("click", () => {
+        selectOption(option);
+        closeList();
+        trigger.focus();
+      });
+
+      option.addEventListener("mouseenter", () => {
+        updateActive(index);
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!list.hidden && !wrapper.contains(event.target)) {
+        closeList();
+      }
+    });
+
+    const form = wrapper.closest("form");
+
+    if (form) {
+      form.addEventListener("reset", () => {
+        window.setTimeout(syncFromNative, 0);
+      });
+    }
+
+    syncFromNative();
+  });
 }
 
 

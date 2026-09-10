@@ -141,7 +141,7 @@
 
   <link
     rel="stylesheet"
-    href="../css/styles.css?v=20260910"
+    href="../css/styles.css?v=20260918"
   >
 
   <link
@@ -151,7 +151,7 @@
 
   <!-- JavaScript -->
   <script
-    src="../js/main.js?v=20260822"
+    src="../js/main.js?v=20260920"
     defer
   ></script>
 
@@ -167,7 +167,7 @@
   ></script>
 
   <script
-    src="../js/showroom-3d.js?v=20260839"
+    src="../js/showroom-3d.js?v=20260918"
     defer
   ></script>
 </head>
@@ -553,12 +553,16 @@
       class="home-intro"
       aria-label="Presentación de AE Property Management"
     >
-      <div class="container--text home-intro__body" data-reveal>
-        <p class="home-intro__lead">
+      <div class="container--wide home-intro__body" data-reveal>
+        <span class="eyebrow">
+          Bienvenida
+        </span>
+
+        <h2 class="home-intro__lead">
           La experiencia de poseer una gran propiedad en Mallorca comienza
           con la tranquilidad de tener a alguien de total confianza
           cuidando de ella.
-        </p>
+        </h2>
 
         <p>
           A diferencia de las gestoras convencionales, limitamos el
@@ -645,7 +649,6 @@
               Supervisión, mantenimiento y gestión de incidencias.
             </span>
 
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
           </span>
         </a>
 
@@ -671,7 +674,6 @@
               Presencia local en Mallorca, con trato personal.
             </span>
 
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
           </span>
         </a>
 
@@ -697,7 +699,6 @@
               Hablemos de su propiedad.
             </span>
 
-            <span class="showroom-panel__arrow" aria-hidden="true">↗</span>
           </span>
         </a>
       </nav>
@@ -744,13 +745,27 @@
               ★★★★★
             </div>
 
-            <p class="review-card__quote">
-              “Andrea is a great person, kind, reliable, quick and well
-              organized. She is a person who sees the ‘problems’ and all
-              issues and finds solutions. She can push when possible and
-              give time if needed. We always liked to work with her and
-              can only recommend her and her team!”
-            </p>
+            <div class="review-card__quote-wrap" data-review-quote>
+              <p class="review-card__quote">
+                “Andrea is a great person, kind, reliable, quick and well
+                organized. She is a person who sees the ‘problems’ and
+                all issues and finds solutions. She can push when
+                possible and give time if needed. We always liked to
+                work with her and can only recommend her and her team!”
+              </p>
+            </div>
+
+            <button
+              class="review-card__toggle"
+              type="button"
+              data-review-toggle
+              data-label-more="Leer más"
+              data-label-less="Leer menos"
+              aria-expanded="false"
+              hidden
+            >
+              Leer más
+            </button>
 
             <p class="review-card__author">
               Ilka
@@ -766,11 +781,25 @@
               ★★★★★
             </div>
 
-            <p class="review-card__quote">
-              “Having Andrea's help was a great choice for our house
-              maintenance and a few updates we wanted to make. I'm
-              really happy to have her taking care of our property.”
-            </p>
+            <div class="review-card__quote-wrap" data-review-quote>
+              <p class="review-card__quote">
+                “Having Andrea's help was a great choice for our house
+                maintenance and a few updates we wanted to make. I'm
+                really happy to have her taking care of our property.”
+              </p>
+            </div>
+
+            <button
+              class="review-card__toggle"
+              type="button"
+              data-review-toggle
+              data-label-more="Leer más"
+              data-label-less="Leer menos"
+              aria-expanded="false"
+              hidden
+            >
+              Leer más
+            </button>
 
             <p class="review-card__author">
               Fam. Kortüm
@@ -786,28 +815,44 @@
               ★★★★★
             </div>
 
-            <p class="review-card__quote">
-              “Working with Andrea has been an absolute pleasure from the
-              start. She is incredibly reliable, and has a calm and
-              positive way with which she approaches whatever comes up
-              with an old house. She simply gets things done without
-              ever making it feel complicated or stressful to us.
-            </p>
+            <div class="review-card__quote-wrap" data-review-quote>
+              <p class="review-card__quote">
+                “Working with Andrea has been an absolute pleasure from
+                the start. She is incredibly reliable, and has a calm
+                and positive way with which she approaches whatever
+                comes up with an old house. She simply gets things done
+                without ever making it feel complicated or stressful to
+                us.
+              </p>
 
-            <p class="review-card__quote">
-              We know that we can rely on her completely, all matters
-              are handled properly, timely, efficiently and always with
-              a very sensible eye on costs. She is proactive, hands-on
-              and thanks to her, we feel like we can enjoy the time in
-              the house rather than having to trouble shoot things
-              ourselves whenever we return.
-            </p>
+              <p class="review-card__quote">
+                We know that we can rely on her completely, all matters
+                are handled properly, timely, efficiently and always
+                with a very sensible eye on costs. She is proactive,
+                hands-on and thanks to her, we feel like we can enjoy
+                the time in the house rather than having to trouble
+                shoot things ourselves whenever we return.
+              </p>
 
-            <p class="review-card__quote">
-              On top of all that, Andrea is simply a wonderful person to
-              be around. We are extremely happy to have her looking
-              after our property and can wholeheartedly recommend her.”
-            </p>
+              <p class="review-card__quote">
+                On top of all that, Andrea is simply a wonderful person
+                to be around. We are extremely happy to have her looking
+                after our property and can wholeheartedly recommend
+                her.”
+              </p>
+            </div>
+
+            <button
+              class="review-card__toggle"
+              type="button"
+              data-review-toggle
+              data-label-more="Leer más"
+              data-label-less="Leer menos"
+              aria-expanded="false"
+              hidden
+            >
+              Leer más
+            </button>
 
             <p class="review-card__author">
               Alice &amp; Pauline
@@ -994,7 +1039,7 @@
 
   <a
     class="whatsapp-float"
-    href="https://wa.me/34601927601?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20gesti%C3%B3n%20de%20mi%20propiedad."
+    href="https://wa.me/34601927601?text=Hello%2C%20I%27d%20like%20information%20about%20managing%20my%20property."
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Contactar con AE Property Management & Consult por WhatsApp"

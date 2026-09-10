@@ -136,7 +136,7 @@
 
   <link
     rel="stylesheet"
-    href="../css/components.css"
+    href="../css/components.css?v=20260919"
   >
 
   <link
@@ -151,7 +151,7 @@
 
   <!-- JavaScript -->
   <script
-    src="../js/main.js"
+    src="../js/main.js?v=20260920"
     defer
   ></script>
 
@@ -413,7 +413,7 @@
           </a>
 
           <a
-            href="https://wa.me/34601927601?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20gesti%C3%B3n%20de%20mi%20propiedad%20en%20Mallorca."
+            href="https://wa.me/34601927601?text=Hello%2C%20I%27d%20like%20information%20about%20managing%20my%20property%20in%20Mallorca."
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contactar con AE Property Management and Consult mediante WhatsApp"
@@ -510,7 +510,7 @@
               type="tel"
               autocomplete="tel"
               inputmode="tel"
-              placeholder="+34"
+              placeholder="(+00) 000 000 000"
             >
           </div>
 
@@ -535,30 +535,97 @@
           <!-- Contacto preferido -->
 
           <div class="form-field form-field--full">
-            <label for="contact-method">
+            <label id="contact-method-label" for="contact-method-trigger">
               Método de contacto preferido
             </label>
 
-            <select
-              id="contact-method"
-              name="preferred_contact_method"
-            >
-              <option value="">
-                Seleccione una opción
-              </option>
+            <div class="custom-select" data-custom-select>
+              <button
+                type="button"
+                class="custom-select__trigger"
+                id="contact-method-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-labelledby="contact-method-label contact-method-trigger"
+              >
+                <span class="custom-select__value" data-custom-select-value>
+                  Seleccione una opción
+                </span>
 
-              <option value="email">
-                Correo electrónico
-              </option>
+                <span class="custom-select__arrow" aria-hidden="true"></span>
+              </button>
 
-              <option value="phone">
-                Llamada telefónica
-              </option>
+              <ul
+                class="custom-select__list"
+                role="listbox"
+                aria-labelledby="contact-method-label"
+                hidden
+              >
+                <li
+                  class="custom-select__option is-selected"
+                  id="contact-method-option-placeholder"
+                  role="option"
+                  aria-selected="true"
+                  data-value=""
+                >
+                  Seleccione una opción
+                </li>
 
-              <option value="whatsapp">
-                WhatsApp
-              </option>
-            </select>
+                <li
+                  class="custom-select__option"
+                  id="contact-method-option-email"
+                  role="option"
+                  aria-selected="false"
+                  data-value="email"
+                >
+                  Correo electrónico
+                </li>
+
+                <li
+                  class="custom-select__option"
+                  id="contact-method-option-phone"
+                  role="option"
+                  aria-selected="false"
+                  data-value="phone"
+                >
+                  Llamada telefónica
+                </li>
+
+                <li
+                  class="custom-select__option"
+                  id="contact-method-option-whatsapp"
+                  role="option"
+                  aria-selected="false"
+                  data-value="whatsapp"
+                >
+                  WhatsApp
+                </li>
+              </ul>
+
+              <select
+                class="custom-select__native"
+                id="contact-method"
+                name="preferred_contact_method"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <option value="">
+                  Seleccione una opción
+                </option>
+
+                <option value="email">
+                  Correo electrónico
+                </option>
+
+                <option value="phone">
+                  Llamada telefónica
+                </option>
+
+                <option value="whatsapp">
+                  WhatsApp
+                </option>
+              </select>
+            </div>
           </div>
 
 
@@ -832,7 +899,7 @@
 
   <a
     class="whatsapp-float"
-    href="https://wa.me/34601927601?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20gesti%C3%B3n%20de%20mi%20propiedad%20en%20Mallorca."
+    href="https://wa.me/34601927601?text=Hello%2C%20I%27d%20like%20information%20about%20managing%20my%20property%20in%20Mallorca."
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Contactar con AE Property Management & Consult por WhatsApp"
