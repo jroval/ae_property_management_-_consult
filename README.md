@@ -155,7 +155,8 @@ Todas las variables completas están documentadas en `css/variables.css`.
 - Open Graph con imagen panorámica propia por página
 - Datos estructurados `BreadcrumbList` y `FAQPage` (JSON-LD)
 - `sitemap.xml` con anotaciones `hreflang` — **pendiente de rellenar**
-  (archivo vacío hasta tener el dominio definitivo)
+  (archivo vacío; ya hay dominio definitivo, falta generar el listado
+  de URLs)
 - Atributos `alt` descriptivos en todas las imágenes de contenido;
   `alt=""` deliberado en imágenes puramente decorativas (carrusel del
   hero)
@@ -183,9 +184,10 @@ desarrollo.
 - [x] Logo real, favicon e iconos de dispositivo aplicados
 - [x] Identidad legal y datos de contacto reales aplicados (Política de
       Privacidad, Aviso Legal, footers, WhatsApp)
-- [ ] **Dominio definitivo** — hoy todo el sitio usa `TU-DOMINIO.com`
-      como marcador (canonical, hreflang, Open Graph)
-- [ ] **`sitemap.xml`** — rellenar en cuanto haya dominio
+- [x] **Dominio definitivo** (`aeproperties.es`) aplicado en todo el
+      sitio (canonical, hreflang, Open Graph, `robots.txt`) y en el
+      `CNAME` de GitHub Pages
+- [ ] **`sitemap.xml`** — rellenar ahora que ya hay dominio definitivo
 - [ ] **Correo `info@aeproperties.com`** — el dominio del email ya está
       decidido, falta crear el buzón de verdad
 - [ ] Vincular el formulario de contacto a un proveedor de envío real
