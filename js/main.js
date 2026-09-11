@@ -841,7 +841,11 @@ function initializeCustomSelects() {
 
 /* ==========================================================================
    FORMULARIO DE CONTACTO
-   Validación provisional hasta conectar un sistema de envío.
+   Envío real vía Web3Forms (api.web3forms.com). El endpoint y el
+   mensaje de éxito/error se leen de data-submit-endpoint /
+   data-success-message / data-error-message en el <form>. El campo
+   "website" es un honeypot anti-spam invisible: si llega relleno, se
+   descarta el envío en silencio (sin avisar al bot).
    ========================================================================== */
 
 function initializeContactForms() {
@@ -853,6 +857,33 @@ function initializeContactForms() {
     const statusMessage = form.querySelector(
       "[data-form-status]"
     );
+    const submitButton = form.querySelector(
+      'button[type="submit"]'
+    );
+    const honeypot = form.querySelector(
+      '[name="website"]'
+    );
+
+    function showStatus(message, isError) {
+      if (!statusMessage || !message) {
+        return;
+      }
+
+      statusMessage.hidden = false;
+
+      statusMessage.classList.toggle(
+        "form-status--error",
+        Boolean(isError)
+      );
+
+      statusMessage.classList.toggle(
+        "form-status--success",
+        !isError
+      );
+
+      statusMessage.textContent = message;
+      statusMessage.focus();
+    }
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -862,27 +893,62 @@ function initializeContactForms() {
         return;
       }
 
-      const successMessage =
-        form.dataset.successMessage ||
-        "El formulario se ha validado correctamente. Falta conectar el sistema de envío definitivo.";
+      const successMessage = form.dataset.successMessage;
+      const errorMessage = form.dataset.errorMessage;
+      const endpoint = form.dataset.submitEndpoint;
 
-      if (statusMessage) {
-        statusMessage.hidden = false;
-
-        statusMessage.classList.remove(
-          "form-status--error"
-        );
-
-        statusMessage.classList.add(
-          "form-status--success"
-        );
-
-        statusMessage.textContent = successMessage;
-
-        statusMessage.focus();
+      // Honeypot: los bots suelen rellenar este campo oculto. Se
+      // finge un envío correcto para no darles pistas, pero no se
+      // manda nada de verdad.
+      if (honeypot && honeypot.value.trim() !== "") {
+        showStatus(successMessage, false);
+        form.reset();
+        return;
       }
 
-      form.reset();
+      if (!endpoint) {
+        showStatus(
+          successMessage ||
+            "El formulario se ha validado correctamente. Falta conectar el sistema de envío definitivo.",
+          false
+        );
+        form.reset();
+        return;
+      }
+
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
+
+      fetch(endpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json"
+        },
+        body: new FormData(form)
+      })
+        .then((response) =>
+          response
+            .json()
+            .catch(() => ({}))
+            .then((data) => ({ ok: response.ok, data }))
+        )
+        .then(({ ok, data }) => {
+          if (ok && data.success) {
+            showStatus(successMessage, false);
+            form.reset();
+          } else {
+            showStatus(errorMessage, true);
+          }
+        })
+        .catch(() => {
+          showStatus(errorMessage, true);
+        })
+        .finally(() => {
+          if (submitButton) {
+            submitButton.disabled = false;
+          }
+        });
     });
   });
 }

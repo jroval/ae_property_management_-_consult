@@ -157,7 +157,7 @@
 
   <link
     rel="stylesheet"
-    href="../css/styles.css?v=20260921"
+    href="../css/styles.css?v=20260922"
   >
 
   <link
@@ -167,7 +167,7 @@
 
   <!-- JavaScript -->
   <script
-    src="../js/main.js?v=20260920"
+    src="../js/main.js?v=20260923"
     defer
   ></script>
 
@@ -419,21 +419,33 @@
            FORM
            ============================================================ -->
 
-      <!--
-        The form keeps main.js's provisional behaviour.
-
-        PENDING:
-        connect the form to the final email or submission service.
-      -->
-
       <form
         class="contact-premium__form"
-        action="#"
+        action="https://api.web3forms.com/submit"
         method="post"
         data-contact-form
-        data-success-message="The form has been validated successfully. Connection to the final submission system is still pending."
+        data-submit-endpoint="https://api.web3forms.com/submit"
+        data-success-message="Your enquiry has been sent successfully. We'll get back to you as soon as possible."
+        data-error-message="Your enquiry could not be sent. Please try again or email us at info@aeproperties.es."
         data-reveal
       >
+        <input
+          type="hidden"
+          name="access_key"
+          value="dd5f31b4-520b-4074-bca1-9e2f39ff63dc"
+        >
+
+        <input
+          type="hidden"
+          name="subject"
+          value="New enquiry from the website — AE Property Management"
+        >
+
+        <input
+          type="hidden"
+          name="from_name"
+          value="Contact form — aeproperties.es"
+        >
 
         <header class="contact-premium__form-header">
           <span class="eyebrow">

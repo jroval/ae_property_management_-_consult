@@ -157,7 +157,7 @@
 
   <link
     rel="stylesheet"
-    href="../css/styles.css?v=20260921"
+    href="../css/styles.css?v=20260922"
   >
 
   <link
@@ -167,7 +167,7 @@
 
   <!-- JavaScript -->
   <script
-    src="../js/main.js?v=20260920"
+    src="../js/main.js?v=20260923"
     defer
   ></script>
 
@@ -419,21 +419,33 @@
            FORMULARIO
            ============================================================ -->
 
-      <!--
-        El formulario conserva el funcionamiento provisional de main.js.
-
-        PENDIENTE:
-        conectar el formulario con el correo o servicio de envío definitivo.
-      -->
-
       <form
         class="contact-premium__form"
-        action="#"
+        action="https://api.web3forms.com/submit"
         method="post"
         data-contact-form
-        data-success-message="El formulario se ha validado correctamente. La conexión con el sistema de envío está pendiente de configuración."
+        data-submit-endpoint="https://api.web3forms.com/submit"
+        data-success-message="Su consulta se ha enviado correctamente. Nos pondremos en contacto con usted lo antes posible."
+        data-error-message="No se ha podido enviar la consulta. Inténtelo de nuevo o escríbanos a info@aeproperties.es."
         data-reveal
       >
+        <input
+          type="hidden"
+          name="access_key"
+          value="dd5f31b4-520b-4074-bca1-9e2f39ff63dc"
+        >
+
+        <input
+          type="hidden"
+          name="subject"
+          value="Nueva consulta desde la web — AE Property Management"
+        >
+
+        <input
+          type="hidden"
+          name="from_name"
+          value="Formulario de contacto — aeproperties.es"
+        >
 
         <header class="contact-premium__form-header">
           <span class="eyebrow">

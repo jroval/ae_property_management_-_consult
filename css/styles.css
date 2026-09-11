@@ -76,20 +76,16 @@ button:focus-visible {
   transition:
     background-color var(--transition-base),
     border-color var(--transition-base),
-    box-shadow var(--transition-base),
-    backdrop-filter var(--transition-base);
+    box-shadow var(--transition-base);
 }
 
 .site-header.is-scrolled,
 .site-header--solid {
   border-color: var(--color-border-soft);
 
-  background-color: rgba(11, 12, 11, 0.9);
+  background-color: rgba(11, 12, 11, 0.96);
 
   box-shadow: var(--shadow-header);
-
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
 }
 
 .site-header__inner {
