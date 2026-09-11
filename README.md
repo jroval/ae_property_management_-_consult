@@ -201,8 +201,9 @@ desarrollo.
 - [x] Reseñas reales de clientes en la home (Ilka, Fam. Kortüm, Alice
       & Pauline — sustituyeron a las tarjetas de ejemplo)
 - [x] Google Fonts cargadas de verdad (Cormorant Garamond + Manrope)
-- [ ] **Correo `info@aeproperties.com`** — el dominio del email ya está
-      decidido, falta crear el buzón de verdad
+- [ ] **Correo `info@aeproperties.es`** — dirección definitiva ya
+      aplicada en toda la web; falta confirmar que el buzón esté
+      creado y operativo
 - [ ] Vincular el formulario de contacto a un proveedor de envío real
       (Netlify Forms, Formspree o similar) — hoy no envía a ningún sitio
 - [ ] Ficha de Google Business Profile + Google Analytics

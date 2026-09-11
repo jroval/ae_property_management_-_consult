@@ -2842,42 +2842,6 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
-.contact-premium__direct {
-  display: grid;
-  gap: var(--space-3);
-  width: min(100%, 34rem);
-  padding-top: var(--space-6);
-  border-top: 1px solid var(--color-border-soft);
-}
-
-.contact-premium__direct > span {
-  margin-bottom: var(--space-2);
-  color: var(--color-text-muted);
-  font-size: var(--font-size-2xs);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-wider);
-  text-transform: uppercase;
-}
-
-.contact-premium__direct a {
-  width: max-content;
-  max-width: 100%;
-  color: var(--color-text-secondary);
-  font-family: var(--font-heading);
-  font-size: clamp(1.45rem, 5vw, 2rem);
-  line-height: 1.25;
-  overflow-wrap: anywhere;
-  transition:
-    color var(--transition-base),
-    transform var(--transition-base);
-}
-
-.contact-premium__direct a:hover,
-.contact-premium__direct a:focus-visible {
-  color: var(--color-accent-hover);
-  transform: translateX(0.25rem);
-}
-
 .contact-premium__form {
   align-self: start;
   padding: clamp(1.5rem, 5vw, 3rem);
