@@ -107,7 +107,7 @@ function runShowroomScene(stage, fallback, section) {
       title: fallbackTitle("nosotros.html", "Nuestra historia"),
       subtitle: "Conoce nuestra trayectoria y valores.",
       href: "nosotros.html",
-      src: "../assets/images/about/about-hero.webp",
+      src: "../assets/images/about/andrea-foot.webp",
       slotX: 0,
       restY: 0,
       restZ: 0.1,
