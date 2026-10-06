@@ -294,7 +294,7 @@ button:focus-visible {
 
   border-radius: var(--radius-circle);
 
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-light);
 
   content: "";
 }
@@ -578,7 +578,7 @@ button:focus-visible {
 .hero-carousel__indicator:hover::before,
 .hero-carousel__indicator.is-active::before,
 .hero-carousel__indicator[aria-current="true"]::before {
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-light);
 
   transform:
     translateY(-50%)
@@ -616,7 +616,7 @@ button:focus-visible {
 }
 
 .trust-strip__number {
-  color: var(--color-accent);
+  color: var(--color-accent-light);
 
   font-family: var(--font-heading);
   font-size: var(--font-size-xl);
@@ -682,7 +682,7 @@ button:focus-visible {
     linear-gradient(
       135deg,
       transparent 55%,
-      rgba(110, 122, 78, 0.22)
+      rgba(76, 169, 134, 0.22)
     );
 
   pointer-events: none;
@@ -797,7 +797,7 @@ button:focus-visible {
   max-width: 100%;
   margin-bottom: var(--space-3);
 
-  color: var(--color-accent-hover);
+  color: var(--color-accent-light);
 
   font-family: var(--font-heading);
   font-size: clamp(2rem, 2.7vw, 2.5rem);
@@ -855,7 +855,7 @@ button:focus-visible {
 .zone-panel__map svg {
   width: min(70%, 22rem);
 
-  color: var(--color-accent);
+  color: var(--color-accent-light);
 
   opacity: 0.82;
 }
@@ -891,7 +891,7 @@ button:focus-visible {
 
   border-radius: var(--radius-circle);
 
-  background-color: rgba(110, 122, 78, 0.12);
+  background-color: rgba(76, 169, 134, 0.12);
 
   filter: blur(30px);
 
@@ -969,7 +969,7 @@ button:focus-visible {
   background:
     radial-gradient(
       circle at 85% 30%,
-      rgba(110, 122, 78, 0.12),
+      rgba(76, 169, 134, 0.12),
       transparent 25%
     ),
     linear-gradient(
@@ -1028,7 +1028,7 @@ button:focus-visible {
 }
 
 .service-detail__number {
-  color: var(--color-accent);
+  color: var(--color-accent-light);
 
   font-family: var(--font-heading);
   font-size: var(--font-size-3xl);
@@ -1065,7 +1065,7 @@ button:focus-visible {
 }
 
 .service-detail li::marker {
-  color: var(--color-accent);
+  color: var(--color-accent-light);
 }
 
 
@@ -1161,7 +1161,7 @@ button:focus-visible {
 }
 
 .contact-list a:hover {
-  color: var(--color-accent-hover);
+  color: var(--color-accent-light);
 }
 
 
@@ -1452,7 +1452,7 @@ button:focus-visible {
   position: absolute;
   inset: 0 auto 0 0;
   width: var(--carousel-progress);
-  background-color: var(--color-accent-hover);
+  background-color: var(--color-accent-light);
   transition: width 900ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -1483,7 +1483,7 @@ button:focus-visible {
 .home-hero__scroll span::after {
   position: absolute;
   inset: 0;
-  background-color: var(--color-accent-hover);
+  background-color: var(--color-accent-light);
   content: "";
   transform: translateX(-100%);
   animation: home-scroll-line 2.4s ease-in-out infinite;
@@ -1568,7 +1568,7 @@ button:focus-visible {
 
 .home-reviews__notice {
   margin-top: var(--space-4);
-  color: var(--color-accent-hover);
+  color: var(--color-accent-light);
   font-size: var(--font-size-sm);
   font-style: italic;
 }
@@ -1590,7 +1590,7 @@ button:focus-visible {
 }
 
 .review-card__rating {
-  color: var(--color-accent-hover);
+  color: var(--color-accent-light);
   font-size: var(--font-size-md);
   letter-spacing: 0.2em;
 }
@@ -1656,7 +1656,7 @@ button:focus-visible {
   padding: 0;
   border: none;
   background: none;
-  color: var(--color-accent-hover);
+  color: var(--color-accent-light);
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
@@ -1895,7 +1895,7 @@ button:focus-visible {
   clip: auto !important;
   white-space: normal !important;
   border-radius: var(--radius-sm);
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-light);
   outline: none;
   box-shadow: var(--focus-ring);
 }
@@ -2157,7 +2157,7 @@ button:focus-visible {
   width: 0.35rem;
   height: 0.35rem;
   border-radius: 50%;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-light);
   content: "";
 }
 
@@ -2253,7 +2253,7 @@ button:focus-visible {
 .faq-item__number {
   align-self: start;
   padding-top: 0.25rem;
-  color: var(--color-accent);
+  color: var(--color-accent-light);
   font-size: var(--font-size-2xs);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wider);
@@ -2500,14 +2500,14 @@ button:focus-visible {
   margin: clamp(0.75rem, 2vw, 1.5rem) 0 0;
   padding-top: var(--space-5);
   border-top: 1px solid var(--color-border-soft);
-  color: var(--color-accent-hover);
+  color: var(--color-accent-light);
   font-family: var(--font-heading);
   font-size: var(--font-size-lg);
   font-style: italic;
 }
 
 .about-story__frame {
-  --story-mark: var(--color-accent-hover);
+  --story-mark: var(--color-accent-light);
   --story-mark-len: clamp(1rem, 1.8vw, 1.5rem);
   --story-mark-gap: clamp(0.5rem, 1vw, 0.75rem);
   aspect-ratio: 3 / 4;
@@ -2632,7 +2632,7 @@ button:focus-visible {
 }
 
 .about-principles__media {
-  --story-mark: var(--color-accent-hover);
+  --story-mark: var(--color-accent-light);
   --story-mark-len: clamp(1rem, 1.8vw, 1.5rem);
   --story-mark-gap: clamp(0.5rem, 1vw, 0.75rem);
   width: min(100%, 32rem);
@@ -2728,7 +2728,7 @@ button:focus-visible {
 }
 
 .about-value:hover h3 {
-  color: var(--color-accent-hover);
+  color: var(--color-accent-light);
   transform: translateX(0.3rem);
 }
 
@@ -2840,7 +2840,7 @@ button:focus-visible {
   background:
     linear-gradient(
       to bottom,
-      var(--color-accent),
+      var(--color-accent-light),
       transparent
     );
   content: "";
@@ -2998,7 +2998,7 @@ button:focus-visible {
 .contact-premium__form .form-field input:focus,
 .contact-premium__form .form-field select:focus,
 .contact-premium__form .form-field textarea:focus {
-  border-color: var(--color-accent-hover);
+  border-color: var(--color-accent-light);
   box-shadow: none;
 }
 
@@ -3024,7 +3024,7 @@ button:focus-visible {
 }
 
 .contact-premium__privacy a {
-  color: var(--color-accent-hover);
+  color: var(--color-accent-light);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
@@ -3048,7 +3048,7 @@ button:focus-visible {
   flex: 0 0 auto;
   margin-top: 0.45rem;
   border-radius: 50%;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-light);
   content: "";
 }
 

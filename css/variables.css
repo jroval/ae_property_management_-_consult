@@ -43,17 +43,20 @@
   --color-text-disabled: #696862;
 
   /*
-   * Verde oliva ahumado.
+   * Verde de marca #004225.
    *
-   * Acento definitivo de marca, cálido y editorial.
+   * Es muy oscuro: se usa para rellenos (botones, WhatsApp). Para textos,
+   * líneas y detalles sobre fondo oscuro se usa --color-accent-light, un
+   * tono más claro del mismo verde.
    */
 
-  --color-accent: #6e7a4e;
-  --color-accent-hover: #8b9768;
-  --color-accent-strong: #4f5837;
-  --color-accent-strong-hover: #5c6640;
-  --color-accent-soft: rgba(110, 122, 78, 0.14);
-  --color-accent-border: rgba(110, 122, 78, 0.45);
+  --color-accent: #004225;
+  --color-accent-hover: #00573a;
+  --color-accent-light: #4ca986;
+  --color-accent-strong: #00331c;
+  --color-accent-strong-hover: #004a29;
+  --color-accent-soft: rgba(76, 169, 134, 0.14);
+  --color-accent-border: rgba(76, 169, 134, 0.45);
 
   /*
    * Colores de estado.
@@ -125,7 +128,7 @@
     ),
     radial-gradient(
       circle at 82% 14%,
-      rgba(110, 122, 78, 0.035) 0,
+      rgba(76, 169, 134, 0.035) 0,
       transparent 22%
     ),
     radial-gradient(
@@ -147,7 +150,7 @@
       142deg,
       transparent 0%,
       transparent 46%,
-      rgba(110, 122, 78, 0.018) 46.4%,
+      rgba(76, 169, 134, 0.018) 46.4%,
       transparent 47%,
       transparent 100%
     );
@@ -164,7 +167,7 @@
     ),
     radial-gradient(
       ellipse at 78% 18%,
-      rgba(110, 122, 78, 0.045) 0,
+      rgba(76, 169, 134, 0.045) 0,
       transparent 22%
     ),
     radial-gradient(
@@ -186,7 +189,7 @@
       152deg,
       transparent 0%,
       transparent 48%,
-      rgba(110, 122, 78, 0.025) 48.4%,
+      rgba(76, 169, 134, 0.025) 48.4%,
       transparent 49%
     );
 
@@ -330,7 +333,7 @@
     0 1.875rem 5rem rgba(0, 0, 0, 0.38);
 
   --shadow-accent:
-    0 0.75rem 2.5rem rgba(110, 122, 78, 0.22);
+    0 0.75rem 2.5rem rgba(76, 169, 134, 0.22);
 
   --shadow-header:
     0 0.5rem 2rem rgba(0, 0, 0, 0.2);

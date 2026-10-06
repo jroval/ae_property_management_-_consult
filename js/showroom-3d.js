@@ -88,7 +88,7 @@ function runShowroomScene(stage, fallback, section) {
     return link ? link.textContent.trim() : defaultTitle;
   }
 
-  const OLIVE = 0x6e7a4e;
+  const OLIVE = 0x4ca986;
 
   const PANEL_DATA = [
     {
