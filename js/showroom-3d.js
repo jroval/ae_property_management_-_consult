@@ -88,7 +88,7 @@ function runShowroomScene(stage, fallback, section) {
     return link ? link.textContent.trim() : defaultTitle;
   }
 
-  const OLIVE = 0x4ca986;
+  const OLIVE = 0xd4c3b3;
 
   const PANEL_DATA = [
     {
@@ -286,7 +286,7 @@ function runShowroomScene(stage, fallback, section) {
      (--color-text-secondary). Nada de dorado ni tipografías ajenas a
      la web — el acento en verde oliva se reserva para el hover, en
      un paso posterior. */
-  const TEXT_PRIMARY = "#f5f2ec";
+  const TEXT_PRIMARY = "#f6f4ee";
   const TEXT_SECONDARY = "rgba(185, 182, 175, 0.9)";
   const SANS_STACK = "'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
   const SERIF_STACK = "Georgia, 'Times New Roman', serif";
@@ -380,7 +380,7 @@ function runShowroomScene(stage, fallback, section) {
      ------------------------------------------------------------------------ */
 
   const SCENE_BACKDROP_SRC = ""; // p.ej. "../assets/images/showroom/backdrop.webp"
-  const SCENE_BG_COLOR = 0x0c0d0c;
+  const SCENE_BG_COLOR = 0x111815;
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(SCENE_BG_COLOR);
@@ -548,7 +548,7 @@ function runShowroomScene(stage, fallback, section) {
 
     /* Brillo verde oliva de marca: apagado en reposo, se enciende por
        debajo del panel al pasar el ratón por encima. */
-    const oliveGlow = new THREE.PointLight(0x9caf72, 0, 4, 1.4);
+    const oliveGlow = new THREE.PointLight(0xd4c3b3, 0, 4, 1.4);
     oliveGlow.position.set(item.slotX, 0.05, item.restZ + 0.55);
     scene.add(oliveGlow);
 
@@ -572,7 +572,7 @@ function runShowroomScene(stage, fallback, section) {
     const neonBar = new THREE.Mesh(
       new THREE.PlaneGeometry(PANEL_W * 0.92, 0.03),
       new THREE.MeshBasicMaterial({
-        color: 0xc8f5a0,
+        color: 0xd4c3b3,
         transparent: true,
         opacity: 0,
         depthWrite: false,

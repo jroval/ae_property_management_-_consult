@@ -17,46 +17,56 @@
      ======================================================================== */
 
   /*
-   * Negro mineral principal.
-   * Se evita el negro absoluto para conservar profundidad y matices.
+   * Paleta definitiva de marca.
+   *
+   *   #111815  negro verdoso (fondo general)
+   *   #0B2B1B  verde profundo (solo botones)
+   *   #004225  verde de marca (botones y rellenos)
+   *   #D4C3B3  beige (detalles, líneas y texto secundario)
+   *   #C5924E  dorado (menú superior y letras de botones)
+   *   #F6F4EE  marfil (texto principal)
    */
-  --color-background: #101110;
-  --color-background-soft: #161715;
-  --color-background-elevated: #1c1d1b;
-  --color-background-strong: #0b0c0b;
+  --color-ink: #111815;
+  --color-green-deep: #0b2b1b;
+  --color-green: #004225;
+  --color-beige: #d4c3b3;
+  --color-gold: #c5924e;
+  --color-ivory: #f6f4ee;
+
+  --color-background: #111815;
+  --color-background-soft: #111815;
+  --color-background-elevated: #18221d;
+  --color-background-strong: #111815;
 
   /*
    * Superficies utilizadas en tarjetas, formularios,
    * navegación móvil y elementos elevados.
    */
-  --color-surface: #171816;
-  --color-surface-hover: #20211f;
-  --color-surface-active: #262724;
+  --color-surface: #151e1a;
+  --color-surface-hover: #1a2520;
+  --color-surface-active: #202d27;
 
   /*
-   * Blancos y grises ligeramente cálidos.
+   * Texto: marfil de la paleta y beiges derivados.
    */
   --color-white: #ffffff;
-  --color-text-primary: #f5f2ec;
-  --color-text-secondary: #b9b6af;
-  --color-text-muted: #8e8c86;
-  --color-text-disabled: #696862;
+  --color-text-primary: #f6f4ee;
+  --color-text-secondary: #d4c3b3;
+  --color-text-muted: #aa9e91;
+  --color-text-disabled: #7a7168;
 
   /*
-   * Verde de marca #004225.
-   *
-   * Es muy oscuro: se usa para rellenos (botones, WhatsApp). Para textos,
-   * líneas y detalles sobre fondo oscuro se usa --color-accent-light, un
-   * tono más claro del mismo verde.
+   * Verde de marca #004225 para rellenos (botones, WhatsApp).
+   * Los detalles finos sobre fondo oscuro (etiquetas, líneas, esquinas
+   * de las fotos) usan el beige de la paleta.
    */
-
   --color-accent: #004225;
   --color-accent-hover: #00573a;
-  --color-accent-light: #4ca986;
+  --color-accent-light: #d4c3b3;
   --color-accent-strong: #00331c;
   --color-accent-strong-hover: #004a29;
-  --color-accent-soft: rgba(76, 169, 134, 0.14);
-  --color-accent-border: rgba(76, 169, 134, 0.45);
+  --color-accent-soft: rgba(212, 195, 179, 0.12);
+  --color-accent-border: rgba(212, 195, 179, 0.4);
 
   /*
    * Colores de estado.
@@ -71,10 +81,10 @@
      BORDES Y DIVISORES
      ======================================================================== */
 
-  --color-border: rgba(245, 242, 236, 0.12);
-  --color-border-soft: rgba(245, 242, 236, 0.07);
-  --color-border-strong: rgba(245, 242, 236, 0.25);
-  --color-divider: rgba(245, 242, 236, 0.08);
+  --color-border: rgba(246, 244, 238, 0.12);
+  --color-border-soft: rgba(246, 244, 238, 0.07);
+  --color-border-strong: rgba(246, 244, 238, 0.25);
+  --color-divider: rgba(246, 244, 238, 0.08);
 
   /* ========================================================================
      SUPERPOSICIONES
@@ -82,8 +92,8 @@
 
   --overlay-light: rgba(255, 255, 255, 0.04);
   --overlay-medium: rgba(255, 255, 255, 0.08);
-  --overlay-dark: rgba(5, 6, 5, 0.58);
-  --overlay-dark-strong: rgba(5, 6, 5, 0.78);
+  --overlay-dark: rgba(17, 24, 21, 0.58);
+  --overlay-dark-strong: rgba(17, 24, 21, 0.78);
 
   /*
    * Degradado que protegerá la legibilidad de los textos
@@ -92,18 +102,18 @@
   --overlay-hero:
     linear-gradient(
       90deg,
-      rgba(7, 8, 7, 0.92) 0%,
-      rgba(7, 8, 7, 0.76) 40%,
-      rgba(7, 8, 7, 0.34) 72%,
-      rgba(7, 8, 7, 0.2) 100%
+      rgba(17, 24, 21, 0.92) 0%,
+      rgba(17, 24, 21, 0.76) 40%,
+      rgba(17, 24, 21, 0.34) 72%,
+      rgba(17, 24, 21, 0.2) 100%
     );
 
   --overlay-hero-mobile:
     linear-gradient(
       180deg,
-      rgba(7, 8, 7, 0.72) 0%,
-      rgba(7, 8, 7, 0.42) 35%,
-      rgba(7, 8, 7, 0.9) 100%
+      rgba(17, 24, 21, 0.72) 0%,
+      rgba(17, 24, 21, 0.42) 35%,
+      rgba(17, 24, 21, 0.9) 100%
     );
 
   /* ========================================================================
@@ -128,7 +138,7 @@
     ),
     radial-gradient(
       circle at 82% 14%,
-      rgba(76, 169, 134, 0.035) 0,
+      rgba(212, 195, 179, 0.035) 0,
       transparent 22%
     ),
     radial-gradient(
@@ -150,7 +160,7 @@
       142deg,
       transparent 0%,
       transparent 46%,
-      rgba(76, 169, 134, 0.018) 46.4%,
+      rgba(212, 195, 179, 0.018) 46.4%,
       transparent 47%,
       transparent 100%
     );
@@ -167,7 +177,7 @@
     ),
     radial-gradient(
       ellipse at 78% 18%,
-      rgba(76, 169, 134, 0.045) 0,
+      rgba(212, 195, 179, 0.045) 0,
       transparent 22%
     ),
     radial-gradient(
@@ -189,7 +199,7 @@
       152deg,
       transparent 0%,
       transparent 48%,
-      rgba(76, 169, 134, 0.025) 48.4%,
+      rgba(212, 195, 179, 0.025) 48.4%,
       transparent 49%
     );
 
@@ -333,7 +343,7 @@
     0 1.875rem 5rem rgba(0, 0, 0, 0.38);
 
   --shadow-accent:
-    0 0.75rem 2.5rem rgba(76, 169, 134, 0.22);
+    0 0.75rem 2.5rem rgba(0, 0, 0, 0.35);
 
   --shadow-header:
     0 0.5rem 2rem rgba(0, 0, 0, 0.2);

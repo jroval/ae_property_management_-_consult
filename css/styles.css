@@ -83,7 +83,7 @@ button:focus-visible {
 .site-header--solid {
   border-color: var(--color-border-soft);
 
-  background-color: rgba(11, 12, 11, 0.96);
+  background-color: rgba(17, 24, 21, 0.96);
 
   box-shadow: var(--shadow-header);
 }
@@ -247,7 +247,7 @@ button:focus-visible {
 
   border-top: 1px solid var(--color-border-soft);
 
-  background-color: rgba(11, 12, 11, 0.98);
+  background-color: rgba(17, 24, 21, 0.98);
   background-image: var(--background-quartz-emphasis);
 
   transform: translateX(100%);
@@ -273,7 +273,7 @@ button:focus-visible {
 
   border-bottom: 1px solid var(--color-divider);
 
-  color: var(--color-text-secondary);
+  color: var(--color-gold);
 
   font-family: var(--font-heading);
   font-size: 1.75rem;
@@ -294,7 +294,7 @@ button:focus-visible {
 
   border-radius: var(--radius-circle);
 
-  background-color: var(--color-accent-light);
+  background-color: var(--color-gold);
 
   content: "";
 }
@@ -564,7 +564,7 @@ button:focus-visible {
   width: 100%;
   height: 2px;
 
-  background-color: rgba(245, 242, 236, 0.32);
+  background-color: rgba(246, 244, 238, 0.32);
 
   content: "";
 
@@ -682,7 +682,7 @@ button:focus-visible {
     linear-gradient(
       135deg,
       transparent 55%,
-      rgba(76, 169, 134, 0.22)
+      rgba(212, 195, 179, 0.22)
     );
 
   pointer-events: none;
@@ -891,7 +891,7 @@ button:focus-visible {
 
   border-radius: var(--radius-circle);
 
-  background-color: rgba(76, 169, 134, 0.12);
+  background-color: rgba(212, 195, 179, 0.12);
 
   filter: blur(30px);
 
@@ -969,13 +969,13 @@ button:focus-visible {
   background:
     radial-gradient(
       circle at 85% 30%,
-      rgba(76, 169, 134, 0.12),
+      rgba(212, 195, 179, 0.12),
       transparent 25%
     ),
     linear-gradient(
       90deg,
-      rgba(7, 8, 7, 0.2),
-      rgba(7, 8, 7, 0.72)
+      rgba(17, 24, 21, 0.2),
+      rgba(17, 24, 21, 0.72)
     );
 
   content: "";
@@ -1268,7 +1268,7 @@ button:focus-visible {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  background-color: rgba(16, 17, 16, 0.88);
+  background-color: rgba(17, 24, 21, 0.88);
 
   box-shadow: var(--shadow-lg);
 
@@ -1348,16 +1348,16 @@ button:focus-visible {
   background:
     linear-gradient(
       90deg,
-      rgba(7, 8, 7, 0.92) 0%,
-      rgba(7, 8, 7, 0.67) 42%,
-      rgba(7, 8, 7, 0.16) 76%,
-      rgba(7, 8, 7, 0.32) 100%
+      rgba(17, 24, 21, 0.92) 0%,
+      rgba(17, 24, 21, 0.67) 42%,
+      rgba(17, 24, 21, 0.16) 76%,
+      rgba(17, 24, 21, 0.32) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(7, 8, 7, 0.2) 0%,
-      rgba(7, 8, 7, 0.08) 52%,
-      rgba(7, 8, 7, 0.76) 100%
+      rgba(17, 24, 21, 0.2) 0%,
+      rgba(17, 24, 21, 0.08) 52%,
+      rgba(17, 24, 21, 0.76) 100%
     );
 }
 
@@ -1406,7 +1406,7 @@ button:focus-visible {
 
 .page-home .home-hero .hero-carousel__text {
   max-width: 34rem;
-  color: rgba(245, 242, 236, 0.82);
+  color: rgba(246, 244, 238, 0.82);
   font-size: clamp(0.95rem, 1.4vw, 1.15rem);
 }
 
@@ -1445,7 +1445,7 @@ button:focus-visible {
   width: clamp(5rem, 12vw, 10rem);
   height: 1px;
   overflow: hidden;
-  background-color: rgba(245, 242, 236, 0.25);
+  background-color: rgba(246, 244, 238, 0.25);
 }
 
 .home-hero__progress span {
@@ -1464,7 +1464,7 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: var(--space-4);
-  color: rgba(245, 242, 236, 0.72);
+  color: rgba(246, 244, 238, 0.72);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--letter-spacing-label);
@@ -1477,7 +1477,7 @@ button:focus-visible {
   width: 3.25rem;
   height: 1px;
   overflow: hidden;
-  background-color: rgba(245, 242, 236, 0.38);
+  background-color: rgba(246, 244, 238, 0.38);
 }
 
 .home-hero__scroll span::after {
@@ -1721,7 +1721,7 @@ button:focus-visible {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(7, 8, 7, 0.08) 35%, rgba(7, 8, 7, 0.84) 100%);
+    linear-gradient(180deg, rgba(17, 24, 21, 0.08) 35%, rgba(17, 24, 21, 0.84) 100%);
   pointer-events: none;
 }
 
@@ -1745,7 +1745,7 @@ button:focus-visible {
 
 .showroom-panel__text {
   max-width: 26rem;
-  color: rgba(245, 242, 236, 0.82);
+  color: rgba(246, 244, 238, 0.82);
   font-size: var(--font-size-sm);
   transition:
     opacity 450ms ease,
@@ -2044,7 +2044,7 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, transparent 58%, rgba(7, 8, 7, 0.32) 100%),
+    linear-gradient(180deg, transparent 58%, rgba(17, 24, 21, 0.32) 100%),
     var(--background-quartz-emphasis);
   content: "";
   opacity: 0.24;
@@ -2068,7 +2068,7 @@ button:focus-visible {
   right: var(--space-5);
   bottom: var(--space-4);
   z-index: 2;
-  color: rgba(245, 242, 236, 0.7);
+  color: rgba(246, 244, 238, 0.7);
   font-size: var(--font-size-2xs);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-label);
@@ -2435,14 +2435,14 @@ button:focus-visible {
   background:
     linear-gradient(
       90deg,
-      rgba(6, 7, 6, 0.72) 0%,
-      rgba(6, 7, 6, 0.46) 42%,
-      rgba(6, 7, 6, 0) 78%
+      rgba(17, 24, 21, 0.72) 0%,
+      rgba(17, 24, 21, 0.46) 42%,
+      rgba(17, 24, 21, 0) 78%
     ),
     linear-gradient(
       to top,
-      rgba(11, 12, 11, 0.78) 0%,
-      rgba(11, 12, 11, 0) 20%
+      rgba(17, 24, 21, 0.78) 0%,
+      rgba(17, 24, 21, 0) 20%
     );
   content: "";
 }
@@ -2507,7 +2507,7 @@ button:focus-visible {
 }
 
 .about-story__frame {
-  --story-mark: var(--color-accent-light);
+  --story-mark: var(--color-gold);
   --story-mark-len: clamp(1rem, 1.8vw, 1.5rem);
   --story-mark-gap: clamp(0.5rem, 1vw, 0.75rem);
   aspect-ratio: 3 / 4;
@@ -2543,7 +2543,7 @@ button:focus-visible {
 
 .about-story__frame::after {
   inset: 0;
-  box-shadow: inset 0 0 0 1px rgba(245, 242, 236, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(246, 244, 238, 0.14);
 }
 
 .about-story__frame--1 {
@@ -2578,7 +2578,7 @@ button:focus-visible {
   position: absolute;
   top: 0;
   right: 0;
-  color: rgba(245, 242, 236, 0.018);
+  color: rgba(246, 244, 238, 0.018);
   font-family: var(--font-heading);
   font-size: clamp(9rem, 28vw, 28rem);
   letter-spacing: -0.08em;
@@ -2632,7 +2632,7 @@ button:focus-visible {
 }
 
 .about-principles__media {
-  --story-mark: var(--color-accent-light);
+  --story-mark: var(--color-gold);
   --story-mark-len: clamp(1rem, 1.8vw, 1.5rem);
   --story-mark-gap: clamp(0.5rem, 1vw, 0.75rem);
   width: min(100%, 32rem);
@@ -2668,7 +2668,7 @@ button:focus-visible {
   background:
     linear-gradient(
       to top,
-      rgba(5, 6, 5, 0.6),
+      rgba(17, 24, 21, 0.6),
       transparent 48%
     );
   content: "";
@@ -2680,7 +2680,7 @@ button:focus-visible {
   right: var(--space-5);
   bottom: var(--space-5);
   z-index: 1;
-  color: rgba(245, 242, 236, 0.86);
+  color: rgba(246, 244, 238, 0.86);
   font-size: var(--font-size-2xs);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wider);
@@ -2760,13 +2760,13 @@ button:focus-visible {
   background:
     linear-gradient(
       90deg,
-      rgba(6, 7, 6, 0.9) 0%,
-      rgba(6, 7, 6, 0.68) 46%,
-      rgba(6, 7, 6, 0.2) 100%
+      rgba(17, 24, 21, 0.9) 0%,
+      rgba(17, 24, 21, 0.68) 46%,
+      rgba(17, 24, 21, 0.2) 100%
     ),
     linear-gradient(
       to top,
-      rgba(6, 7, 6, 0.72),
+      rgba(17, 24, 21, 0.72),
       transparent 62%
     );
 }
@@ -2796,7 +2796,7 @@ button:focus-visible {
 
 .about-contact__content h2 span {
   display: block;
-  color: rgba(245, 242, 236, 0.78);
+  color: rgba(246, 244, 238, 0.78);
   font-style: italic;
 }
 
