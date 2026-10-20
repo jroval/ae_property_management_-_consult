@@ -19,8 +19,32 @@
 
 "use strict";
 
+/* Three.js y GSAP se cargan solo donde la escena se usa (dispositivos con
+   hover). En táctil no se descargan: allí se muestran las tarjetas. */
+const SHOWROOM_LIBS = [
+  "https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js",
+  "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js",
+];
+
+function loadScript(src) {
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = resolve;
+    script.onerror = resolve; // si falla, initShowroom3D() muestra el fallback
+    document.head.appendChild(script);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  initShowroom3D();
+  if (
+    !document.getElementById("showroom3dStage") ||
+    !window.matchMedia("(hover: hover)").matches
+  ) {
+    return;
+  }
+
+  Promise.all(SHOWROOM_LIBS.map(loadScript)).then(initShowroom3D);
 });
 
 function initShowroom3D() {

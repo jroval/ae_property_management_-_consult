@@ -122,21 +122,26 @@
     href="../site.webmanifest"
   >
 
-  <!-- Google Fonts -->
+  <!-- Schriften (selbst gehostet) -->
   <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
+    rel="preload"
+    href="../assets/fonts/cormorant-garamond-normal-latin.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
   >
 
   <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
+    rel="preload"
+    href="../assets/fonts/manrope-normal-latin.woff2"
+    as="font"
+    type="font/woff2"
     crossorigin
   >
 
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Manrope:wght@400;600;700&display=swap"
+    href="../css/fonts.css?v=20261020"
   >
 
   <!-- Stylesheets -->
@@ -157,7 +162,7 @@
 
   <link
     rel="stylesheet"
-    href="../css/styles.css?v=20261031"
+    href="../css/styles.css?v=20261020b"
   >
 
   <link
@@ -165,25 +170,45 @@
     href="../css/responsive.css?v=20261028"
   >
 
+  <!-- Strukturierte Daten: Unternehmen -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://aeproperties.es/#business",
+    "name": "AE Property Management & Consult",
+    "legalName": "AE PROPERTY MANAGEMENT CONSULT, S.L.",
+    "taxID": "B88803077",
+    "url": "https://aeproperties.es/de/index.html",
+    "logo": "https://aeproperties.es/assets/logo/logo_ae.png",
+    "image": "https://aeproperties.es/assets/images/hero/hero-01.webp",
+    "description": "Persönliche Pflege, Betreuung und Verwaltung von Villen und Zweitwohnsitzen auf Mallorca.",
+    "telephone": "+34 601 927 601",
+    "email": "info@aeproperties.es",
+    "priceRange": "Ab 250 € pro Monat",
+    "founder": { "@type": "Person", "name": "Andrea" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Campos",
+      "addressRegion": "Illes Balears",
+      "postalCode": "07630",
+      "addressCountry": "ES"
+    },
+    "areaServed": { "@type": "Place", "name": "Mallorca (Süden, Südosten und Südwesten)" },
+    "availableLanguage": ["es", "en", "de"],
+    "knowsAbout": ["Immobilienverwaltung", "Concierge", "Baubegleitung", "Immobilien"]
+  }
+  </script>
+
   <!-- JavaScript -->
   <script
     src="../js/main.js?v=20260923"
     defer
   ></script>
 
-  <!-- Showroom 3D: Three.js + GSAP (nur auf der Startseite) -->
+  <!-- Showroom 3D (nur auf der Startseite). Three.js und GSAP lädt das Skript selbst, nur auf dem Desktop -->
   <script
-    src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"
-    defer
-  ></script>
-
-  <script
-    src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
-    defer
-  ></script>
-
-  <script
-    src="../js/showroom-3d.js?v=20261028"
+    src="../js/showroom-3d.js?v=20261020"
     defer
   ></script>
 </head>
