@@ -3031,6 +3031,12 @@ button:focus-visible {
   line-height: 1.65;
 }
 
+.contact-premium__legal-info {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: var(--font-size-xs);
+}
+
 .contact-premium__privacy a {
   color: var(--color-accent-light);
   text-decoration: underline;

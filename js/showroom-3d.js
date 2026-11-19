@@ -20,10 +20,11 @@
 "use strict";
 
 /* Three.js y GSAP se cargan solo donde la escena se usa (dispositivos con
-   hover). En táctil no se descargan: allí se muestran las tarjetas. */
+   hover). En táctil no se descargan: allí se muestran las tarjetas.
+   Alojados en js/vendor/ para no enviar la IP del visitante a un CDN. */
 const SHOWROOM_LIBS = [
-  "https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js",
-  "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js",
+  "../js/vendor/three-0.149.0.min.js",
+  "../js/vendor/gsap-3.12.5.min.js",
 ];
 
 function loadScript(src) {
